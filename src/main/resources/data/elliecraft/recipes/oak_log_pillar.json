@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "misc",
+    "pattern": [
+        "   ",
+        " L ",
+        " L "
+    ],
+    "key": {
+        "L": {
+            "item": "minecraft:oak_log"
+        }
+    },
+    "result": {
+        "item": "elliecraft:oak_log_pillar",
+        "count": 2
+    }
+}

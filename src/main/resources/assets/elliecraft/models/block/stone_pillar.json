@@ -1,0 +1,7 @@
+{
+	"parent": "elliecraft:block/pillar",
+	"textures": {
+		"0": "elliecraft:block/stone_pillar",
+		"particle": "elliecraft:block/stone_pillar"
+	}
+}

@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "misc",
+    "pattern": [
+        "DE ",
+        "RS ",
+        "  S"
+    ],
+    "key": {
+        "S": {
+            "item": "minecraft:stick"
+        },
+        "R": {
+            "item": "minecraft:redstone"
+        },
+        "D": {
+            "item": "minecraft:diamond"
+        },
+        "E": {
+            "item": "minecraft:emerald"
+        }
+    },
+    "result": {
+        "item": "elliecraft:metal_detector"
+    }
+}

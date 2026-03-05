@@ -1,6 +1,10 @@
 package net.ellieraven.elliecraft;
 
 import com.mojang.logging.LogUtils;
+
+import net.ellieraven.elliecraft.block.ModBlocks;
+import net.ellieraven.elliecraft.item.ModCreativeModeTabs;
+import net.ellieraven.elliecraft.item.ModItems;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.food.FoodProperties;
@@ -40,14 +44,15 @@ public class EllieCraft
     public EllieCraft(FMLJavaModLoadingContext context)
     {
         IEventBus modEventBus = context.getModEventBus();
+        ModCreativeModeTabs.register(modEventBus);
 
-        // Register the commonSetup method for modloading
+        ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
+
         modEventBus.addListener(this::commonSetup);
 
-        // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
 
-        // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
     }
 
@@ -56,20 +61,20 @@ public class EllieCraft
 
     }
 
-    // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event)
     {
-
+        if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+            event.accept(ModItems.SAPPHIRE);
+            event.accept(ModItems.RAW_SAPPHIRE);
+        }
     }
 
-    // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event)
     {
 
     }
 
-    // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
     @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents
     {

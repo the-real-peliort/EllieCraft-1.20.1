@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "misc",
+    "pattern": [
+        "  O",
+        " O ",
+        "O  "
+    ],
+    "key": {
+        "O": {
+            "item": "minecraft:obsidian"
+        }
+    },
+    "result": {
+        "item": "elliecraft:obsidian_rod",
+        "count": 1
+    }
+}

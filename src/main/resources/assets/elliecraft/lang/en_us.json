@@ -1,0 +1,21 @@
+{
+    "creativetab.elliecraft_tab": "EllieCraft",
+
+    "item.elliecraft.sapphire": "Sapphire",
+    "block.elliecraft.sapphire_block": "Sapphire Block",
+    "item.elliecraft.raw_sapphire": "Raw Sapphire",
+    "block.elliecraft.sapphire_ore": "Sapphire Ore",
+
+    "item.elliecraft.hamburger": "Hamburger",
+
+    "block.elliecraft.stone_pillar": "Stone Pillar",
+    "block.elliecraft.oak_log_pillar": "Oak Log Pillar",
+
+    "block.elliecraft.oak_log_sapphire_generator": "Oak Log Sapphire Generator",
+
+    "item.elliecraft.basic_sapphire_core": "Basic Sapphire Core",
+    "item.elliecraft.obsidian_rod": "Obsidian Rod",
+
+    "item.elliecraft.metal_detector": "Metal Detector",
+    "item.elliecraft.basic_wand": "Basic Wand"
+}

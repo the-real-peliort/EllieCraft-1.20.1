@@ -1,0 +1,24 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "misc",
+    "pattern": [
+        "GSG",
+        "SDS",
+        "GSG"
+    ],
+    "key": {
+        "G": {
+            "item": "minecraft:gold_block"
+        },
+        "S": {
+            "item": "elliecraft:sapphire_block"
+        },
+        "D": {
+            "item": "minecraft:diamond_block"
+        }
+    },
+    "result": {
+        "item": "elliecraft:basic_sapphire_core",
+        "count": 1
+    }
+}

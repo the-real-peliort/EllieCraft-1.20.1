@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "misc",
+    "pattern": [
+        "###",
+        "###",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "item": "elliecraft:sapphire"
+        }
+    },
+    "result": {
+        "item": "elliecraft:sapphire_block"
+    }
+}

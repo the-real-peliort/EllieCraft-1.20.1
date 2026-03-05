@@ -1,0 +1,7 @@
+{
+	"parent": "elliecraft:block/pillar",
+	"textures": {
+		"0": "elliecraft:block/oak_log_pillar",
+		"particle": "elliecraft:block/oak_log_pillar"
+	}
+}
