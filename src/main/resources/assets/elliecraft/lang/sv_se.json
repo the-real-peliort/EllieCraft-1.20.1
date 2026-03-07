@@ -1,0 +1,25 @@
+{
+    "creativetab.elliecraft_tab": "EllieCraft",
+
+    "item.elliecraft.sapphire": "Safir",
+    "block.elliecraft.sapphire_block": "Safir Block",
+    "item.elliecraft.raw_sapphire": "Rå Safir",
+    "block.elliecraft.sapphire_ore": "Safir Malm",
+
+    "item.elliecraft.hamburger": "Hamburgare",
+
+    "block.elliecraft.stone_pillar": "Sten Pelare",
+    "block.elliecraft.connecting_stone_pillar": "Anslutande Sten Pelare",
+    "block.elliecraft.oak_log_pillar": "Ek Stock Pelare",
+
+    "block.elliecraft.oak_log_sapphire_generator": "Ekstocks Safir generator",
+
+    "item.elliecraft.basic_sapphire_core": "Enkel Safir Kärna",
+    "item.elliecraft.obsidian_rod": "Obsidian Stång",
+
+    "item.elliecraft.metal_detector": "Metallsökare",
+    "item.elliecraft.basic_wand": "Enkel Stav",
+
+    "item.elliecraft.reinforced_stick": "Förstärkt Pinne",
+    "block.elliecraft.tunnel": "Trä Tunnel"
+}

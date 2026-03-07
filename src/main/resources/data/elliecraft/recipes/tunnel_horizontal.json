@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "misc",
+    "pattern": [
+        "PPP",
+        "   ",
+        "PPP"
+    ],
+    "key": {
+        "P": {
+            "tag": "wooden_pressure_plates"
+        }
+    },
+    "result": {
+        "item": "elliecraft:tunnel",
+        "count": 4
+    }
+}

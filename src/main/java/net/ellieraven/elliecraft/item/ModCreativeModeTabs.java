@@ -31,11 +31,15 @@ public class ModCreativeModeTabs {
             pOutput.accept(ModItems.HAMBURGER.get());
 
             pOutput.accept(ModBlocks.STONE_PILLAR.get());
+            pOutput.accept(ModBlocks.CONNECTING_STONE_PILLAR.get());
             pOutput.accept(ModBlocks.OAK_LOG_PILLAR.get());
 
             pOutput.accept(ModItems.OBSIDIAN_ROD.get());
             pOutput.accept(ModItems.BASIC_SAPPHIRE_CORE.get());
             pOutput.accept(ModBlocks.OAK_LOG_SAPPHIRE_GENERATOR.get());
+
+            pOutput.accept(ModItems.REINFORCED_STICK.get());
+            pOutput.accept(ModBlocks.TUNNEL.get());
         })
         .build()
     );

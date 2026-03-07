@@ -5,9 +5,7 @@ import java.util.function.Supplier;
 import com.mojang.blaze3d.shaders.Uniform;
 
 import net.ellieraven.elliecraft.EllieCraft;
-import net.ellieraven.elliecraft.block.custom.OakLogPillarBlock;
-import net.ellieraven.elliecraft.block.custom.OakLogSapphireGeneratorBlock;
-import net.ellieraven.elliecraft.block.custom.StonePillarBlock;
+import net.ellieraven.elliecraft.block.custom.*;
 import net.ellieraven.elliecraft.item.ModItems;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
@@ -40,12 +38,20 @@ public class ModBlocks {
             () -> new StonePillarBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICKS).noOcclusion())
     );
 
+    public static final RegistryObject<Block> CONNECTING_STONE_PILLAR = registerBlock("connecting_stone_pillar",
+            () -> new ConnectingStonePillarBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICKS).noOcclusion())
+    );
+
     public static final RegistryObject<Block> OAK_LOG_PILLAR = registerBlock("oak_log_pillar",
             () -> new OakLogPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).noOcclusion())
     );
 
     public static final RegistryObject<Block> OAK_LOG_SAPPHIRE_GENERATOR = registerBlock("oak_log_sapphire_generator",
             () -> new OakLogSapphireGeneratorBlock(BlockBehaviour.Properties.copy(Blocks.STONE).noOcclusion())
+    );
+
+    public static final RegistryObject<Block> TUNNEL = registerBlock("tunnel",
+            () -> new TunnelBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG).noOcclusion())
     );
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {

@@ -1,0 +1,13 @@
+{
+    "multipart": [
+        { "when": { "axis": "y" },
+            "apply": { "model": "elliecraft:block/tunnel"}
+        },
+        { "when": { "axis": "x" },
+            "apply": { "model": "elliecraft:block/tunnel", "x": 90, "y": 90 }
+        },
+        { "when": { "axis": "z" },
+            "apply": { "model": "elliecraft:block/tunnel", "x": 90 }
+        }
+    ]
+}

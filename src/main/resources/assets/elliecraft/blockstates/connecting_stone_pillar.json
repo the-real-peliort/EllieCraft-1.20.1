@@ -1,0 +1,22 @@
+{
+    "multipart": [
+
+        { "apply": { "model": "elliecraft:block/stone_pillar" } },
+
+        { "when": { "north": true },
+            "apply": { "model": "elliecraft:block/stone_pillar_connection", "y": 0 }
+        },
+
+        { "when": { "east": true },
+            "apply": { "model": "elliecraft:block/stone_pillar_connection", "y": 90 }
+        },
+
+        { "when": { "south": true },
+            "apply": { "model": "elliecraft:block/stone_pillar_connection", "y": 180 }
+        },
+
+        { "when": { "west": true },
+            "apply": { "model": "elliecraft:block/stone_pillar_connection", "y": 270 }
+        }
+    ]
+}

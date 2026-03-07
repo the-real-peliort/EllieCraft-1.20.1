@@ -9,6 +9,7 @@
     "item.elliecraft.hamburger": "Hamburger",
 
     "block.elliecraft.stone_pillar": "Stone Pillar",
+    "block.elliecraft.connecting_stone_pillar": "Connecting Stone Pillar",
     "block.elliecraft.oak_log_pillar": "Oak Log Pillar",
 
     "block.elliecraft.oak_log_sapphire_generator": "Oak Log Sapphire Generator",
@@ -17,5 +18,8 @@
     "item.elliecraft.obsidian_rod": "Obsidian Rod",
 
     "item.elliecraft.metal_detector": "Metal Detector",
-    "item.elliecraft.basic_wand": "Basic Wand"
+    "item.elliecraft.basic_wand": "Basic Wand",
+
+    "item.elliecraft.reinforced_stick": "Reinforced Stick",
+    "block.elliecraft.tunnel": "Wooden Tunnel"
 }

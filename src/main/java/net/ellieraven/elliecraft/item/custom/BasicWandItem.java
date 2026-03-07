@@ -1,5 +1,6 @@
 package net.ellieraven.elliecraft.item.custom;
 
+import net.ellieraven.elliecraft.block.ModBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
@@ -86,6 +87,18 @@ public class BasicWandItem extends Item {
         }
         else if (level.getBlockState(blockPos).is(Blocks.BIRCH_SAPLING)) {
             BlockState newState = Blocks.OAK_SAPLING.defaultBlockState();
+            level.setBlock(blockPos, newState, 3);
+            return true;
+        }
+
+
+        else if (level.getBlockState(blockPos).is(ModBlocks.STONE_PILLAR.get())) {
+            BlockState newState = ModBlocks.CONNECTING_STONE_PILLAR.get().defaultBlockState();
+            level.setBlock(blockPos, newState, 3);
+            return true;
+        }
+        else if (level.getBlockState(blockPos).is(ModBlocks.CONNECTING_STONE_PILLAR.get())) {
+            BlockState newState = ModBlocks.STONE_PILLAR.get().defaultBlockState();
             level.setBlock(blockPos, newState, 3);
             return true;
         }
