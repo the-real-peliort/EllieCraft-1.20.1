@@ -21,5 +21,7 @@
     "item.elliecraft.basic_wand": "Enkel Stav",
 
     "item.elliecraft.reinforced_stick": "Förstärkt Pinne",
-    "block.elliecraft.tunnel": "Trä Tunnel"
+    "block.elliecraft.tunnel": "Trä Tunnel",
+
+    "item.elliecraft.lag_stick": "\"Pinne\""
 }

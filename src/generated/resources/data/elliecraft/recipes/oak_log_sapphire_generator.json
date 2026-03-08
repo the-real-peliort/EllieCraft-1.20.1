@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "minecraft:iron_block"
+    },
+    "C": {
+      "item": "elliecraft:basic_sapphire_core"
+    },
+    "N": {
+      "item": "minecraft:iron_nugget"
+    },
+    "O": {
+      "item": "elliecraft:obsidian_rod"
+    },
+    "P": {
+      "item": "minecraft:heavy_weighted_pressure_plate"
+    },
+    "S": {
+      "item": "minecraft:oak_sapling"
+    }
+  },
+  "pattern": [
+    "OCO",
+    "BSB",
+    "NPN"
+  ],
+  "result": {
+    "item": "elliecraft:oak_log_sapphire_generator"
+  },
+  "show_notification": true
+}

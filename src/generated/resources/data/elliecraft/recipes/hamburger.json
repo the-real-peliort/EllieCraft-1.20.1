@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "minecraft:bread"
+    },
+    "S": {
+      "item": "minecraft:cooked_beef"
+    }
+  },
+  "pattern": [
+    "B",
+    "S",
+    "B"
+  ],
+  "result": {
+    "item": "elliecraft:hamburger"
+  },
+  "show_notification": true
+}

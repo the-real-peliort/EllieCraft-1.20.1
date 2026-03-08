@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "P": {
+      "item": "minecraft:oak_pressure_plate"
+    }
+  },
+  "pattern": [
+    "PPP",
+    "   ",
+    "PPP"
+  ],
+  "result": {
+    "count": 4,
+    "item": "elliecraft:tunnel"
+  },
+  "show_notification": true
+}

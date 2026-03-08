@@ -35,10 +35,12 @@ public class ModCreativeModeTabs {
             pOutput.accept(ModBlocks.OAK_LOG_PILLAR.get());
 
             pOutput.accept(ModItems.OBSIDIAN_ROD.get());
+            pOutput.accept(ModItems.REINFORCED_STICK.get());
+            pOutput.accept(ModItems.LAG_STICK.get());
+
             pOutput.accept(ModItems.BASIC_SAPPHIRE_CORE.get());
             pOutput.accept(ModBlocks.OAK_LOG_SAPPHIRE_GENERATOR.get());
 
-            pOutput.accept(ModItems.REINFORCED_STICK.get());
             pOutput.accept(ModBlocks.TUNNEL.get());
         })
         .build()

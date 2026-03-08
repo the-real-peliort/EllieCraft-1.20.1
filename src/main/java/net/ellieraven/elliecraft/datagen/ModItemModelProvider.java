@@ -27,12 +27,20 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.METAL_DETECTOR);
         simpleItem(ModItems.OBSIDIAN_ROD);
         simpleItem(ModItems.REINFORCED_STICK);
+
+        simpleVanillaTextureItem(ModItems.LAG_STICK, "stick");
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {
         return withExistingParent(item.getId().getPath(),
                 new ResourceLocation("item/generated")).texture("layer0",
                 new ResourceLocation(EllieCraft.MOD_ID,"item/" + item.getId().getPath()));
+    }
+
+    private ItemModelBuilder simpleVanillaTextureItem(RegistryObject<Item> item, String textureName) {
+        return withExistingParent(item.getId().getPath(),
+                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation("minecraft:item/" + textureName));
     }
 
 }
