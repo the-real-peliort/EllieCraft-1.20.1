@@ -2,6 +2,7 @@ package net.ellieraven.elliecraft.item;
 
 import net.ellieraven.elliecraft.EllieCraft;
 import net.ellieraven.elliecraft.item.custom.BasicWandItem;
+import net.ellieraven.elliecraft.item.custom.EllieCraftBookItem;
 import net.ellieraven.elliecraft.item.custom.LagStickItem;
 import net.ellieraven.elliecraft.item.custom.MetalDetectorItem;
 import net.minecraft.world.item.Item;
@@ -48,6 +49,10 @@ public class ModItems {
 
     public static final RegistryObject<Item> LAG_STICK = ITEMS.register("lag_stick",
             () -> new LagStickItem(new Item.Properties().stacksTo(1))
+    );
+
+    public static final RegistryObject<Item> ELLIECRAFT_BOOK = ITEMS.register("elliecraft_book",
+            () -> new EllieCraftBookItem(new Item.Properties().stacksTo(1))
     );
 
     public static void register(IEventBus eventBus) {

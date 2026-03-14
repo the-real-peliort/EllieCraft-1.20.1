@@ -201,6 +201,12 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('S', Items.STICK)
                 .unlockedBy(getHasName(Items.BEDROCK), has(Items.BEDROCK))
                 .save(pWriter);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.SAPPHIRE.get(), 1)
+                .requires(Items.EMERALD, 1)
+                .requires(Items.LIGHT_BLUE_DYE, 1)
+                .unlockedBy(getHasName(Items.EMERALD), has(Items.EMERALD))
+                .save(pWriter, EllieCraft.MOD_ID + ":color_emerald_into_sapphire");
     }
 
     protected static void oreSmelting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult, float pExperience, int pCookingTime, String pGroup) {

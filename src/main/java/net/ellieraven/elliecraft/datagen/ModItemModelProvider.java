@@ -27,6 +27,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.METAL_DETECTOR);
         simpleItem(ModItems.OBSIDIAN_ROD);
         simpleItem(ModItems.REINFORCED_STICK);
+        simpleItem(ModItems.ELLIECRAFT_BOOK);
 
         simpleVanillaTextureItem(ModItems.LAG_STICK, "stick");
     }

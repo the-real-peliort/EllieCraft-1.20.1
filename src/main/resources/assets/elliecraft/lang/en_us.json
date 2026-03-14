@@ -2,8 +2,8 @@
     "creativetab.elliecraft_tab": "EllieCraft",
 
     "item.elliecraft.sapphire": "Sapphire",
-    "block.elliecraft.sapphire_block": "Sapphire Block",
     "item.elliecraft.raw_sapphire": "Raw Sapphire",
+    "block.elliecraft.sapphire_block": "Sapphire Block",
     "block.elliecraft.sapphire_ore": "Sapphire Ore",
 
     "item.elliecraft.hamburger": "Hamburger",
@@ -23,5 +23,6 @@
     "item.elliecraft.reinforced_stick": "Reinforced Stick",
     "block.elliecraft.tunnel": "Wooden Tunnel",
 
-    "item.elliecraft.lag_stick": "\"Stick\""
+    "item.elliecraft.lag_stick": "Stick?",
+    "item.elliecraft.elliecraft_book": "EllieCraft Book"
 }

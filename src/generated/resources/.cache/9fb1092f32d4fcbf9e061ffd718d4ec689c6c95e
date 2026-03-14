@@ -1,6 +1,7 @@
-// 1.20.1	2026-03-08T19:23:23.3002909	Recipes
+// 1.20.1	2026-03-10T21:49:41.0259089	Recipes
 a35305c55d526d3d09ce0a4da02c47abbe1a9fb9 data/elliecraft/advancements/recipes/misc/basic_sapphire_core.json
 1c343e5ec78d9de0af6aa95642dfab677eace605 data/elliecraft/advancements/recipes/misc/basic_wand.json
+8fc32176fa87a467d577a6fc6d158628aff9c2a9 data/elliecraft/advancements/recipes/misc/color_emerald_into_sapphire.json
 e96aaf69dd2507708b1adf279924ad55a4dfdda9 data/elliecraft/advancements/recipes/misc/connecting_stone_pillar_from_stone_pillar.json
 54f47e20d4830e8b024d1865c9f0e29fadd8e39d data/elliecraft/advancements/recipes/misc/hamburger.json
 11a4fc5ed37ce6e7f76298be69ac146a44fd5953 data/elliecraft/advancements/recipes/misc/hopper_shortcut.json
@@ -24,6 +25,7 @@ b0c699733b311d913c0615a73e51f7bb83bf26f2 data/elliecraft/advancements/recipes/mi
 690d8fadd88fc536e4c5fc7bbd06eeaf5f083034 data/elliecraft/advancements/recipes/misc/tunnel_vertical.json
 182953b0a544e03873b523e1ea2743775fdc5d3e data/elliecraft/recipes/basic_sapphire_core.json
 28f2929aadb04370e3273dd9df72d14c41742597 data/elliecraft/recipes/basic_wand.json
+9dfd0e5b0654d3951442391911f5b6443f59c23e data/elliecraft/recipes/color_emerald_into_sapphire.json
 baf4652e965ada83f0e5f3bc57c0750f970455bf data/elliecraft/recipes/connecting_stone_pillar_from_stone_pillar.json
 898a2677fa7f835d8d52afce30efb0a0914d1ba0 data/elliecraft/recipes/hamburger.json
 523513e9004a0b424d6e77d68d346ed10ca0bd30 data/elliecraft/recipes/hopper_shortcut.json

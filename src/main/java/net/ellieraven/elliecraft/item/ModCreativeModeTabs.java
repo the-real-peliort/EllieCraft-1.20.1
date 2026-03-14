@@ -22,26 +22,22 @@ public class ModCreativeModeTabs {
         .displayItems((pParameters, pOutput) -> {
             pOutput.accept(ModItems.SAPPHIRE.get());
             pOutput.accept(ModItems.RAW_SAPPHIRE.get());
-
             pOutput.accept(ModBlocks.SAPPHIRE_BLOCK.get());
             pOutput.accept(ModBlocks.SAPPHIRE_ORE.get());
-
             pOutput.accept(ModItems.METAL_DETECTOR.get());
             pOutput.accept(ModItems.BASIC_WAND.get());
             pOutput.accept(ModItems.HAMBURGER.get());
-
             pOutput.accept(ModBlocks.STONE_PILLAR.get());
             pOutput.accept(ModBlocks.CONNECTING_STONE_PILLAR.get());
-            pOutput.accept(ModBlocks.OAK_LOG_PILLAR.get());
 
+            pOutput.accept(ModBlocks.OAK_LOG_PILLAR.get());
             pOutput.accept(ModItems.OBSIDIAN_ROD.get());
             pOutput.accept(ModItems.REINFORCED_STICK.get());
             pOutput.accept(ModItems.LAG_STICK.get());
-
             pOutput.accept(ModItems.BASIC_SAPPHIRE_CORE.get());
             pOutput.accept(ModBlocks.OAK_LOG_SAPPHIRE_GENERATOR.get());
-
             pOutput.accept(ModBlocks.TUNNEL.get());
+            pOutput.accept(ModItems.ELLIECRAFT_BOOK.get());
         })
         .build()
     );
