@@ -25,5 +25,5 @@ run
 forge*changelog.txt
 
 # datagen
-/src/generated
-/run-data
+/src/generated/
+/run-data/
