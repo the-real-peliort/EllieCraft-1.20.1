@@ -209,7 +209,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('B', Blocks.IRON_BLOCK)
                 .define('E', Items.ENDER_PEARL)
                 .define('Y', Blocks.YELLOW_CONCRETE)
-                .unlockedBy(getHasName(Items.BEDROCK), has(Items.BEDROCK))
+                .unlockedBy(getHasName(Items.ENDER_PEARL), has(Items.ENDER_PEARL))
                 .save(pWriter);
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.SAPPHIRE.get(), 1)
