@@ -19,6 +19,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.SAPPHIRE_ORE);
         blockWithItem(ModBlocks.PASSTHROUGH_BLOCK);
         blockWithItem(ModBlocks.BLACK_BRICKS);
+        blockWithItem(ModBlocks.BLUE_BRICKS);
+        blockWithItem(ModBlocks.YELLOW_BRICKS);
+        blockWithItem(ModBlocks.PINK_BRICKS);
         blockWithItem(ModBlocks.ROUNDABOUT_SIGN);
         blockWithItem(ModBlocks.STOP_SIGN);
     }

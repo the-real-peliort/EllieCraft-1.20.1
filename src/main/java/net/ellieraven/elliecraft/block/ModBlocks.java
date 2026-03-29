@@ -68,6 +68,18 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.BRICKS))
     );
 
+    public static final RegistryObject<Block> BLUE_BRICKS = registerBlock("blue_bricks",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.BRICKS))
+    );
+
+    public static final RegistryObject<Block> YELLOW_BRICKS = registerBlock("yellow_bricks",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.BRICKS))
+    );
+
+    public static final RegistryObject<Block> PINK_BRICKS = registerBlock("pink_bricks",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.BRICKS))
+    );
+
     public static final RegistryObject<Block> ROUNDABOUT_SIGN = registerBlock("roundabout_sign",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK))
     );

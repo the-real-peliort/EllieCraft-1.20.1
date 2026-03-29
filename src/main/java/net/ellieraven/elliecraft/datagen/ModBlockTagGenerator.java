@@ -37,6 +37,9 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 .add(ModBlocks.PASSTHROUGH_BLOCK.get())
                 .add(ModBlocks.ALGAE_STONE.get())
                 .add(ModBlocks.BLACK_BRICKS.get())
+                .add(ModBlocks.BLUE_BRICKS.get())
+                .add(ModBlocks.YELLOW_BRICKS.get())
+                .add(ModBlocks.PINK_BRICKS.get())
                 .add(ModBlocks.ROUNDABOUT_SIGN.get())
                 .add(ModBlocks.STOP_SIGN.get());
 

@@ -28,7 +28,11 @@
 
     "block.elliecraft.algae_stone": "Algae-Covered Stone",
     "block.elliecraft.passthrough_block": "Passthrough Block",
+
     "block.elliecraft.black_bricks": "Black Bricks",
+    "block.elliecraft.blue_bricks": "Blue Bricks",
+    "block.elliecraft.yellow_bricks": "Yellow Bricks",
+    "block.elliecraft.pink_bricks": "Pink Bricks",
 
     "block.elliecraft.roundabout_sign": "Roundabout Sign",
     "block.elliecraft.stop_sign": "Stop Sign"

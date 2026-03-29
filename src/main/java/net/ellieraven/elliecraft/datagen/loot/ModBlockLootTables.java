@@ -25,6 +25,9 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.ALGAE_STONE.get());
         this.dropSelf(ModBlocks.PASSTHROUGH_BLOCK.get());
         this.dropSelf(ModBlocks.BLACK_BRICKS.get());
+        this.dropSelf(ModBlocks.BLUE_BRICKS.get());
+        this.dropSelf(ModBlocks.YELLOW_BRICKS.get());
+        this.dropSelf(ModBlocks.PINK_BRICKS.get());
         this.dropSelf(ModBlocks.ROUNDABOUT_SIGN.get());
         this.dropSelf(ModBlocks.STOP_SIGN.get());
 
