@@ -1,5 +1,0 @@
-// 1.20.1	2026-03-07T15:35:17.5943847	Tags for minecraft:block mod id elliecraft
-9b08442f950f085a0a20ab082e61f53b813516ea data/minecraft/tags/blocks/mineable/axe.json
-c82e54487f5251673eda0b408732f31e0f68d4db data/minecraft/tags/blocks/mineable/pickaxe.json
-d00b436d1bc29017d030a4667e56fa73847bc72a data/minecraft/tags/blocks/needs_diamond_tool.json
-b0c1b668ccd48d870cb3ca124a1d620faf60397c data/minecraft/tags/blocks/needs_iron_tool.json
