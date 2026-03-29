@@ -202,6 +202,16 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(Items.BEDROCK), has(Items.BEDROCK))
                 .save(pWriter);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.PASSTHROUGH_BLOCK.get(), 1)
+                .pattern(" E ")
+                .pattern("YBY")
+                .pattern(" E ")
+                .define('B', Blocks.IRON_BLOCK)
+                .define('E', Items.ENDER_PEARL)
+                .define('Y', Blocks.YELLOW_CONCRETE)
+                .unlockedBy(getHasName(Items.BEDROCK), has(Items.BEDROCK))
+                .save(pWriter);
+
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.SAPPHIRE.get(), 1)
                 .requires(Items.EMERALD, 1)
                 .requires(Items.LIGHT_BLUE_DYE, 1)
