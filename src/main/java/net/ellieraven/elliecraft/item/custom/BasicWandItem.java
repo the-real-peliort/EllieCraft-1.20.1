@@ -5,12 +5,14 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.context.UseOnContext;
+import net.minecraft.world.level.GameType;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.RotatedPillarBlock;
@@ -70,7 +72,11 @@ public class BasicWandItem extends Item {
 
     private boolean TryConvertAsBasicWand(Level level, BlockPos blockPos, Player player, int ExperienceNeeded) {
 
-        if (player.totalExperience < ExperienceNeeded) {
+        ServerPlayer serverPlayer = (ServerPlayer) player;
+
+        GameType gameType = serverPlayer.gameMode.getGameModeForPlayer();
+
+        if (serverPlayer.totalExperience < ExperienceNeeded && gameType != GameType.CREATIVE) {
             player.sendSystemMessage(Component.literal("You need XP to use this!"));
             return false;
         }
