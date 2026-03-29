@@ -43,6 +43,7 @@ public class ModCreativeModeTabs {
             pOutput.accept(ModBlocks.PASSTHROUGH_BLOCK.get());
             pOutput.accept(ModBlocks.BLACK_BRICKS.get());
             pOutput.accept(ModBlocks.ROUNDABOUT_SIGN.get());
+            pOutput.accept(ModBlocks.STOP_SIGN.get());
         })
         .build()
     );

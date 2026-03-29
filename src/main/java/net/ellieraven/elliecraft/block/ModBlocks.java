@@ -69,7 +69,11 @@ public class ModBlocks {
     );
 
     public static final RegistryObject<Block> ROUNDABOUT_SIGN = registerBlock("roundabout_sign",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.BRICKS))
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK))
+    );
+
+    public static final RegistryObject<Block> STOP_SIGN = registerBlock("stop_sign",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK))
     );
 
     public static void register(IEventBus eventBus) {
