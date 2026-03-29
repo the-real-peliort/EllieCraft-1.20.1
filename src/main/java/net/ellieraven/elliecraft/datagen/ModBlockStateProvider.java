@@ -19,6 +19,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.SAPPHIRE_ORE);
         blockWithItem(ModBlocks.PASSTHROUGH_BLOCK);
         blockWithItem(ModBlocks.BLACK_BRICKS);
+        blockWithItem(ModBlocks.ROUNDABOUT_SIGN);
     }
 
     private void blockWithItem(RegistryObject<Block> blockRegistryObject) {
