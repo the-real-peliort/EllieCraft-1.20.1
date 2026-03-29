@@ -24,5 +24,9 @@
     "block.elliecraft.tunnel": "Wooden Tunnel",
 
     "item.elliecraft.lag_stick": "Stick?",
-    "item.elliecraft.elliecraft_book": "EllieCraft Book"
+    "item.elliecraft.elliecraft_book": "EllieCraft Book",
+
+    "block.elliecraft.algae_stone": "Algae-Covered Stone",
+    "block.elliecraft.passthrough_block": "Passthrough Block",
+    "block.elliecraft.black_bricks": "Black Bricks"
 }

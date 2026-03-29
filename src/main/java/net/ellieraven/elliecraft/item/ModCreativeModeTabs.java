@@ -38,6 +38,10 @@ public class ModCreativeModeTabs {
             pOutput.accept(ModBlocks.OAK_LOG_SAPPHIRE_GENERATOR.get());
             pOutput.accept(ModBlocks.TUNNEL.get());
             pOutput.accept(ModItems.ELLIECRAFT_BOOK.get());
+            pOutput.accept(ModBlocks.ALGAE_STONE.get());
+
+            pOutput.accept(ModBlocks.PASSTHROUGH_BLOCK.get());
+            pOutput.accept(ModBlocks.BLACK_BRICKS.get());
         })
         .build()
     );

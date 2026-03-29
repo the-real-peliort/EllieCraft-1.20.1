@@ -207,6 +207,30 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .requires(Items.LIGHT_BLUE_DYE, 1)
                 .unlockedBy(getHasName(Items.EMERALD), has(Items.EMERALD))
                 .save(pWriter, EllieCraft.MOD_ID + ":color_emerald_into_sapphire");
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModBlocks.BLACK_BRICKS.get(), 1)
+                .requires(Items.BLACK_DYE, 1)
+                .requires(Blocks.BRICKS, 1)
+                .unlockedBy(getHasName(Blocks.BRICKS), has(Blocks.BRICKS))
+                .save(pWriter, EllieCraft.MOD_ID + ":black_bricks_single");
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModBlocks.BLACK_BRICKS.get(), 8)
+                .requires(Items.BLACK_DYE, 1)
+                .requires(Blocks.BRICKS, 8)
+                .unlockedBy(getHasName(Blocks.BRICKS), has(Blocks.BRICKS))
+                .save(pWriter, EllieCraft.MOD_ID + ":black_bricks_bulk");
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Blocks.BRICKS, 1)
+                .requires(Items.WATER_BUCKET, 1)
+                .requires(ModBlocks.BLACK_BRICKS.get(), 1)
+                .unlockedBy(getHasName(Blocks.BRICKS), has(Blocks.BRICKS))
+                .save(pWriter, EllieCraft.MOD_ID + ":black_bricks_single_uncolor");
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Blocks.BRICKS, 8)
+                .requires(Items.WATER_BUCKET, 1)
+                .requires(ModBlocks.BLACK_BRICKS.get(), 8)
+                .unlockedBy(getHasName(ModBlocks.BLACK_BRICKS.get()), has(ModBlocks.BLACK_BRICKS.get()))
+                .save(pWriter, EllieCraft.MOD_ID + ":black_bricks_bulk_uncolor");
     }
 
     protected static void oreSmelting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult, float pExperience, int pCookingTime, String pGroup) {

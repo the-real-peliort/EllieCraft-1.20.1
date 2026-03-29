@@ -22,6 +22,9 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.CONNECTING_STONE_PILLAR.get());
         this.dropSelf(ModBlocks.TUNNEL.get());
         this.dropSelf(ModBlocks.OAK_LOG_SAPPHIRE_GENERATOR.get());
+        this.dropSelf(ModBlocks.ALGAE_STONE.get());
+        this.dropSelf(ModBlocks.PASSTHROUGH_BLOCK.get());
+        this.dropSelf(ModBlocks.BLACK_BRICKS.get());
 
         this.add(ModBlocks.SAPPHIRE_ORE.get(),
                 block -> createOreDrop(ModBlocks.SAPPHIRE_ORE.get(), ModItems.RAW_SAPPHIRE.get()));

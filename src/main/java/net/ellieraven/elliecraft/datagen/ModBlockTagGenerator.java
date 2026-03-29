@@ -33,7 +33,10 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 .add(ModBlocks.SAPPHIRE_ORE.get())
                 .add(ModBlocks.OAK_LOG_SAPPHIRE_GENERATOR.get())
                 .add(ModBlocks.STONE_PILLAR.get())
-                .add(ModBlocks.CONNECTING_STONE_PILLAR.get());
+                .add(ModBlocks.CONNECTING_STONE_PILLAR.get())
+                .add(ModBlocks.PASSTHROUGH_BLOCK.get())
+                .add(ModBlocks.ALGAE_STONE.get())
+                .add(ModBlocks.BLACK_BRICKS.get());
 
         this.tag(BlockTags.MINEABLE_WITH_AXE)
                 .add(ModBlocks.OAK_LOG_PILLAR.get());

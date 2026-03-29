@@ -46,6 +46,7 @@ public class ModBlocks {
             () -> new OakLogPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).noOcclusion())
     );
 
+
     public static final RegistryObject<Block> OAK_LOG_SAPPHIRE_GENERATOR = registerBlock("oak_log_sapphire_generator",
             () -> new OakLogSapphireGeneratorBlock(BlockBehaviour.Properties.copy(Blocks.STONE).noOcclusion())
     );
@@ -53,6 +54,23 @@ public class ModBlocks {
     public static final RegistryObject<Block> TUNNEL = registerBlock("tunnel",
             () -> new TunnelBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG).noOcclusion())
     );
+
+
+    public static final RegistryObject<Block> ALGAE_STONE = registerBlock("algae_stone",
+            () -> new AlgaeStoneBlock(BlockBehaviour.Properties.copy(Blocks.STONE).randomTicks())
+    );
+
+    public static final RegistryObject<Block> PASSTHROUGH_BLOCK = registerBlock("passthrough_block",
+            () -> new PassthroughBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noCollission())
+    );
+
+    public static final RegistryObject<Block> BLACK_BRICKS = registerBlock("black_bricks",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.BRICKS))
+    );
+
+    public static void register(IEventBus eventBus) {
+        BLOCKS.register(eventBus);
+    }
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
@@ -62,9 +80,5 @@ public class ModBlocks {
 
     private static <T extends Block> RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block) {
         return ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
-    }
-
-    public static void register(IEventBus eventBus) {
-        BLOCKS.register(eventBus);
     }
 }

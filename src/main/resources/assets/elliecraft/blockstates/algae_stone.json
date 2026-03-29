@@ -1,0 +1,9 @@
+{
+	"variants": {
+		"moisture=0": { "model": "elliecraft:block/algae_stone_0" },
+		"moisture=1": { "model": "elliecraft:block/algae_stone_1" },
+		"moisture=2": { "model": "elliecraft:block/algae_stone_2" },
+		"moisture=3": { "model": "elliecraft:block/algae_stone_3" },
+		"moisture=4": { "model": "elliecraft:block/algae_stone_4" }
+	}
+}
