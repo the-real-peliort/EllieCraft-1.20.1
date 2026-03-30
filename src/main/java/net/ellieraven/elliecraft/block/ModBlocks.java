@@ -96,6 +96,30 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK))
     );
 
+    public static final RegistryObject<Block> SPEED_LIMIT_SIGN_30 = registerBlock("speed_limit_sign_30",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK))
+    );
+
+    public static final RegistryObject<Block> SPEED_LIMIT_SIGN_40 = registerBlock("speed_limit_sign_40",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK))
+    );
+
+    public static final RegistryObject<Block> SPEED_LIMIT_SIGN_50 = registerBlock("speed_limit_sign_50",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK))
+    );
+
+    public static final RegistryObject<Block> SPEED_LIMIT_SIGN_60 = registerBlock("speed_limit_sign_60",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK))
+    );
+
+    public static final RegistryObject<Block> SPEED_LIMIT_SIGN_70 = registerBlock("speed_limit_sign_70",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK))
+    );
+
+    public static final RegistryObject<Block> SPEED_LIMIT_SIGN_80 = registerBlock("speed_limit_sign_80",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK))
+    );
+
     public static void register(IEventBus eventBus) {
         BLOCKS.register(eventBus);
     }

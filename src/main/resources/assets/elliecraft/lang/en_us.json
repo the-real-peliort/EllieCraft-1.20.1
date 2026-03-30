@@ -38,5 +38,16 @@
     "block.elliecraft.stop_sign": "Stop Sign",
 
     "block.elliecraft.red_metal_sheet_block": "Red Metal Sheet Block",
-    "block.elliecraft.blue_metal_sheet_block": "Blue Metal Sheet Block"
+    "block.elliecraft.blue_metal_sheet_block": "Blue Metal Sheet Block",
+
+    "block.elliecraft.speed_limit_sign_30": "Speed Limit Sign 30",
+    "block.elliecraft.speed_limit_sign_40": "Speed Limit Sign 40",
+    "block.elliecraft.speed_limit_sign_50": "Speed Limit Sign 50",
+    "block.elliecraft.speed_limit_sign_60": "Speed Limit Sign 60",
+    "block.elliecraft.speed_limit_sign_70": "Speed Limit Sign 70",
+    "block.elliecraft.speed_limit_sign_80": "Speed Limit Sign 80",
+    "block.elliecraft.speed_limit_sign_90": "Speed Limit Sign 90",
+    "block.elliecraft.speed_limit_sign_100": "Speed Limit Sign 100",
+    "block.elliecraft.speed_limit_sign_110": "Speed Limit Sign 110",
+    "block.elliecraft.speed_limit_sign_120": "Speed Limit Sign 120"
 }

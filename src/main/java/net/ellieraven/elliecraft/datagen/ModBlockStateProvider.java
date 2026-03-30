@@ -26,6 +26,12 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.STOP_SIGN);
         blockWithItem(ModBlocks.RED_METAL_SHEET_BLOCK);
         blockWithItem(ModBlocks.BLUE_METAL_SHEET_BLOCK);
+        blockWithItem(ModBlocks.SPEED_LIMIT_SIGN_30);
+        blockWithItem(ModBlocks.SPEED_LIMIT_SIGN_40);
+        blockWithItem(ModBlocks.SPEED_LIMIT_SIGN_50);
+        blockWithItem(ModBlocks.SPEED_LIMIT_SIGN_60);
+        blockWithItem(ModBlocks.SPEED_LIMIT_SIGN_70);
+        blockWithItem(ModBlocks.SPEED_LIMIT_SIGN_80);
     }
 
     private void blockWithItem(RegistryObject<Block> blockRegistryObject) {

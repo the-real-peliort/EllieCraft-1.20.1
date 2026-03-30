@@ -49,6 +49,13 @@ public class ModCreativeModeTabs {
             pOutput.accept(ModBlocks.STOP_SIGN.get());
             pOutput.accept(ModBlocks.RED_METAL_SHEET_BLOCK.get());
             pOutput.accept(ModBlocks.BLUE_METAL_SHEET_BLOCK.get());
+
+            pOutput.accept(ModBlocks.SPEED_LIMIT_SIGN_30.get());
+            pOutput.accept(ModBlocks.SPEED_LIMIT_SIGN_40.get());
+            pOutput.accept(ModBlocks.SPEED_LIMIT_SIGN_50.get());
+            pOutput.accept(ModBlocks.SPEED_LIMIT_SIGN_60.get());
+            pOutput.accept(ModBlocks.SPEED_LIMIT_SIGN_70.get());
+            pOutput.accept(ModBlocks.SPEED_LIMIT_SIGN_80.get());
         })
         .build()
     );

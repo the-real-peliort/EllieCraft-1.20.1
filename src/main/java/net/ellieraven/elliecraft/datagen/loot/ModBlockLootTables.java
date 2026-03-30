@@ -32,6 +32,12 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.STOP_SIGN.get());
         this.dropSelf(ModBlocks.RED_METAL_SHEET_BLOCK.get());
         this.dropSelf(ModBlocks.BLUE_METAL_SHEET_BLOCK.get());
+        this.dropSelf(ModBlocks.SPEED_LIMIT_SIGN_30.get());
+        this.dropSelf(ModBlocks.SPEED_LIMIT_SIGN_40.get());
+        this.dropSelf(ModBlocks.SPEED_LIMIT_SIGN_50.get());
+        this.dropSelf(ModBlocks.SPEED_LIMIT_SIGN_60.get());
+        this.dropSelf(ModBlocks.SPEED_LIMIT_SIGN_70.get());
+        this.dropSelf(ModBlocks.SPEED_LIMIT_SIGN_80.get());
 
         this.add(ModBlocks.SAPPHIRE_ORE.get(),
                 block -> createOreDrop(ModBlocks.SAPPHIRE_ORE.get(), ModItems.RAW_SAPPHIRE.get()));
