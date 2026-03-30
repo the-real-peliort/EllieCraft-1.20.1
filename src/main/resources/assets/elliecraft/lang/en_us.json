@@ -35,5 +35,8 @@
     "block.elliecraft.pink_bricks": "Pink Bricks",
 
     "block.elliecraft.roundabout_sign": "Roundabout Sign",
-    "block.elliecraft.stop_sign": "Stop Sign"
+    "block.elliecraft.stop_sign": "Stop Sign",
+
+    "block.elliecraft.red_metal_sheet_block": "Red Metal Sheet Block",
+    "block.elliecraft.blue_metal_sheet_block": "Blue Metal Sheet Block"
 }
