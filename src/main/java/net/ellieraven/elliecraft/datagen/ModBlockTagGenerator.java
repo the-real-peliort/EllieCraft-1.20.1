@@ -43,7 +43,14 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 .add(ModBlocks.ROUNDABOUT_SIGN.get())
                 .add(ModBlocks.STOP_SIGN.get())
                 .add(ModBlocks.RED_METAL_SHEET_BLOCK.get())
-                .add(ModBlocks.BLUE_METAL_SHEET_BLOCK.get());
+                .add(ModBlocks.BLUE_METAL_SHEET_BLOCK.get())
+                .add(ModBlocks.SPEED_LIMIT_SIGN_30.get())
+                .add(ModBlocks.SPEED_LIMIT_SIGN_40.get())
+                .add(ModBlocks.SPEED_LIMIT_SIGN_50.get())
+                .add(ModBlocks.SPEED_LIMIT_SIGN_60.get())
+                .add(ModBlocks.SPEED_LIMIT_SIGN_70.get())
+                .add(ModBlocks.SPEED_LIMIT_SIGN_80.get())
+        ;
 
         this.tag(BlockTags.MINEABLE_WITH_AXE)
                 .add(ModBlocks.OAK_LOG_PILLAR.get());
