@@ -41,7 +41,9 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 .add(ModBlocks.YELLOW_BRICKS.get())
                 .add(ModBlocks.PINK_BRICKS.get())
                 .add(ModBlocks.ROUNDABOUT_SIGN.get())
-                .add(ModBlocks.STOP_SIGN.get());
+                .add(ModBlocks.STOP_SIGN.get())
+                .add(ModBlocks.RED_METAL_SHEET_BLOCK.get())
+                .add(ModBlocks.BLUE_METAL_SHEET_BLOCK.get());
 
         this.tag(BlockTags.MINEABLE_WITH_AXE)
                 .add(ModBlocks.OAK_LOG_PILLAR.get());

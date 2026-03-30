@@ -24,6 +24,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.PINK_BRICKS);
         blockWithItem(ModBlocks.ROUNDABOUT_SIGN);
         blockWithItem(ModBlocks.STOP_SIGN);
+        blockWithItem(ModBlocks.RED_METAL_SHEET_BLOCK);
+        blockWithItem(ModBlocks.BLUE_METAL_SHEET_BLOCK);
     }
 
     private void blockWithItem(RegistryObject<Block> blockRegistryObject) {

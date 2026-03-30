@@ -88,6 +88,14 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK))
     );
 
+    public static final RegistryObject<Block> RED_METAL_SHEET_BLOCK = registerBlock("red_metal_sheet_block",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK))
+    );
+
+    public static final RegistryObject<Block> BLUE_METAL_SHEET_BLOCK = registerBlock("blue_metal_sheet_block",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK))
+    );
+
     public static void register(IEventBus eventBus) {
         BLOCKS.register(eventBus);
     }

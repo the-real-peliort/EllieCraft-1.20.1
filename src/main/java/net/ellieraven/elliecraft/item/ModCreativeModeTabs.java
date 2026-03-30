@@ -47,6 +47,8 @@ public class ModCreativeModeTabs {
             pOutput.accept(ModBlocks.PINK_BRICKS.get());
             pOutput.accept(ModBlocks.ROUNDABOUT_SIGN.get());
             pOutput.accept(ModBlocks.STOP_SIGN.get());
+            pOutput.accept(ModBlocks.RED_METAL_SHEET_BLOCK.get());
+            pOutput.accept(ModBlocks.BLUE_METAL_SHEET_BLOCK.get());
         })
         .build()
     );
