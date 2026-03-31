@@ -32,6 +32,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.STOP_SIGN.get());
         this.dropSelf(ModBlocks.RED_METAL_SHEET_BLOCK.get());
         this.dropSelf(ModBlocks.BLUE_METAL_SHEET_BLOCK.get());
+        this.dropSelf(ModBlocks.YELLOW_METAL_SHEET_BLOCK.get());
         this.dropSelf(ModBlocks.SPEED_LIMIT_SIGN_30.get());
         this.dropSelf(ModBlocks.SPEED_LIMIT_SIGN_40.get());
         this.dropSelf(ModBlocks.SPEED_LIMIT_SIGN_50.get());

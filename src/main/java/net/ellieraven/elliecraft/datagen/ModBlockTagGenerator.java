@@ -44,6 +44,7 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 .add(ModBlocks.STOP_SIGN.get())
                 .add(ModBlocks.RED_METAL_SHEET_BLOCK.get())
                 .add(ModBlocks.BLUE_METAL_SHEET_BLOCK.get())
+                .add(ModBlocks.YELLOW_METAL_SHEET_BLOCK.get())
                 .add(ModBlocks.SPEED_LIMIT_SIGN_30.get())
                 .add(ModBlocks.SPEED_LIMIT_SIGN_40.get())
                 .add(ModBlocks.SPEED_LIMIT_SIGN_50.get())

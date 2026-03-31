@@ -96,6 +96,10 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK))
     );
 
+    public static final RegistryObject<Block> YELLOW_METAL_SHEET_BLOCK = registerBlock("yellow_metal_sheet_block",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK))
+    );
+
     public static final RegistryObject<Block> SPEED_LIMIT_SIGN_30 = registerBlock("speed_limit_sign_30",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK))
     );
