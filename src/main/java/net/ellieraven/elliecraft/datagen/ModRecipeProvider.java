@@ -290,7 +290,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("IDI")
                 .pattern(" I ")
                 .define('I', Items.IRON_INGOT)
-                .define('B', Items.BLUE_DYE)
+                .define('D', Items.BLUE_DYE)
                 .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
                 .save(pWriter);
 
@@ -299,7 +299,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("IDI")
                 .pattern(" I ")
                 .define('I', Items.IRON_INGOT)
-                .define('B', Items.YELLOW_DYE)
+                .define('D', Items.YELLOW_DYE)
                 .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
                 .save(pWriter);
 
@@ -308,7 +308,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("IDI")
                 .pattern(" I ")
                 .define('I', Items.IRON_INGOT)
-                .define('B', Items.RED_DYE)
+                .define('D', Items.RED_DYE)
                 .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
                 .save(pWriter);
 
