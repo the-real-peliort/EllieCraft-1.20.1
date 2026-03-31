@@ -81,43 +81,43 @@ public class ModBlocks {
     );
 
     public static final RegistryObject<Block> ROUNDABOUT_SIGN = registerBlock("roundabout_sign",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK))
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).destroyTime(0.5f))
     );
 
     public static final RegistryObject<Block> STOP_SIGN = registerBlock("stop_sign",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK))
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).destroyTime(0.5f))
     );
 
     public static final RegistryObject<Block> RED_METAL_SHEET_BLOCK = registerBlock("red_metal_sheet_block",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK))
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).destroyTime(0.5f))
     );
 
     public static final RegistryObject<Block> BLUE_METAL_SHEET_BLOCK = registerBlock("blue_metal_sheet_block",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK))
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).destroyTime(0.5f))
     );
 
     public static final RegistryObject<Block> YELLOW_METAL_SHEET_BLOCK = registerBlock("yellow_metal_sheet_block",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK))
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).destroyTime(0.5f))
     );
 
     public static final RegistryObject<Block> SPEED_LIMIT_SIGN_30 = registerBlock("speed_limit_sign_30",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK))
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).destroyTime(0.5f))
     );
 
     public static final RegistryObject<Block> SPEED_LIMIT_SIGN_40 = registerBlock("speed_limit_sign_40",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK))
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).destroyTime(0.5f))
     );
 
     public static final RegistryObject<Block> SPEED_LIMIT_SIGN_50 = registerBlock("speed_limit_sign_50",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK))
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).destroyTime(0.5f))
     );
 
     public static final RegistryObject<Block> SPEED_LIMIT_SIGN_60 = registerBlock("speed_limit_sign_60",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK))
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).destroyTime(0.5f))
     );
 
     public static final RegistryObject<Block> SPEED_LIMIT_SIGN_70 = registerBlock("speed_limit_sign_70",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK))
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).destroyTime(0.5f))
     );
 
     public static final RegistryObject<Block> SPEED_LIMIT_SIGN_80 = registerBlock("speed_limit_sign_80",
