@@ -311,6 +311,22 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('B', Items.RED_DYE)
                 .unlockedBy(getHasName(ModBlocks.YELLOW_METAL_SHEET_BLOCK.get()), has(ModBlocks.YELLOW_METAL_SHEET_BLOCK.get()))
                 .save(pWriter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.ROUNDABOUT_SIGN.get(), 1)
+                .pattern("W W")
+                .pattern(" S ")
+                .pattern("W W")
+                .define('W', Items.WHITE_DYE)
+                .define('B', ModBlocks.BLUE_METAL_SHEET_BLOCK.get())
+                .unlockedBy(getHasName(ModBlocks.YELLOW_METAL_SHEET_BLOCK.get()), has(ModBlocks.YELLOW_METAL_SHEET_BLOCK.get()))
+                .save(pWriter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.STOP_SIGN.get(), 1)
+                .pattern("SW")
+                .define('W', Items.WHITE_DYE)
+                .define('B', ModBlocks.RED_METAL_SHEET_BLOCK.get())
+                .unlockedBy(getHasName(ModBlocks.YELLOW_METAL_SHEET_BLOCK.get()), has(ModBlocks.YELLOW_METAL_SHEET_BLOCK.get()))
+                .save(pWriter);
     }
 
     static void createBrickRecipe(Block block, String blockName, Item dye, Consumer<FinishedRecipe> pWriter) {
