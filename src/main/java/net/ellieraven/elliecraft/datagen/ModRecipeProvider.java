@@ -291,7 +291,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern(" I ")
                 .define('I', Items.IRON_INGOT)
                 .define('B', Items.BLUE_DYE)
-                .unlockedBy(getHasName(ModBlocks.YELLOW_METAL_SHEET_BLOCK.get()), has(ModBlocks.YELLOW_METAL_SHEET_BLOCK.get()))
+                .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
                 .save(pWriter);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.YELLOW_METAL_SHEET_BLOCK.get(), 1)
@@ -300,7 +300,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern(" I ")
                 .define('I', Items.IRON_INGOT)
                 .define('B', Items.YELLOW_DYE)
-                .unlockedBy(getHasName(ModBlocks.YELLOW_METAL_SHEET_BLOCK.get()), has(ModBlocks.YELLOW_METAL_SHEET_BLOCK.get()))
+                .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
                 .save(pWriter);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.RED_METAL_SHEET_BLOCK.get(), 1)
@@ -309,7 +309,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern(" I ")
                 .define('I', Items.IRON_INGOT)
                 .define('B', Items.RED_DYE)
-                .unlockedBy(getHasName(ModBlocks.YELLOW_METAL_SHEET_BLOCK.get()), has(ModBlocks.YELLOW_METAL_SHEET_BLOCK.get()))
+                .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
                 .save(pWriter);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.ROUNDABOUT_SIGN.get(), 1)
@@ -318,14 +318,14 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("W W")
                 .define('W', Items.WHITE_DYE)
                 .define('B', ModBlocks.BLUE_METAL_SHEET_BLOCK.get())
-                .unlockedBy(getHasName(ModBlocks.YELLOW_METAL_SHEET_BLOCK.get()), has(ModBlocks.YELLOW_METAL_SHEET_BLOCK.get()))
+                .unlockedBy(getHasName(ModBlocks.BLUE_METAL_SHEET_BLOCK.get()), has(ModBlocks.BLUE_METAL_SHEET_BLOCK.get()))
                 .save(pWriter);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.STOP_SIGN.get(), 1)
                 .pattern("SW")
                 .define('W', Items.WHITE_DYE)
                 .define('B', ModBlocks.RED_METAL_SHEET_BLOCK.get())
-                .unlockedBy(getHasName(ModBlocks.YELLOW_METAL_SHEET_BLOCK.get()), has(ModBlocks.YELLOW_METAL_SHEET_BLOCK.get()))
+                .unlockedBy(getHasName(ModBlocks.RED_METAL_SHEET_BLOCK.get()), has(ModBlocks.RED_METAL_SHEET_BLOCK.get()))
                 .save(pWriter);
     }
 
