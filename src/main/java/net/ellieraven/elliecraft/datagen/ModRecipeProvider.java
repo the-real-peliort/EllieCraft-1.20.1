@@ -317,14 +317,14 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern(" S ")
                 .pattern("W W")
                 .define('W', Items.WHITE_DYE)
-                .define('B', ModBlocks.BLUE_METAL_SHEET_BLOCK.get())
+                .define('S', ModBlocks.BLUE_METAL_SHEET_BLOCK.get())
                 .unlockedBy(getHasName(ModBlocks.BLUE_METAL_SHEET_BLOCK.get()), has(ModBlocks.BLUE_METAL_SHEET_BLOCK.get()))
                 .save(pWriter);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.STOP_SIGN.get(), 1)
                 .pattern("SW")
                 .define('W', Items.WHITE_DYE)
-                .define('B', ModBlocks.RED_METAL_SHEET_BLOCK.get())
+                .define('S', ModBlocks.RED_METAL_SHEET_BLOCK.get())
                 .unlockedBy(getHasName(ModBlocks.RED_METAL_SHEET_BLOCK.get()), has(ModBlocks.RED_METAL_SHEET_BLOCK.get()))
                 .save(pWriter);
     }
