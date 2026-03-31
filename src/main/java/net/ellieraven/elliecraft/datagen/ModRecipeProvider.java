@@ -284,6 +284,33 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('B', Items.BLACK_DYE)
                 .unlockedBy(getHasName(ModBlocks.YELLOW_METAL_SHEET_BLOCK.get()), has(ModBlocks.YELLOW_METAL_SHEET_BLOCK.get()))
                 .save(pWriter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.BLUE_METAL_SHEET_BLOCK.get(), 1)
+                .pattern(" I ")
+                .pattern("IDI")
+                .pattern(" I ")
+                .define('I', Items.IRON_INGOT)
+                .define('B', Items.BLUE_DYE)
+                .unlockedBy(getHasName(ModBlocks.YELLOW_METAL_SHEET_BLOCK.get()), has(ModBlocks.YELLOW_METAL_SHEET_BLOCK.get()))
+                .save(pWriter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.YELLOW_METAL_SHEET_BLOCK.get(), 1)
+                .pattern(" I ")
+                .pattern("IDI")
+                .pattern(" I ")
+                .define('I', Items.IRON_INGOT)
+                .define('B', Items.YELLOW_DYE)
+                .unlockedBy(getHasName(ModBlocks.YELLOW_METAL_SHEET_BLOCK.get()), has(ModBlocks.YELLOW_METAL_SHEET_BLOCK.get()))
+                .save(pWriter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.RED_METAL_SHEET_BLOCK.get(), 1)
+                .pattern(" I ")
+                .pattern("IDI")
+                .pattern(" I ")
+                .define('I', Items.IRON_INGOT)
+                .define('B', Items.RED_DYE)
+                .unlockedBy(getHasName(ModBlocks.YELLOW_METAL_SHEET_BLOCK.get()), has(ModBlocks.YELLOW_METAL_SHEET_BLOCK.get()))
+                .save(pWriter);
     }
 
     static void createBrickRecipe(Block block, String blockName, Item dye, Consumer<FinishedRecipe> pWriter) {
