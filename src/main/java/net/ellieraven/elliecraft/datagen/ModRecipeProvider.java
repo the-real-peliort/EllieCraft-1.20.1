@@ -20,6 +20,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
+import net.minecraftforge.fml.common.Mod;
 
 import java.io.Writer;
 import java.util.List;
@@ -223,6 +224,66 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         createBrickRecipe(ModBlocks.BLUE_BRICKS.get(), "blue_bricks", Items.BLUE_DYE, pWriter);
         createBrickRecipe(ModBlocks.YELLOW_BRICKS.get(), "yellow_bricks", Items.YELLOW_DYE, pWriter);
         createBrickRecipe(ModBlocks.PINK_BRICKS.get(), "pink_bricks", Items.PINK_DYE, pWriter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.SPEED_LIMIT_SIGN_30.get(), 1)
+                .pattern("YRB")
+                .pattern("   ")
+                .pattern("   ")
+                .define('Y', ModBlocks.YELLOW_METAL_SHEET_BLOCK.get())
+                .define('R', Items.RED_DYE)
+                .define('B', Items.BLACK_DYE)
+                .unlockedBy(getHasName(ModBlocks.YELLOW_METAL_SHEET_BLOCK.get()), has(ModBlocks.YELLOW_METAL_SHEET_BLOCK.get()))
+                .save(pWriter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.SPEED_LIMIT_SIGN_40.get(), 1)
+                .pattern("YR ")
+                .pattern("B  ")
+                .pattern("   ")
+                .define('Y', ModBlocks.YELLOW_METAL_SHEET_BLOCK.get())
+                .define('R', Items.RED_DYE)
+                .define('B', Items.BLACK_DYE)
+                .unlockedBy(getHasName(ModBlocks.YELLOW_METAL_SHEET_BLOCK.get()), has(ModBlocks.YELLOW_METAL_SHEET_BLOCK.get()))
+                .save(pWriter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.SPEED_LIMIT_SIGN_50.get(), 1)
+                .pattern("YR ")
+                .pattern(" B ")
+                .pattern("   ")
+                .define('Y', ModBlocks.YELLOW_METAL_SHEET_BLOCK.get())
+                .define('R', Items.RED_DYE)
+                .define('B', Items.BLACK_DYE)
+                .unlockedBy(getHasName(ModBlocks.YELLOW_METAL_SHEET_BLOCK.get()), has(ModBlocks.YELLOW_METAL_SHEET_BLOCK.get()))
+                .save(pWriter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.SPEED_LIMIT_SIGN_60.get(), 1)
+                .pattern("YR ")
+                .pattern("  B")
+                .pattern("   ")
+                .define('Y', ModBlocks.YELLOW_METAL_SHEET_BLOCK.get())
+                .define('R', Items.RED_DYE)
+                .define('B', Items.BLACK_DYE)
+                .unlockedBy(getHasName(ModBlocks.YELLOW_METAL_SHEET_BLOCK.get()), has(ModBlocks.YELLOW_METAL_SHEET_BLOCK.get()))
+                .save(pWriter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.SPEED_LIMIT_SIGN_70.get(), 1)
+                .pattern("YR ")
+                .pattern("   ")
+                .pattern("B  ")
+                .define('Y', ModBlocks.YELLOW_METAL_SHEET_BLOCK.get())
+                .define('R', Items.RED_DYE)
+                .define('B', Items.BLACK_DYE)
+                .unlockedBy(getHasName(ModBlocks.YELLOW_METAL_SHEET_BLOCK.get()), has(ModBlocks.YELLOW_METAL_SHEET_BLOCK.get()))
+                .save(pWriter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.SPEED_LIMIT_SIGN_80.get(), 1)
+                .pattern("YR ")
+                .pattern("   ")
+                .pattern(" B ")
+                .define('Y', ModBlocks.YELLOW_METAL_SHEET_BLOCK.get())
+                .define('R', Items.RED_DYE)
+                .define('B', Items.BLACK_DYE)
+                .unlockedBy(getHasName(ModBlocks.YELLOW_METAL_SHEET_BLOCK.get()), has(ModBlocks.YELLOW_METAL_SHEET_BLOCK.get()))
+                .save(pWriter);
     }
 
     static void createBrickRecipe(Block block, String blockName, Item dye, Consumer<FinishedRecipe> pWriter) {
