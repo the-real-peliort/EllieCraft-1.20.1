@@ -28,7 +28,9 @@ public class PaintSpongeItem extends Item {
             Map.entry(Blocks.WHITE_TERRACOTTA, Blocks.TERRACOTTA),
             Map.entry(Blocks.LIGHT_GRAY_TERRACOTTA, Blocks.TERRACOTTA),
             Map.entry(Blocks.GRAY_TERRACOTTA, Blocks.TERRACOTTA),
-            Map.entry(Blocks.BLACK_TERRACOTTA, Blocks.TERRACOTTA)
+            Map.entry(Blocks.BLACK_TERRACOTTA, Blocks.TERRACOTTA),
+            Map.entry(Blocks.BROWN_TERRACOTTA, Blocks.TERRACOTTA),
+            Map.entry(Blocks.CYAN_TERRACOTTA, Blocks.TERRACOTTA)
     );
 
     public PaintSpongeItem(Properties pProperties) {
