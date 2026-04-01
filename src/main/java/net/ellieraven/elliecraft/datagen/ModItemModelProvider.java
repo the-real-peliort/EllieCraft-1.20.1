@@ -28,6 +28,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.OBSIDIAN_ROD);
         simpleItem(ModItems.REINFORCED_STICK);
         simpleItem(ModItems.ELLIECRAFT_BOOK);
+        simpleItem(ModItems.PAINT_SPONGE);
 
         simpleVanillaTextureItem(ModItems.LAG_STICK, "stick");
     }

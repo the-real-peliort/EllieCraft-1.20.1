@@ -1,10 +1,7 @@
 package net.ellieraven.elliecraft.item;
 
 import net.ellieraven.elliecraft.EllieCraft;
-import net.ellieraven.elliecraft.item.custom.BasicWandItem;
-import net.ellieraven.elliecraft.item.custom.EllieCraftBookItem;
-import net.ellieraven.elliecraft.item.custom.LagStickItem;
-import net.ellieraven.elliecraft.item.custom.MetalDetectorItem;
+import net.ellieraven.elliecraft.item.custom.*;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -53,6 +50,10 @@ public class ModItems {
 
     public static final RegistryObject<Item> ELLIECRAFT_BOOK = ITEMS.register("elliecraft_book",
             () -> new EllieCraftBookItem(new Item.Properties().stacksTo(1))
+    );
+
+    public static final RegistryObject<Item> PAINT_SPONGE = ITEMS.register("paint_sponge",
+            () -> new PaintSpongeItem(new Item.Properties())
     );
 
     public static void register(IEventBus eventBus) {
