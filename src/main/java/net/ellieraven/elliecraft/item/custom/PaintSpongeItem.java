@@ -1,6 +1,8 @@
 package net.ellieraven.elliecraft.item.custom;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.context.UseOnContext;
@@ -46,6 +48,7 @@ public class PaintSpongeItem extends Item {
         Block cleanedBlock = CLEANING_MAP.get(pState.getBlock());
         if (cleanedBlock != null) {
             pLevel.setBlock(pPos, cleanedBlock.defaultBlockState(), 3);
+            pLevel.playSound(null, pPos, SoundEvents.SLIME_JUMP, SoundSource.BLOCKS, 1f, 1f);
             return InteractionResult.SUCCESS;
         }
 
