@@ -1,5 +1,6 @@
 package net.ellieraven.elliecraft.item.custom;
 
+import net.ellieraven.elliecraft.block.ModBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -32,8 +33,17 @@ public class PaintSpongeItem extends Item {
             Map.entry(Blocks.GRAY_TERRACOTTA, Blocks.TERRACOTTA),
             Map.entry(Blocks.BLACK_TERRACOTTA, Blocks.TERRACOTTA),
             Map.entry(Blocks.BROWN_TERRACOTTA, Blocks.TERRACOTTA),
-            Map.entry(Blocks.CYAN_TERRACOTTA, Blocks.TERRACOTTA)
-    );
+            Map.entry(Blocks.CYAN_TERRACOTTA, Blocks.TERRACOTTA),
+            Map.entry(ModBlocks.STOP_SIGN, ModBlocks.RED_METAL_SHEET_BLOCK),
+            Map.entry(ModBlocks.ROUNDABOUT_SIGN, ModBlocks.BLUE_METAL_SHEET_BLOCK),
+            Map.entry(ModBlocks.SPEED_LIMIT_SIGN_30, ModBlocks.YELLOW_METAL_SHEET_BLOCK),
+            Map.entry(ModBlocks.SPEED_LIMIT_SIGN_40, ModBlocks.YELLOW_METAL_SHEET_BLOCK),
+            Map.entry(ModBlocks.SPEED_LIMIT_SIGN_50, ModBlocks.YELLOW_METAL_SHEET_BLOCK),
+            Map.entry(ModBlocks.SPEED_LIMIT_SIGN_60, ModBlocks.YELLOW_METAL_SHEET_BLOCK),
+            Map.entry(ModBlocks.SPEED_LIMIT_SIGN_70, ModBlocks.YELLOW_METAL_SHEET_BLOCK),
+            Map.entry(ModBlocks.SPEED_LIMIT_SIGN_80, ModBlocks.YELLOW_METAL_SHEET_BLOCK)
+
+            );
 
     public PaintSpongeItem(Properties pProperties) {
         super(pProperties);
