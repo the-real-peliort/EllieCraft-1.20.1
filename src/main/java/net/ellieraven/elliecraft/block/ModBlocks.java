@@ -2,8 +2,6 @@ package net.ellieraven.elliecraft.block;
 
 import java.util.function.Supplier;
 
-import com.mojang.blaze3d.shaders.Uniform;
-
 import net.ellieraven.elliecraft.EllieCraft;
 import net.ellieraven.elliecraft.block.custom.*;
 import net.ellieraven.elliecraft.item.ModItems;
@@ -122,6 +120,10 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> SPEED_LIMIT_SIGN_80 = registerBlock("speed_limit_sign_80",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK))
+    );
+
+    public static final RegistryObject<Block> FATE_CUBE = registerBlock("fate_cube",
+            () -> new FateCubeBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).destroyTime(0.5f))
     );
 
     public static void register(IEventBus eventBus) {
