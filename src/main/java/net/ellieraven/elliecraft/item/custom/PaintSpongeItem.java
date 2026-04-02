@@ -41,7 +41,11 @@ public class PaintSpongeItem extends Item {
             Map.entry(ModBlocks.SPEED_LIMIT_SIGN_50.get(), ModBlocks.YELLOW_METAL_SHEET_BLOCK.get()),
             Map.entry(ModBlocks.SPEED_LIMIT_SIGN_60.get(), ModBlocks.YELLOW_METAL_SHEET_BLOCK.get()),
             Map.entry(ModBlocks.SPEED_LIMIT_SIGN_70.get(), ModBlocks.YELLOW_METAL_SHEET_BLOCK.get()),
-            Map.entry(ModBlocks.SPEED_LIMIT_SIGN_80.get(), ModBlocks.YELLOW_METAL_SHEET_BLOCK.get())
+            Map.entry(ModBlocks.SPEED_LIMIT_SIGN_80.get(), ModBlocks.YELLOW_METAL_SHEET_BLOCK.get()),
+            Map.entry(ModBlocks.BLACK_BRICKS.get(), Blocks.BRICKS),
+            Map.entry(ModBlocks.BLUE_BRICKS.get(), Blocks.BRICKS),
+            Map.entry(ModBlocks.YELLOW_BRICKS.get(), Blocks.BRICKS),
+            Map.entry(ModBlocks.PINK_BRICKS.get(), Blocks.BRICKS)
 
             );
 
