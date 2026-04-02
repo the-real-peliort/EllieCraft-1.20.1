@@ -34,7 +34,7 @@ public class FateCubeBlock extends Block {
                         level.explode(null, pos.getX(), pos.getY(), pos.getZ(), 3, Level.ExplosionInteraction.BLOCK);
                     },
                     () ->  {
-                        level.setBlock(pos, Blocks.DIAMOND_BLOCK.defaultBlockState(), 3);
+                        level.setBlock(pos.above(), Blocks.DIAMOND_BLOCK.defaultBlockState(), 3);
                     },
                     () ->  {
                         level.setBlock(pos, Blocks.DIRT.defaultBlockState(), 3);
