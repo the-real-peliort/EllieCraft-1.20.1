@@ -37,7 +37,7 @@ public class FateCubeBlock extends Block {
                         level.setBlock(pos.above(), Blocks.DIAMOND_BLOCK.defaultBlockState(), 3);
                     },
                     () ->  {
-                        level.setBlock(pos, Blocks.DIRT.defaultBlockState(), 3);
+                        level.setBlock(pos.above(), Blocks.DIRT.defaultBlockState(), 3);
                     },
                     () ->  {
                         level.setBlock(pos.north().west(), ModBlocks.FATE_CUBE.get().defaultBlockState(), 3);
