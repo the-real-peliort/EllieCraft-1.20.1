@@ -58,6 +58,7 @@ public class ModCreativeModeTabs {
             pOutput.accept(ModBlocks.SPEED_LIMIT_SIGN_70.get());
             pOutput.accept(ModBlocks.SPEED_LIMIT_SIGN_80.get());
             pOutput.accept(ModItems.PAINT_SPONGE.get());
+            pOutput.accept(ModItems.SOAP_BAR.get());
         })
         .build()
     );

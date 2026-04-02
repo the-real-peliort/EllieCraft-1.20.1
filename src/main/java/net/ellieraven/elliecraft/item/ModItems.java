@@ -56,6 +56,10 @@ public class ModItems {
             () -> new PaintSpongeItem(new Item.Properties())
     );
 
+    public static final RegistryObject<Item> SOAP_BAR = ITEMS.register("soap_bar",
+            () -> new Item(new Item.Properties())
+    );
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }
