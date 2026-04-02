@@ -226,6 +226,12 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(Blocks.SLIME_BLOCK), has(Blocks.SLIME_BLOCK))
                 .save(pWriter);
 
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.PAINT_SPONGE.get(), 1)
+                .requires(ModItems.SOAP_BAR.get(), 1)
+                .requires(Blocks.SPONGE, 1)
+                .unlockedBy(getHasName(Blocks.SPONGE), has(Blocks.SPONGE))
+                .save(pWriter);
+
         createBrickRecipe(ModBlocks.BLACK_BRICKS.get(), "black_bricks", Items.BLACK_DYE, pWriter);
         createBrickRecipe(ModBlocks.BLUE_BRICKS.get(), "blue_bricks", Items.BLUE_DYE, pWriter);
         createBrickRecipe(ModBlocks.YELLOW_BRICKS.get(), "yellow_bricks", Items.YELLOW_DYE, pWriter);
