@@ -60,6 +60,10 @@ public class ModItems {
             () -> new Item(new Item.Properties())
     );
 
+    public static final RegistryObject<Item> FATE_DELAYING_WAND = ITEMS.register("fate_delaying_wand",
+            () -> new FateDelayingWandItem(new Item.Properties())
+    );
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

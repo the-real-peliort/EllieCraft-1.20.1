@@ -30,6 +30,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.ELLIECRAFT_BOOK);
         simpleItem(ModItems.PAINT_SPONGE);
         simpleItem(ModItems.SOAP_BAR);
+        simpleItem(ModItems.FATE_DELAYING_WAND);
 
         simpleVanillaTextureItem(ModItems.LAG_STICK, "stick");
     }
