@@ -1,6 +1,7 @@
 package net.ellieraven.elliecraft.block.custom;
 
 import net.ellieraven.elliecraft.block.ModBlocks;
+import net.ellieraven.elliecraft.item.ModItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Player;
@@ -37,16 +38,30 @@ public class FateCubeBlock extends Block {
                         level.explode(null, pos.getX(), pos.getY(), pos.getZ(), 8, Level.ExplosionInteraction.BLOCK);
                     },
                     () ->  {
-                        level.setBlock(pos.above(), Blocks.DIAMOND_BLOCK.defaultBlockState(), 3);
+                        ItemStack stack = new ItemStack(Blocks.DIAMOND_BLOCK, 1);
+                        Block.popResource(level, pos, stack);
                     },
                     () ->  {
-                        level.setBlock(pos.above(), Blocks.DIRT.defaultBlockState(), 3);
+                        ItemStack stack = new ItemStack(Blocks.DIRT, 1);
+                        Block.popResource(level, pos, stack);
                     },
                     () ->  {
                         level.setBlock(pos.north().west(), ModBlocks.FATE_CUBE.get().defaultBlockState(), 3);
                         level.setBlock(pos.north().east(), ModBlocks.FATE_CUBE.get().defaultBlockState(), 3);
                         level.setBlock(pos.south().west(), ModBlocks.FATE_CUBE.get().defaultBlockState(), 3);
                         level.setBlock(pos.south().east(), ModBlocks.FATE_CUBE.get().defaultBlockState(), 3);
+                    },
+                    () ->  {
+                        ItemStack stack = new ItemStack(ModItems.ELLIECRAFT_BOOK.get(), 1);
+                        Block.popResource(level, pos, stack);
+                    },
+                    () ->  {
+                        ItemStack stack = new ItemStack(ModItems.HAMBURGER.get(), 4);
+                        Block.popResource(level, pos, stack);
+                    },
+                    () ->  {
+                        ItemStack stack = new ItemStack(ModItems.LAG_STICK.get(), 1);
+                        Block.popResource(level, pos, stack);
                     }
             );
 
