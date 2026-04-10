@@ -7,6 +7,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.Explosion;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -71,5 +72,13 @@ public class FateCubeBlock extends Block {
         }
 
         return super.onDestroyedByPlayer(state, level, pos, player, willHarvest, fluid);
+    }
+
+    @Override
+    public void onBlockExploded(BlockState state, Level level, BlockPos pos, Explosion explosion) {
+        level.setBlock(pos, Blocks.AIR.defaultBlockState(), 3);
+        level.explode(null, pos.getX(), pos.getY(), pos.getZ(), 8, Level.ExplosionInteraction.BLOCK);
+
+        super.onBlockExploded(state, level, pos, explosion);
     }
 }
