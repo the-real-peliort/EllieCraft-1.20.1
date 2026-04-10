@@ -8,6 +8,7 @@ import net.minecraft.network.chat.Component;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Consumer;
 
 public class EllieCraftBookScreen extends Screen {
     public EllieCraftBookScreen(Component pTitle) {
@@ -18,7 +19,7 @@ public class EllieCraftBookScreen extends Screen {
     public int pastelPink = 0xFFC5D3;
 
     public List<Runnable> widgetPages = new ArrayList<>();
-
+    public List<Consumer<GuiGraphics>> renderPages = new ArrayList<>();
 
     StackedWidgetHelper helper = new StackedWidgetHelper(4, 16);
 
@@ -27,8 +28,11 @@ public class EllieCraftBookScreen extends Screen {
 
         helper.resetButtons();
 
-        widgetPages.add(() -> widgetPage1());
-        widgetPages.add(() -> widgetPage2());
+        widgetPages.add(this::widgetPage1);
+        widgetPages.add(this::widgetPage2);
+
+        renderPages.add(guiGraphics -> drawPage1(guiGraphics));
+        renderPages.add(guiGraphics -> drawPage2(guiGraphics));
 
         widgetPages.get(page - 1).run();
         pageWidgets();
@@ -43,12 +47,7 @@ public class EllieCraftBookScreen extends Screen {
     public void render(GuiGraphics pGuiGraphics, int pMouseX, int pMouseY, float pPartialTick) {
         this.renderBackground(pGuiGraphics);
 
-        if (page == 1) {
-            drawPage1(pGuiGraphics);
-        }
-        if (page == 2) {
-            drawPage2(pGuiGraphics);
-        }
+        renderPages.get(page - 1).accept(pGuiGraphics);
 
         //page numbering
         pGuiGraphics.drawCenteredString(this.font, Integer.toString(page), this.width/2, this.height - helper.spacing - 16, pastelPink);
