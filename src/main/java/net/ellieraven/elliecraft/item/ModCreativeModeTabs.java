@@ -62,6 +62,7 @@ public class ModCreativeModeTabs {
 
             pOutput.accept(ModBlocks.FATE_CUBE.get());
             pOutput.accept(ModItems.FATE_DELAYING_WAND.get());
+            pOutput.accept(ModItems.GIRL_THIGH_HIGHS.get());
         })
         .build()
     );
