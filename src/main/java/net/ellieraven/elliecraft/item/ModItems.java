@@ -1,7 +1,9 @@
 package net.ellieraven.elliecraft.item;
 
 import net.ellieraven.elliecraft.EllieCraft;
+import net.ellieraven.elliecraft.armor.ModArmorMaterials;
 import net.ellieraven.elliecraft.item.custom.*;
+import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -62,6 +64,10 @@ public class ModItems {
 
     public static final RegistryObject<Item> FATE_DELAYING_WAND = ITEMS.register("fate_delaying_wand",
             () -> new FateDelayingWandItem(new Item.Properties())
+    );
+
+    public static final RegistryObject<Item> GIRL_THIGH_HIGHS = ITEMS.register("girl_thigh_highs",
+            () -> new ArmorItem(ModArmorMaterials.GIRL_CLOTHES, ArmorItem.Type.LEGGINGS, new Item.Properties().stacksTo(1))
     );
 
     public static void register(IEventBus eventBus) {

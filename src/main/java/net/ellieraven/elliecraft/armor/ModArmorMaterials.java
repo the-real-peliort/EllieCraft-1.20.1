@@ -1,4 +1,4 @@
-package net.ellieraven.elliecraft.item.custom;
+package net.ellieraven.elliecraft.armor;
 
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.ArmorItem;
