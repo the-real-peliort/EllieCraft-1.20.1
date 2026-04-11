@@ -31,6 +31,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.PAINT_SPONGE);
         simpleItem(ModItems.SOAP_BAR);
         simpleItem(ModItems.FATE_DELAYING_WAND);
+        simpleItem(ModItems.GIRL_HOODIE_HOOD);
+        simpleItem(ModItems.GIRL_HOODIE);
         simpleItem(ModItems.GIRL_THIGH_HIGHS);
 
         simpleVanillaTextureItem(ModItems.LAG_STICK, "stick");

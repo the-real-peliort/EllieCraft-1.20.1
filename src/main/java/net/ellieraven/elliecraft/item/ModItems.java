@@ -66,6 +66,13 @@ public class ModItems {
             () -> new FateDelayingWandItem(new Item.Properties())
     );
 
+    public static final RegistryObject<Item> GIRL_HOODIE_HOOD = ITEMS.register("girl_hoodie_hood",
+            () -> new ArmorItem(ModArmorMaterials.GIRL_CLOTHES, ArmorItem.Type.HELMET, new Item.Properties().stacksTo(1))
+    );
+
+    public static final RegistryObject<Item> GIRL_HOODIE = ITEMS.register("girl_hoodie",
+            () -> new ArmorItem(ModArmorMaterials.GIRL_CLOTHES, ArmorItem.Type.CHESTPLATE, new Item.Properties().stacksTo(1))
+    );
     public static final RegistryObject<Item> GIRL_THIGH_HIGHS = ITEMS.register("girl_thigh_highs",
             () -> new ArmorItem(ModArmorMaterials.GIRL_CLOTHES, ArmorItem.Type.LEGGINGS, new Item.Properties().stacksTo(1))
     );
