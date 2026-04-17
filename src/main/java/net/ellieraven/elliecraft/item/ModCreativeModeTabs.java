@@ -65,6 +65,7 @@ public class ModCreativeModeTabs {
             pOutput.accept(ModItems.GIRL_THIGH_HIGHS.get());
             pOutput.accept(ModItems.GIRL_HOODIE.get());
             pOutput.accept(ModItems.GIRL_HOODIE_HOOD.get());
+            pOutput.accept(ModBlocks.BUSH.get());
         })
         .build()
     );

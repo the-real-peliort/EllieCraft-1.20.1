@@ -6,6 +6,8 @@ import net.ellieraven.elliecraft.block.ModBlocks;
 import net.ellieraven.elliecraft.item.ModCreativeModeTabs;
 import net.ellieraven.elliecraft.item.ModItems;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
@@ -81,7 +83,12 @@ public class EllieCraft
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event)
         {
-
+            event.enqueueWork(() -> {
+                ItemBlockRenderTypes.setRenderLayer(
+                        ModBlocks.BUSH.get(),
+                        RenderType.cutout()
+                );
+            });
         }
     }
 }

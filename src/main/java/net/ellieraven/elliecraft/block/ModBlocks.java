@@ -126,6 +126,10 @@ public class ModBlocks {
             () -> new FateCubeBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).destroyTime(0.5f))
     );
 
+    public static final RegistryObject<Block> BUSH = registerBlock("bush",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES).noOcclusion().noCollission())
+    );
+
     public static void register(IEventBus eventBus) {
         BLOCKS.register(eventBus);
     }
