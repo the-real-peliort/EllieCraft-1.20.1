@@ -4,6 +4,7 @@ import com.mojang.datafixers.types.templates.Tag;
 import net.ellieraven.elliecraft.EllieCraft;
 import net.ellieraven.elliecraft.block.ModBlocks;
 import net.ellieraven.elliecraft.item.ModItems;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
@@ -339,6 +340,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('S', ModBlocks.RED_METAL_SHEET_BLOCK.get())
                 .unlockedBy(getHasName(ModBlocks.RED_METAL_SHEET_BLOCK.get()), has(ModBlocks.RED_METAL_SHEET_BLOCK.get()))
                 .save(pWriter);
+
+        createCompressedRecipe(Blocks.COBBLESTONE, ModBlocks.COMPRESSED_COBBLESTONE_1X.get(), pWriter);
+        createCompressedRecipe(ModBlocks.COMPRESSED_COBBLESTONE_1X.get(), ModBlocks.COMPRESSED_COBBLESTONE_2X.get(), pWriter);
     }
 
     static void createBrickRecipe(Block block, String blockName, Item dye, Consumer<FinishedRecipe> pWriter) {
@@ -365,6 +369,19 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .requires(block, 8)
                 .unlockedBy(getHasName(Blocks.BRICKS), has(Blocks.BRICKS))
                 .save(pWriter, EllieCraft.MOD_ID + ":" + blockName + "_bulk_uncolor");
+    }
+
+    static void createCompressedRecipe(Block tiny, Block big, Consumer<FinishedRecipe> pWriter) {
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, big, 1)
+                .requires(tiny, 9)
+                .unlockedBy(getHasName(tiny), has(tiny))
+                .save(pWriter, EllieCraft.MOD_ID + ":" +
+                        BuiltInRegistries.BLOCK.getKey(tiny).getPath() + "_to_" +
+                        BuiltInRegistries.BLOCK.getKey(big).getPath());
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, tiny, 9)
+                .requires(big, 1)
+                .unlockedBy(getHasName(big), has(big))
+                .save(pWriter);
     }
 
     protected static void oreSmelting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult, float pExperience, int pCookingTime, String pGroup) {
