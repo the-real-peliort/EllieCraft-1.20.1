@@ -343,6 +343,11 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         createCompressedRecipe(Blocks.COBBLESTONE, ModBlocks.COMPRESSED_COBBLESTONE_1X.get(), pWriter);
         createCompressedRecipe(ModBlocks.COMPRESSED_COBBLESTONE_1X.get(), ModBlocks.COMPRESSED_COBBLESTONE_2X.get(), pWriter);
+        createCompressedRecipe(ModBlocks.COMPRESSED_COBBLESTONE_2X.get(), ModBlocks.COMPRESSED_COBBLESTONE_3X.get(), pWriter);
+        createCompressedRecipe(ModBlocks.COMPRESSED_COBBLESTONE_3X.get(), ModBlocks.COMPRESSED_COBBLESTONE_4X.get(), pWriter);
+        createCompressedRecipe(ModBlocks.COMPRESSED_COBBLESTONE_4X.get(), ModBlocks.COMPRESSED_COBBLESTONE_5X.get(), pWriter);
+        createCompressedRecipe(ModBlocks.COMPRESSED_COBBLESTONE_5X.get(), ModBlocks.COMPRESSED_COBBLESTONE_6X.get(), pWriter);
+
     }
 
     static void createBrickRecipe(Block block, String blockName, Item dye, Consumer<FinishedRecipe> pWriter) {

@@ -43,6 +43,10 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.BUSH.get());
         this.dropSelf(ModBlocks.COMPRESSED_COBBLESTONE_1X.get());
         this.dropSelf(ModBlocks.COMPRESSED_COBBLESTONE_2X.get());
+        this.dropSelf(ModBlocks.COMPRESSED_COBBLESTONE_3X.get());
+        this.dropSelf(ModBlocks.COMPRESSED_COBBLESTONE_4X.get());
+        this.dropSelf(ModBlocks.COMPRESSED_COBBLESTONE_5X.get());
+        this.dropSelf(ModBlocks.COMPRESSED_COBBLESTONE_6X.get());
 
         this.add(ModBlocks.SAPPHIRE_ORE.get(),
                 block -> createOreDrop(ModBlocks.SAPPHIRE_ORE.get(), ModItems.RAW_SAPPHIRE.get()));

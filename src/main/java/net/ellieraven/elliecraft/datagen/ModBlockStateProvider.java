@@ -36,6 +36,10 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.FATE_CUBE);
         blockWithItemInFolder(ModBlocks.COMPRESSED_COBBLESTONE_1X, "compressed/cobblestone");
         blockWithItemInFolder(ModBlocks.COMPRESSED_COBBLESTONE_2X, "compressed/cobblestone");
+        blockWithItemInFolder(ModBlocks.COMPRESSED_COBBLESTONE_3X, "compressed/cobblestone");
+        blockWithItemInFolder(ModBlocks.COMPRESSED_COBBLESTONE_4X, "compressed/cobblestone");
+        blockWithItemInFolder(ModBlocks.COMPRESSED_COBBLESTONE_5X, "compressed/cobblestone");
+        blockWithItemInFolder(ModBlocks.COMPRESSED_COBBLESTONE_6X, "compressed/cobblestone");
     }
 
     private void blockWithItem(RegistryObject<Block> blockRegistryObject) {

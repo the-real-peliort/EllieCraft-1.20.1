@@ -64,5 +64,9 @@
     "block.elliecraft.bush": "Bush",
 
     "block.elliecraft.compressed_cobblestone_1x": "Compressed Cobblestone 1x",
-    "block.elliecraft.compressed_cobblestone_2x": "Compressed Cobblestone 2x"
+    "block.elliecraft.compressed_cobblestone_2x": "Compressed Cobblestone 2x",
+    "block.elliecraft.compressed_cobblestone_3x": "Compressed Cobblestone 3x",
+    "block.elliecraft.compressed_cobblestone_4x": "Compressed Cobblestone 4x",
+    "block.elliecraft.compressed_cobblestone_5x": "Compressed Cobblestone 5x",
+    "block.elliecraft.compressed_cobblestone_6x": "Compressed Cobblestone 6x"
 }

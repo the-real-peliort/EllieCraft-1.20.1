@@ -68,6 +68,10 @@ public class ModCreativeModeTabs {
             pOutput.accept(ModBlocks.BUSH.get());
             pOutput.accept(ModBlocks.COMPRESSED_COBBLESTONE_1X.get());
             pOutput.accept(ModBlocks.COMPRESSED_COBBLESTONE_2X.get());
+            pOutput.accept(ModBlocks.COMPRESSED_COBBLESTONE_3X.get());
+            pOutput.accept(ModBlocks.COMPRESSED_COBBLESTONE_4X.get());
+            pOutput.accept(ModBlocks.COMPRESSED_COBBLESTONE_5X.get());
+            pOutput.accept(ModBlocks.COMPRESSED_COBBLESTONE_6X.get());
         })
         .build()
     );
