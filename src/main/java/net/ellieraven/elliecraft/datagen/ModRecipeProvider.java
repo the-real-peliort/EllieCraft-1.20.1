@@ -348,6 +348,17 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         createCompressedRecipe(ModBlocks.COMPRESSED_COBBLESTONE_4X.get(), ModBlocks.COMPRESSED_COBBLESTONE_5X.get(), pWriter);
         createCompressedRecipe(ModBlocks.COMPRESSED_COBBLESTONE_5X.get(), ModBlocks.COMPRESSED_COBBLESTONE_6X.get(), pWriter);
 
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.COUNTERFEIT_DIAMOND.get(), 1)
+                .requires(Items.LIGHT_BLUE_DYE, 1)
+                .requires(Items.COAL, 1)
+                .unlockedBy(getHasName(Items.COAL), has(Items.COAL))
+                .save(pWriter, EllieCraft.MOD_ID + "color_coal_into_counterfeit_diamond");
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.COAL, 1)
+                .requires(ModItems.COUNTERFEIT_DIAMOND.get(), 1)
+                .requires(ModItems.PAINT_SPONGE.get(), 1)
+                .unlockedBy(getHasName(Items.COAL), has(Items.COAL))
+                .save(pWriter, EllieCraft.MOD_ID + "wash_counterfeit_diamond_into_coal");
     }
 
     static void createBrickRecipe(Block block, String blockName, Item dye, Consumer<FinishedRecipe> pWriter) {

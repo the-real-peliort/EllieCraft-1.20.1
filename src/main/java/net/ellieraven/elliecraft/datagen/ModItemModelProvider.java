@@ -36,6 +36,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.GIRL_THIGH_HIGHS);
 
         simpleVanillaTextureItem(ModItems.LAG_STICK, "stick");
+        simpleVanillaTextureItem(ModItems.COUNTERFEIT_DIAMOND, "diamond");
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {

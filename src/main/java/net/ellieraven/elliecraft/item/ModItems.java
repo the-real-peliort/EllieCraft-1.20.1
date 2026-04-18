@@ -77,6 +77,10 @@ public class ModItems {
             () -> new ArmorItem(ModArmorMaterials.GIRL_CLOTHES, ArmorItem.Type.LEGGINGS, new Item.Properties().stacksTo(1))
     );
 
+    public static final RegistryObject<Item> COUNTERFEIT_DIAMOND = ITEMS.register("counterfeit_diamond",
+            () -> new Item(new Item.Properties())
+    );
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

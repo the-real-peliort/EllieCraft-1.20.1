@@ -68,5 +68,7 @@
     "block.elliecraft.compressed_cobblestone_3x": "Compressed Cobblestone 3x",
     "block.elliecraft.compressed_cobblestone_4x": "Compressed Cobblestone 4x",
     "block.elliecraft.compressed_cobblestone_5x": "Compressed Cobblestone 5x",
-    "block.elliecraft.compressed_cobblestone_6x": "Compressed Cobblestone 6x"
+    "block.elliecraft.compressed_cobblestone_6x": "Compressed Cobblestone 6x",
+
+    "item.elliecraft.counterfeit_diamond": "Diamond"
 }
