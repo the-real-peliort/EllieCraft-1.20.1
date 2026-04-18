@@ -130,6 +130,14 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES).noOcclusion().noCollission())
     );
 
+    public static final RegistryObject<Block> COMPRESSED_COBBLESTONE_1X = registerBlock("compressed_cobblestone_1x",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE).destroyTime(2.5f))
+    );
+
+    public static final RegistryObject<Block> COMPRESSED_COBBLESTONE_2X = registerBlock("compressed_cobblestone_2x",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE).destroyTime(3f))
+    );
+
     public static void register(IEventBus eventBus) {
         BLOCKS.register(eventBus);
     }

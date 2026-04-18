@@ -66,6 +66,8 @@ public class ModCreativeModeTabs {
             pOutput.accept(ModItems.GIRL_HOODIE.get());
             pOutput.accept(ModItems.GIRL_HOODIE_HOOD.get());
             pOutput.accept(ModBlocks.BUSH.get());
+            pOutput.accept(ModBlocks.COMPRESSED_COBBLESTONE_1X.get());
+            pOutput.accept(ModBlocks.COMPRESSED_COBBLESTONE_2X.get());
         })
         .build()
     );

@@ -34,6 +34,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.SPEED_LIMIT_SIGN_70);
         blockWithItem(ModBlocks.SPEED_LIMIT_SIGN_80);
         blockWithItem(ModBlocks.FATE_CUBE);
+        blockWithItem(ModBlocks.COMPRESSED_COBBLESTONE_1X);
+        blockWithItem(ModBlocks.COMPRESSED_COBBLESTONE_2X);
     }
 
     private void blockWithItem(RegistryObject<Block> blockRegistryObject) {

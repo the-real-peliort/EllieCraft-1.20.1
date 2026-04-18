@@ -61,5 +61,8 @@
     "item.elliecraft.girl_hoodie": "Hoodie",
     "item.elliecraft.girl_thigh_highs": "Thigh Highs",
 
-    "block.elliecraft.bush": "Bush"
+    "block.elliecraft.bush": "Bush",
+
+    "block.elliecraft.compressed_cobblestone_1x": "Compressed Cobblestone 1x",
+    "block.elliecraft.compressed_cobblestone_2x": "Compressed Cobblestone 2x"
 }
