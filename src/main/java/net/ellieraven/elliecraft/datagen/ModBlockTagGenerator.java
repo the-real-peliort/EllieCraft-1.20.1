@@ -51,6 +51,12 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 .add(ModBlocks.SPEED_LIMIT_SIGN_60.get())
                 .add(ModBlocks.SPEED_LIMIT_SIGN_70.get())
                 .add(ModBlocks.SPEED_LIMIT_SIGN_80.get())
+                .add(ModBlocks.COMPRESSED_COBBLESTONE_1X.get())
+                .add(ModBlocks.COMPRESSED_COBBLESTONE_2X.get())
+                .add(ModBlocks.COMPRESSED_COBBLESTONE_3X.get())
+                .add(ModBlocks.COMPRESSED_COBBLESTONE_4X.get())
+                .add(ModBlocks.COMPRESSED_COBBLESTONE_5X.get())
+                .add(ModBlocks.COMPRESSED_COBBLESTONE_6X.get())
         ;
 
         this.tag(BlockTags.MINEABLE_WITH_AXE)
