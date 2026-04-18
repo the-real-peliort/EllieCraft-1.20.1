@@ -18,27 +18,37 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.SAPPHIRE_BLOCK);
         blockWithItem(ModBlocks.SAPPHIRE_ORE);
         blockWithItem(ModBlocks.PASSTHROUGH_BLOCK);
-        blockWithItem(ModBlocks.BLACK_BRICKS);
-        blockWithItem(ModBlocks.BLUE_BRICKS);
-        blockWithItem(ModBlocks.YELLOW_BRICKS);
-        blockWithItem(ModBlocks.PINK_BRICKS);
-        blockWithItem(ModBlocks.ROUNDABOUT_SIGN);
-        blockWithItem(ModBlocks.STOP_SIGN);
+        blockWithItemInFolder(ModBlocks.BLACK_BRICKS, "bricks");
+        blockWithItemInFolder(ModBlocks.BLUE_BRICKS, "bricks");
+        blockWithItemInFolder(ModBlocks.YELLOW_BRICKS, "bricks");
+        blockWithItemInFolder(ModBlocks.PINK_BRICKS, "bricks");
+        blockWithItemInFolder(ModBlocks.ROUNDABOUT_SIGN, "traffic_signs");
+        blockWithItemInFolder(ModBlocks.STOP_SIGN, "traffic_signs");
         blockWithItem(ModBlocks.RED_METAL_SHEET_BLOCK);
         blockWithItem(ModBlocks.BLUE_METAL_SHEET_BLOCK);
         blockWithItem(ModBlocks.YELLOW_METAL_SHEET_BLOCK);
-        blockWithItem(ModBlocks.SPEED_LIMIT_SIGN_30);
-        blockWithItem(ModBlocks.SPEED_LIMIT_SIGN_40);
-        blockWithItem(ModBlocks.SPEED_LIMIT_SIGN_50);
-        blockWithItem(ModBlocks.SPEED_LIMIT_SIGN_60);
-        blockWithItem(ModBlocks.SPEED_LIMIT_SIGN_70);
-        blockWithItem(ModBlocks.SPEED_LIMIT_SIGN_80);
+        blockWithItemInFolder(ModBlocks.SPEED_LIMIT_SIGN_30, "traffic_signs/speed");
+        blockWithItemInFolder(ModBlocks.SPEED_LIMIT_SIGN_40, "traffic_signs/speed");
+        blockWithItemInFolder(ModBlocks.SPEED_LIMIT_SIGN_50, "traffic_signs/speed");
+        blockWithItemInFolder(ModBlocks.SPEED_LIMIT_SIGN_60, "traffic_signs/speed");
+        blockWithItemInFolder(ModBlocks.SPEED_LIMIT_SIGN_70, "traffic_signs/speed");
+        blockWithItemInFolder(ModBlocks.SPEED_LIMIT_SIGN_80, "traffic_signs/speed");
         blockWithItem(ModBlocks.FATE_CUBE);
-        blockWithItem(ModBlocks.COMPRESSED_COBBLESTONE_1X);
-        blockWithItem(ModBlocks.COMPRESSED_COBBLESTONE_2X);
+        blockWithItemInFolder(ModBlocks.COMPRESSED_COBBLESTONE_1X, "compressed/cobblestone");
+        blockWithItemInFolder(ModBlocks.COMPRESSED_COBBLESTONE_2X, "compressed/cobblestone");
     }
 
     private void blockWithItem(RegistryObject<Block> blockRegistryObject) {
         simpleBlockWithItem(blockRegistryObject.get(), cubeAll(blockRegistryObject.get()));
+    }
+
+    private void blockWithItemInFolder(RegistryObject<Block> blockRegistryObject, String folder) {
+        simpleBlockWithItem(
+                blockRegistryObject.get(),
+                models().cubeAll(
+                        blockRegistryObject.getId().getPath(),
+                        modLoc("block/" + folder + "/" + blockRegistryObject.getId().getPath())
+                )
+        );
     }
 }
