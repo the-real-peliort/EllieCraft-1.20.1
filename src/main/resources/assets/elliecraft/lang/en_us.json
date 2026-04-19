@@ -72,16 +72,29 @@
 
     "item.elliecraft.counterfeit_diamond": "Diamond",
 
-    "item.elliecraft.blank_pattern": "Blank Pattern",
-    "item.elliecraft.sword_pattern": "Sword Blade Pattern",
-    "item.elliecraft.pickaxe_pattern": "Pickaxe Head Pattern",
-    "item.elliecraft.axe_pattern": "Axe Head Pattern",
-    "item.elliecraft.shovel_pattern": "Shovel Head Pattern",
-    "item.elliecraft.hoe_pattern": "Hoe Head Pattern",
-    "item.elliecraft.binding_pattern": "Binding Pattern",
+    "item.elliecraft.blank_pattern": "Basic Blank Pattern",
+    "item.elliecraft.sword_pattern": "Basic Sword Blade Pattern",
+    "item.elliecraft.pickaxe_pattern": "Basic Pickaxe Head Pattern",
+    "item.elliecraft.axe_pattern": "Basic Axe Head Pattern",
+    "item.elliecraft.shovel_pattern": "Basic Shovel Head Pattern",
+    "item.elliecraft.hoe_pattern": "Basic Hoe Head Pattern",
+    "item.elliecraft.binding_pattern": "Basic Binding Pattern",
+
+    "item.elliecraft.crude_pattern": "Crude Pattern",
+
+    "item.elliecraft.wooden_binding_part": "Wooden Binding Part",
 
     "item.elliecraft.wooden_sword_part": "Wooden Sword Blade Part",
     "item.elliecraft.wooden_pickaxe_part": "Wooden Pickaxe Head Part",
     "item.elliecraft.wooden_axe_part": "Wooden Axe Head Part",
-    "item.elliecraft.wooden_binding_part": "Wooden Binding Part"
+    "item.elliecraft.wooden_shovel_part": "Wooden Shovel Head Part",
+    "item.elliecraft.wooden_hoe_part": "Wooden Hoe Head Part",
+
+    "item.elliecraft.stone_binding_part": "Stone Binding Part",
+
+    "item.elliecraft.stone_sword_part": "Stone Sword Blade Part",
+    "item.elliecraft.stone_pickaxe_part": "Stone Pickaxe Head Part",
+    "item.elliecraft.stone_axe_part": "Stone Axe Head Part",
+    "item.elliecraft.stone_shovel_part": "Stone Shovel Head Part",
+    "item.elliecraft.stone_hoe_part": "Stone Hoe Head Part"
 }

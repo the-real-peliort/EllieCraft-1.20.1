@@ -79,12 +79,23 @@ public class ModCreativeModeTabs {
             pOutput.accept(ModItems.AXE_PATTERN.get());
             pOutput.accept(ModItems.SHOVEL_PATTERN.get());
             pOutput.accept(ModItems.HOE_PATTERN.get());
-            pOutput.accept(ModItems.BLANK_PATTERN.get());
             pOutput.accept(ModItems.BINDING_PATTERN.get());
+            pOutput.accept(ModItems.BLANK_PATTERN.get());
+            pOutput.accept(ModItems.CRUDE_PATTERN.get());
 
+            pOutput.accept(ModItems.WOODEN_BINDING_PART.get());
             pOutput.accept(ModItems.WOODEN_SWORD_PART.get());
             pOutput.accept(ModItems.WOODEN_PICKAXE_PART.get());
             pOutput.accept(ModItems.WOODEN_AXE_PART.get());
+            pOutput.accept(ModItems.WOODEN_SHOVEL_PART.get());
+            pOutput.accept(ModItems.WOODEN_HOE_PART.get());
+            pOutput.accept(ModItems.STONE_BINDING_PART.get());
+            pOutput.accept(ModItems.STONE_SWORD_PART.get());
+            pOutput.accept(ModItems.STONE_PICKAXE_PART.get());
+
+            pOutput.accept(ModItems.STONE_AXE_PART.get());
+            pOutput.accept(ModItems.STONE_SHOVEL_PART.get());
+            pOutput.accept(ModItems.STONE_HOE_PART.get());
         })
         .build()
     );

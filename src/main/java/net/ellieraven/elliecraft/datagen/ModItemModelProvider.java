@@ -5,12 +5,9 @@ import net.ellieraven.elliecraft.item.ModItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.SimpleFoiledItem;
-import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.model.generators.ItemModelBuilder;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.RegistryObject;
 
 public class ModItemModelProvider extends ItemModelProvider {
@@ -36,6 +33,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.GIRL_HOODIE);
         simpleItem(ModItems.GIRL_THIGH_HIGHS);
 
+        simpleVanillaTextureItem(ModItems.LAG_STICK, "stick");
+        simpleVanillaTextureItem(ModItems.COUNTERFEIT_DIAMOND, "diamond");
+
         simpleItemInFolder(ModItems.SWORD_PATTERN, "crafting_patterns");
         simpleItemInFolder(ModItems.PICKAXE_PATTERN, "crafting_patterns");
         simpleItemInFolder(ModItems.AXE_PATTERN, "crafting_patterns");
@@ -44,12 +44,24 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItemInFolder(ModItems.BLANK_PATTERN, "crafting_patterns");
         simpleItemInFolder(ModItems.BINDING_PATTERN, "crafting_patterns");
 
+        simpleItemInFolder(ModItems.CRUDE_PATTERN, "crafting_patterns");
+
+        simpleItemInFolder(ModItems.WOODEN_BINDING_PART, "tool_parts/wooden");
+
         simpleItemInFolder(ModItems.WOODEN_SWORD_PART, "tool_parts/wooden");
         simpleItemInFolder(ModItems.WOODEN_PICKAXE_PART, "tool_parts/wooden");
         simpleItemInFolder(ModItems.WOODEN_AXE_PART, "tool_parts/wooden");
+        simpleItemInFolder(ModItems.WOODEN_SHOVEL_PART, "tool_parts/wooden");
+        simpleItemInFolder(ModItems.WOODEN_HOE_PART, "tool_parts/wooden");
 
-        simpleVanillaTextureItem(ModItems.LAG_STICK, "stick");
-        simpleVanillaTextureItem(ModItems.COUNTERFEIT_DIAMOND, "diamond");
+        simpleItemInFolder(ModItems.STONE_BINDING_PART, "tool_parts/stone");
+
+        simpleItemInFolder(ModItems.STONE_SWORD_PART, "tool_parts/stone");
+        simpleItemInFolder(ModItems.STONE_PICKAXE_PART, "tool_parts/stone");
+        simpleItemInFolder(ModItems.STONE_AXE_PART, "tool_parts/stone");
+        simpleItemInFolder(ModItems.STONE_SHOVEL_PART, "tool_parts/stone");
+        simpleItemInFolder(ModItems.STONE_HOE_PART, "tool_parts/stone");
+
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {

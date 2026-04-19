@@ -82,24 +82,32 @@ public class ModItems {
     );
 
     public static final RegistryObject<Item> SWORD_PATTERN = ITEMS.register("sword_pattern",
-            () -> new Item(new Item.Properties())
+            () -> new ReusableItem(new Item.Properties())
     );
     public static final RegistryObject<Item> PICKAXE_PATTERN = ITEMS.register("pickaxe_pattern",
-            () -> new Item(new Item.Properties())
+            () -> new ReusableItem(new Item.Properties())
     );
     public static final RegistryObject<Item> AXE_PATTERN = ITEMS.register("axe_pattern",
-            () -> new Item(new Item.Properties())
+            () -> new ReusableItem(new Item.Properties())
     );
     public static final RegistryObject<Item> SHOVEL_PATTERN = ITEMS.register("shovel_pattern",
-            () -> new Item(new Item.Properties())
+            () -> new ReusableItem(new Item.Properties())
     );
     public static final RegistryObject<Item> HOE_PATTERN = ITEMS.register("hoe_pattern",
-            () -> new Item(new Item.Properties())
+            () -> new ReusableItem(new Item.Properties())
     );
     public static final RegistryObject<Item> BLANK_PATTERN = ITEMS.register("blank_pattern",
             () -> new Item(new Item.Properties())
     );
     public static final RegistryObject<Item> BINDING_PATTERN = ITEMS.register("binding_pattern",
+            () -> new ReusableItem(new Item.Properties())
+    );
+
+    public static final RegistryObject<Item> CRUDE_PATTERN = ITEMS.register("crude_pattern",
+            () -> new Item(new Item.Properties())
+    );
+
+    public static final RegistryObject<Item> WOODEN_BINDING_PART = ITEMS.register("wooden_binding_part",
             () -> new Item(new Item.Properties())
     );
 
@@ -110,6 +118,32 @@ public class ModItems {
             () -> new Item(new Item.Properties())
     );
     public static final RegistryObject<Item> WOODEN_AXE_PART = ITEMS.register("wooden_axe_part",
+            () -> new Item(new Item.Properties())
+    );
+    public static final RegistryObject<Item> WOODEN_SHOVEL_PART = ITEMS.register("wooden_shovel_part",
+            () -> new Item(new Item.Properties())
+    );
+    public static final RegistryObject<Item> WOODEN_HOE_PART = ITEMS.register("wooden_hoe_part",
+            () -> new Item(new Item.Properties())
+    );
+
+    public static final RegistryObject<Item> STONE_BINDING_PART = ITEMS.register("stone_binding_part",
+            () -> new Item(new Item.Properties())
+    );
+
+    public static final RegistryObject<Item> STONE_SWORD_PART = ITEMS.register("stone_sword_part",
+            () -> new Item(new Item.Properties())
+    );
+    public static final RegistryObject<Item> STONE_PICKAXE_PART = ITEMS.register("stone_pickaxe_part",
+            () -> new Item(new Item.Properties())
+    );
+    public static final RegistryObject<Item> STONE_AXE_PART = ITEMS.register("stone_axe_part",
+            () -> new Item(new Item.Properties())
+    );
+    public static final RegistryObject<Item> STONE_SHOVEL_PART = ITEMS.register("stone_shovel_part",
+            () -> new Item(new Item.Properties())
+    );
+    public static final RegistryObject<Item> STONE_HOE_PART = ITEMS.register("stone_hoe_part",
             () -> new Item(new Item.Properties())
     );
 
