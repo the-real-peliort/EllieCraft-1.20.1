@@ -44,7 +44,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItemInFolder(ModItems.BLANK_PATTERN, "crafting_patterns");
         simpleItemInFolder(ModItems.BINDING_PATTERN, "crafting_patterns");
 
-
+        simpleItemInFolder(ModItems.WOODEN_SWORD_PART, "tool_parts/wooden");
+        simpleItemInFolder(ModItems.WOODEN_PICKAXE_PART, "tool_parts/wooden");
+        simpleItemInFolder(ModItems.WOODEN_AXE_PART, "tool_parts/wooden");
 
         simpleVanillaTextureItem(ModItems.LAG_STICK, "stick");
         simpleVanillaTextureItem(ModItems.COUNTERFEIT_DIAMOND, "diamond");

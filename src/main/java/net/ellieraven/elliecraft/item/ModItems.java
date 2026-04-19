@@ -103,6 +103,16 @@ public class ModItems {
             () -> new Item(new Item.Properties())
     );
 
+    public static final RegistryObject<Item> WOODEN_SWORD_PART = ITEMS.register("wooden_sword_part",
+            () -> new Item(new Item.Properties())
+    );
+    public static final RegistryObject<Item> WOODEN_PICKAXE_PART = ITEMS.register("wooden_pickaxe_part",
+            () -> new Item(new Item.Properties())
+    );
+    public static final RegistryObject<Item> WOODEN_AXE_PART = ITEMS.register("wooden_axe_part",
+            () -> new Item(new Item.Properties())
+    );
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

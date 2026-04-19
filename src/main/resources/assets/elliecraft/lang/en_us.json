@@ -78,5 +78,10 @@
     "item.elliecraft.axe_pattern": "Axe Head Pattern",
     "item.elliecraft.shovel_pattern": "Shovel Head Pattern",
     "item.elliecraft.hoe_pattern": "Hoe Head Pattern",
-    "item.elliecraft.binding_pattern": "Binding Pattern"
+    "item.elliecraft.binding_pattern": "Binding Pattern",
+
+    "item.elliecraft.wooden_sword_part": "Wooden Sword Blade Part",
+    "item.elliecraft.wooden_pickaxe_part": "Wooden Pickaxe Head Part",
+    "item.elliecraft.wooden_axe_part": "Wooden Axe Head Part",
+    "item.elliecraft.wooden_binding_part": "Wooden Binding Part"
 }
