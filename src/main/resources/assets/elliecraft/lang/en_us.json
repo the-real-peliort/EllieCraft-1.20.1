@@ -70,5 +70,13 @@
     "block.elliecraft.compressed_cobblestone_5x": "Compressed Cobblestone 5x",
     "block.elliecraft.compressed_cobblestone_6x": "Compressed Cobblestone 6x",
 
-    "item.elliecraft.counterfeit_diamond": "Diamond"
+    "item.elliecraft.counterfeit_diamond": "Diamond",
+
+    "item.elliecraft.blank_pattern": "Blank Pattern",
+    "item.elliecraft.sword_pattern": "Sword Blade Pattern",
+    "item.elliecraft.pickaxe_pattern": "Pickaxe Head Pattern",
+    "item.elliecraft.axe_pattern": "Axe Head Pattern",
+    "item.elliecraft.shovel_pattern": "Shovel Head Pattern",
+    "item.elliecraft.hoe_pattern": "Hoe Head Pattern",
+    "item.elliecraft.binding_pattern": "Binding Pattern"
 }

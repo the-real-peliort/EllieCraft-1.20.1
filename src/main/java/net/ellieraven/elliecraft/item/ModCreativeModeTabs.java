@@ -74,6 +74,13 @@ public class ModCreativeModeTabs {
             pOutput.accept(ModBlocks.COMPRESSED_COBBLESTONE_5X.get());
             pOutput.accept(ModBlocks.COMPRESSED_COBBLESTONE_6X.get());
             pOutput.accept(ModItems.COUNTERFEIT_DIAMOND.get());
+            pOutput.accept(ModItems.SWORD_PATTERN.get());
+            pOutput.accept(ModItems.PICKAXE_PATTERN.get());
+            pOutput.accept(ModItems.AXE_PATTERN.get());
+            pOutput.accept(ModItems.SHOVEL_PATTERN.get());
+            pOutput.accept(ModItems.HOE_PATTERN.get());
+            pOutput.accept(ModItems.BLANK_PATTERN.get());
+            pOutput.accept(ModItems.BINDING_PATTERN.get());
         })
         .build()
     );

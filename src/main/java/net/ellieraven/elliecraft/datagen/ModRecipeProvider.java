@@ -359,6 +359,66 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .requires(ModItems.PAINT_SPONGE.get(), 1)
                 .unlockedBy(getHasName(Items.COAL), has(Items.COAL))
                 .save(pWriter, EllieCraft.MOD_ID + "wash_counterfeit_diamond_into_coal");
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.BLANK_PATTERN.get(), 4)
+                .pattern("IP")
+                .pattern("PI")
+                .define('I', Items.STICK)
+                .define('P', ItemTags.PLANKS)
+                .unlockedBy("has_planks", has(ItemTags.PLANKS))
+                .save(pWriter, EllieCraft.MOD_ID + "blank_pattern_1");
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.BLANK_PATTERN.get(), 4)
+                .pattern("PI")
+                .pattern("IP")
+                .define('I', Items.STICK)
+                .define('P', ItemTags.PLANKS)
+                .unlockedBy("has_planks", has(ItemTags.PLANKS))
+                .save(pWriter, EllieCraft.MOD_ID + "blank_pattern_2");
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SWORD_PATTERN.get(), 1)
+                .pattern("W")
+                .pattern("W")
+                .pattern("P")
+                .define('W', Items.WHITE_DYE)
+                .define('P', ModItems.BLANK_PATTERN.get())
+                .unlockedBy(getHasName(ModItems.BLANK_PATTERN.get()), has(ModItems.BLANK_PATTERN.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.AXE_PATTERN.get(), 1)
+                .pattern("WW")
+                .pattern("WP")
+                .define('W', Items.WHITE_DYE)
+                .define('P', ModItems.BLANK_PATTERN.get())
+                .unlockedBy(getHasName(ModItems.BLANK_PATTERN.get()), has(ModItems.BLANK_PATTERN.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.PICKAXE_PATTERN.get(), 1)
+                .pattern("WWW")
+                .pattern(" P ")
+                .define('W', Items.WHITE_DYE)
+                .define('P', ModItems.BLANK_PATTERN.get())
+                .unlockedBy(getHasName(ModItems.BLANK_PATTERN.get()), has(ModItems.BLANK_PATTERN.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.HOE_PATTERN.get(), 1)
+                .pattern("WW")
+                .pattern(" P")
+                .define('W', Items.WHITE_DYE)
+                .define('P', ModItems.BLANK_PATTERN.get())
+                .unlockedBy(getHasName(ModItems.BLANK_PATTERN.get()), has(ModItems.BLANK_PATTERN.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SHOVEL_PATTERN.get(), 1)
+                .pattern("W")
+                .pattern("P")
+                .define('W', Items.WHITE_DYE)
+                .define('P', ModItems.BLANK_PATTERN.get())
+                .unlockedBy(getHasName(ModItems.BLANK_PATTERN.get()), has(ModItems.BLANK_PATTERN.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.BINDING_PATTERN.get(), 1)
+                .pattern("P")
+                .pattern("W")
+                .define('W', Items.WHITE_DYE)
+                .define('P', ModItems.BLANK_PATTERN.get())
+                .unlockedBy(getHasName(ModItems.BLANK_PATTERN.get()), has(ModItems.BLANK_PATTERN.get()))
+                .save(pWriter);
     }
 
     static void createBrickRecipe(Block block, String blockName, Item dye, Consumer<FinishedRecipe> pWriter) {

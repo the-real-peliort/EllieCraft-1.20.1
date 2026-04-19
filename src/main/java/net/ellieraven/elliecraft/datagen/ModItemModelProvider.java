@@ -6,6 +6,7 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.SimpleFoiledItem;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.model.generators.ItemModelBuilder;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -35,6 +36,16 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.GIRL_HOODIE);
         simpleItem(ModItems.GIRL_THIGH_HIGHS);
 
+        simpleItemInFolder(ModItems.SWORD_PATTERN, "crafting_patterns");
+        simpleItemInFolder(ModItems.PICKAXE_PATTERN, "crafting_patterns");
+        simpleItemInFolder(ModItems.AXE_PATTERN, "crafting_patterns");
+        simpleItemInFolder(ModItems.SHOVEL_PATTERN, "crafting_patterns");
+        simpleItemInFolder(ModItems.HOE_PATTERN, "crafting_patterns");
+        simpleItemInFolder(ModItems.BLANK_PATTERN, "crafting_patterns");
+        simpleItemInFolder(ModItems.BINDING_PATTERN, "crafting_patterns");
+
+
+
         simpleVanillaTextureItem(ModItems.LAG_STICK, "stick");
         simpleVanillaTextureItem(ModItems.COUNTERFEIT_DIAMOND, "diamond");
     }
@@ -51,4 +62,9 @@ public class ModItemModelProvider extends ItemModelProvider {
                 new ResourceLocation("minecraft:item/" + textureName));
     }
 
+    private ItemModelBuilder simpleItemInFolder(RegistryObject<Item> item, String folder) {
+        return withExistingParent(item.getId().getPath(),
+                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation(EllieCraft.MOD_ID, "item/" + folder + "/" + item.getId().getPath()));
+    }
 }

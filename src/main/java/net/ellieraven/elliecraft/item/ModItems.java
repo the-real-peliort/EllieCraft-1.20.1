@@ -81,6 +81,28 @@ public class ModItems {
             () -> new Item(new Item.Properties())
     );
 
+    public static final RegistryObject<Item> SWORD_PATTERN = ITEMS.register("sword_pattern",
+            () -> new Item(new Item.Properties())
+    );
+    public static final RegistryObject<Item> PICKAXE_PATTERN = ITEMS.register("pickaxe_pattern",
+            () -> new Item(new Item.Properties())
+    );
+    public static final RegistryObject<Item> AXE_PATTERN = ITEMS.register("axe_pattern",
+            () -> new Item(new Item.Properties())
+    );
+    public static final RegistryObject<Item> SHOVEL_PATTERN = ITEMS.register("shovel_pattern",
+            () -> new Item(new Item.Properties())
+    );
+    public static final RegistryObject<Item> HOE_PATTERN = ITEMS.register("hoe_pattern",
+            () -> new Item(new Item.Properties())
+    );
+    public static final RegistryObject<Item> BLANK_PATTERN = ITEMS.register("blank_pattern",
+            () -> new Item(new Item.Properties())
+    );
+    public static final RegistryObject<Item> BINDING_PATTERN = ITEMS.register("binding_pattern",
+            () -> new Item(new Item.Properties())
+    );
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }
