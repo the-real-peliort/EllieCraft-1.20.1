@@ -15,6 +15,8 @@ public class ReusableItem extends Item {
 
     @Override
     public ItemStack getCraftingRemainingItem(ItemStack itemStack) {
-        return itemStack.copy();
+        ItemStack remainder = itemStack.copy();
+        remainder.setCount(1);
+        return remainder;
     }
 }
