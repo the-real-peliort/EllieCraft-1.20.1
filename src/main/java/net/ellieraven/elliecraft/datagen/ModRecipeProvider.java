@@ -38,6 +38,13 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
     @Override
     protected void buildRecipes(Consumer<FinishedRecipe> pWriter) {
+
+        createSignRecipes(pWriter);
+        createPatternRecipes(pWriter);
+        createToolPartRecipesCrude(pWriter);
+        createToolPartRecipes(pWriter);
+        createToolRecipes(pWriter);
+
         oreSmelting(pWriter, SAPPHIRE_SMELTABLES, RecipeCategory.MISC, ModItems.SAPPHIRE.get(), 0.25f, 200, "sapphire");
         oreBlasting(pWriter, SAPPHIRE_SMELTABLES, RecipeCategory.MISC, ModItems.SAPPHIRE.get(), 0.25f, 100, "sapphire");
         /*
@@ -212,6 +219,306 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         createBrickRecipe(ModBlocks.YELLOW_BRICKS.get(), "yellow_bricks", Items.YELLOW_DYE, pWriter);
         createBrickRecipe(ModBlocks.PINK_BRICKS.get(), "pink_bricks", Items.PINK_DYE, pWriter);
 
+        createCompressedRecipe(Blocks.COBBLESTONE, ModBlocks.COMPRESSED_COBBLESTONE_1X.get(), pWriter);
+        createCompressedRecipe(ModBlocks.COMPRESSED_COBBLESTONE_1X.get(), ModBlocks.COMPRESSED_COBBLESTONE_2X.get(), pWriter);
+        createCompressedRecipe(ModBlocks.COMPRESSED_COBBLESTONE_2X.get(), ModBlocks.COMPRESSED_COBBLESTONE_3X.get(), pWriter);
+        createCompressedRecipe(ModBlocks.COMPRESSED_COBBLESTONE_3X.get(), ModBlocks.COMPRESSED_COBBLESTONE_4X.get(), pWriter);
+        createCompressedRecipe(ModBlocks.COMPRESSED_COBBLESTONE_4X.get(), ModBlocks.COMPRESSED_COBBLESTONE_5X.get(), pWriter);
+        createCompressedRecipe(ModBlocks.COMPRESSED_COBBLESTONE_5X.get(), ModBlocks.COMPRESSED_COBBLESTONE_6X.get(), pWriter);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.COUNTERFEIT_DIAMOND.get(), 1)
+                .requires(Items.LIGHT_BLUE_DYE, 1)
+                .requires(Items.COAL, 1)
+                .unlockedBy(getHasName(Items.COAL), has(Items.COAL))
+                .save(pWriter, EllieCraft.MOD_ID + ":color_coal_into_counterfeit_diamond");
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.COAL, 1)
+                .requires(ModItems.COUNTERFEIT_DIAMOND.get(), 1)
+                .requires(ModItems.PAINT_SPONGE.get(), 1)
+                .unlockedBy(getHasName(Items.COAL), has(Items.COAL))
+                .save(pWriter, EllieCraft.MOD_ID + ":wash_counterfeit_diamond_into_coal");
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.RED_DYE, 1)
+                .requires(Items.SWEET_BERRIES, 1)
+                .unlockedBy(getHasName(Items.SWEET_BERRIES), has(Items.SWEET_BERRIES))
+                .save(pWriter, EllieCraft.MOD_ID + ":red_dye_from_berries");
+    }
+
+    static void createToolPartRecipe(Item toolPart, Item pattern, Item material, int amount, Consumer<FinishedRecipe> pWriter) {
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, toolPart, 1)
+                .requires(pattern, 1)
+                .requires(material, amount)
+                .unlockedBy(getHasName(pattern), has(pattern))
+                .save(pWriter, EllieCraft.MOD_ID + ":" +
+                        BuiltInRegistries.ITEM.getKey(toolPart).getPath() + "_from_"+
+                        BuiltInRegistries.ITEM.getKey(pattern).getPath());
+    }
+    static void createToolPartRecipe(Item toolPart, Item pattern, TagKey<Item> material, int amount, Consumer<FinishedRecipe> pWriter) {
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, toolPart, 1)
+                .requires(pattern, 1)
+                .requires(Ingredient.of(material), amount)
+                .unlockedBy(getHasName(pattern), has(pattern))
+                .save(pWriter, EllieCraft.MOD_ID + ":" +
+                        BuiltInRegistries.ITEM.getKey(toolPart).getPath() + "_from_"+
+                        BuiltInRegistries.ITEM.getKey(pattern).getPath());
+    }
+
+    static void createBrickRecipe(Block block, String blockName, Item dye, Consumer<FinishedRecipe> pWriter) {
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, block, 1)
+                .requires(dye, 1)
+                .requires(Blocks.BRICKS, 1)
+                .unlockedBy(getHasName(Blocks.BRICKS), has(Blocks.BRICKS))
+                .save(pWriter, EllieCraft.MOD_ID + ":" + blockName + "_single");
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, block, 8)
+                .requires(dye, 1)
+                .requires(Blocks.BRICKS, 8)
+                .unlockedBy(getHasName(Blocks.BRICKS), has(Blocks.BRICKS))
+                .save(pWriter, EllieCraft.MOD_ID + ":" + blockName + "_bulk");
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Blocks.BRICKS, 1)
+                .requires(Items.WATER_BUCKET, 1)
+                .requires(block, 1)
+                .unlockedBy(getHasName(Blocks.BRICKS), has(Blocks.BRICKS))
+                .save(pWriter, EllieCraft.MOD_ID + ":" + blockName + "_single_uncolor");
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Blocks.BRICKS, 8)
+                .requires(Items.WATER_BUCKET, 1)
+                .requires(block, 8)
+                .unlockedBy(getHasName(Blocks.BRICKS), has(Blocks.BRICKS))
+                .save(pWriter, EllieCraft.MOD_ID + ":" + blockName + "_bulk_uncolor");
+    }
+
+    static void createCompressedRecipe(Block tiny, Block big, Consumer<FinishedRecipe> pWriter) {
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, big, 1)
+                .requires(tiny, 9)
+                .unlockedBy(getHasName(tiny), has(tiny))
+                .save(pWriter, EllieCraft.MOD_ID + ":" +
+                        BuiltInRegistries.BLOCK.getKey(tiny).getPath() + "_to_" +
+                        BuiltInRegistries.BLOCK.getKey(big).getPath());
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, tiny, 9)
+                .requires(big, 1)
+                .unlockedBy(getHasName(big), has(big))
+                .save(pWriter, EllieCraft.MOD_ID + ":" +
+                        BuiltInRegistries.BLOCK.getKey(big).getPath() + "_to_" +
+                        BuiltInRegistries.BLOCK.getKey(tiny).getPath());
+    }
+
+
+    static void createToolRecipe(Item tool, Item mainPart, Item binding, Consumer<FinishedRecipe> pWriter) {
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, tool, 1)
+                .requires(Items.STICK, 1)
+                .requires(binding, 1)
+                .requires(mainPart, 1)
+                .unlockedBy(getHasName(mainPart), has(mainPart))
+                .save(pWriter, EllieCraft.MOD_ID + ":" + BuiltInRegistries.ITEM.getKey(tool).getPath());
+    }
+
+    protected static void oreSmelting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult, float pExperience, int pCookingTime, String pGroup) {
+        oreCooking(pFinishedRecipeConsumer, RecipeSerializer.SMELTING_RECIPE, pIngredients, pCategory, pResult, pExperience, pCookingTime, pGroup, "_from_smelting");
+    }
+
+    protected static void oreBlasting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult, float pExperience, int pCookingTime, String pGroup) {
+        oreCooking(pFinishedRecipeConsumer, RecipeSerializer.BLASTING_RECIPE, pIngredients, pCategory, pResult, pExperience, pCookingTime, pGroup, "_from_blasting");
+    }
+
+    protected static void oreCooking(Consumer<FinishedRecipe> pFinishedRecipeConsumer, RecipeSerializer<? extends AbstractCookingRecipe> pCookingSerializer, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult, float pExperience, int pCookingTime, String pGroup, String pRecipeName) {
+        for(ItemLike itemlike : pIngredients) {
+            SimpleCookingRecipeBuilder.generic(Ingredient.of(itemlike), pCategory, pResult,
+                            pExperience, pCookingTime, pCookingSerializer)
+                    .group(pGroup).unlockedBy(getHasName(itemlike), has(itemlike))
+                    .save(pFinishedRecipeConsumer,  EllieCraft.MOD_ID + ":" + getItemName(pResult) + pRecipeName + "_" + getItemName(itemlike));
+        }
+    }
+
+    private void createToolRecipes(Consumer<FinishedRecipe> pWriter) {
+        createToolRecipe(Items.WOODEN_SWORD, ModItems.WOODEN_SWORD_PART.get(), ModItems.WOODEN_BINDING_PART.get(), pWriter);
+        createToolRecipe(Items.WOODEN_PICKAXE, ModItems.WOODEN_PICKAXE_PART.get(), ModItems.WOODEN_BINDING_PART.get(), pWriter);
+        createToolRecipe(Items.WOODEN_AXE, ModItems.WOODEN_AXE_PART.get(), ModItems.WOODEN_BINDING_PART.get(), pWriter);
+        createToolRecipe(Items.WOODEN_SHOVEL, ModItems.WOODEN_SHOVEL_PART.get(), ModItems.WOODEN_BINDING_PART.get(), pWriter);
+        createToolRecipe(Items.WOODEN_HOE, ModItems.WOODEN_HOE_PART.get(), ModItems.WOODEN_BINDING_PART.get(), pWriter);
+
+        createToolRecipe(Items.STONE_SWORD, ModItems.STONE_SWORD_PART.get(), ModItems.STONE_BINDING_PART.get(), pWriter);
+        createToolRecipe(Items.STONE_PICKAXE, ModItems.STONE_PICKAXE_PART.get(), ModItems.STONE_BINDING_PART.get(), pWriter);
+        createToolRecipe(Items.STONE_AXE, ModItems.STONE_AXE_PART.get(), ModItems.STONE_BINDING_PART.get(), pWriter);
+        createToolRecipe(Items.STONE_SHOVEL, ModItems.STONE_SHOVEL_PART.get(), ModItems.STONE_BINDING_PART.get(), pWriter);
+        createToolRecipe(Items.STONE_HOE, ModItems.STONE_HOE_PART.get(), ModItems.STONE_BINDING_PART.get(), pWriter);
+    }
+
+    private void createToolPartRecipes(Consumer<FinishedRecipe> pWriter) {
+        createToolPartRecipe(ModItems.WOODEN_BINDING_PART.get(), ModItems.BINDING_PATTERN.get(), ItemTags.PLANKS, 1, pWriter);
+
+        createToolPartRecipe(ModItems.WOODEN_SWORD_PART.get(),      ModItems.SWORD_PATTERN.get(),   ItemTags.PLANKS, 2, pWriter);
+        createToolPartRecipe(ModItems.WOODEN_PICKAXE_PART.get(),    ModItems.PICKAXE_PATTERN.get(), ItemTags.PLANKS, 3, pWriter);
+        createToolPartRecipe(ModItems.WOODEN_AXE_PART.get(),        ModItems.AXE_PATTERN.get(),     ItemTags.PLANKS, 3, pWriter);
+        createToolPartRecipe(ModItems.WOODEN_SHOVEL_PART.get(),     ModItems.SHOVEL_PATTERN.get(),  ItemTags.PLANKS, 1, pWriter);
+        createToolPartRecipe(ModItems.WOODEN_HOE_PART.get(),        ModItems.HOE_PATTERN.get(),     ItemTags.PLANKS, 2, pWriter);
+
+        createToolPartRecipe(ModItems.STONE_BINDING_PART.get(), ModItems.BINDING_PATTERN.get(), Tags.Items.COBBLESTONE, 1, pWriter);
+
+        createToolPartRecipe(ModItems.STONE_SWORD_PART.get(),      ModItems.SWORD_PATTERN.get(),   Tags.Items.COBBLESTONE, 2, pWriter);
+        createToolPartRecipe(ModItems.STONE_PICKAXE_PART.get(),    ModItems.PICKAXE_PATTERN.get(), Tags.Items.COBBLESTONE, 3, pWriter);
+        createToolPartRecipe(ModItems.STONE_AXE_PART.get(),        ModItems.AXE_PATTERN.get(),     Tags.Items.COBBLESTONE, 3, pWriter);
+        createToolPartRecipe(ModItems.STONE_SHOVEL_PART.get(),     ModItems.SHOVEL_PATTERN.get(),  Tags.Items.COBBLESTONE, 1, pWriter);
+        createToolPartRecipe(ModItems.STONE_HOE_PART.get(),        ModItems.HOE_PATTERN.get(),     Tags.Items.COBBLESTONE, 2, pWriter);
+    }
+
+    private void createToolPartRecipesCrude(Consumer<FinishedRecipe> pWriter) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.STONE_SWORD_PART.get(), 1)
+                .pattern("W")
+                .pattern("W")
+                .pattern("P")
+                .define('W', Tags.Items.COBBLESTONE)
+                .define('P', ModItems.CRUDE_PATTERN.get())
+                .unlockedBy(getHasName(ModItems.BLANK_PATTERN.get()), has(ModItems.BLANK_PATTERN.get()))
+                .save(pWriter, EllieCraft.MOD_ID + ":stone_sword_part_crude");
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.STONE_AXE_PART.get(), 1)
+                .pattern("WW")
+                .pattern("WP")
+                .define('W', Tags.Items.COBBLESTONE)
+                .define('P', ModItems.CRUDE_PATTERN.get())
+                .unlockedBy(getHasName(ModItems.BLANK_PATTERN.get()), has(ModItems.BLANK_PATTERN.get()))
+                .save(pWriter, EllieCraft.MOD_ID + ":stone_axe_part_crude");
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.STONE_PICKAXE_PART.get(), 1)
+                .pattern("WWW")
+                .pattern(" P ")
+                .define('W', Tags.Items.COBBLESTONE)
+                .define('P', ModItems.CRUDE_PATTERN.get())
+                .unlockedBy(getHasName(ModItems.BLANK_PATTERN.get()), has(ModItems.BLANK_PATTERN.get()))
+                .save(pWriter, EllieCraft.MOD_ID + ":stone_pickaxe_part_crude");
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.STONE_HOE_PART.get(), 1)
+                .pattern("WW")
+                .pattern(" P")
+                .define('W', Tags.Items.COBBLESTONE)
+                .define('P', ModItems.CRUDE_PATTERN.get())
+                .unlockedBy(getHasName(ModItems.BLANK_PATTERN.get()), has(ModItems.BLANK_PATTERN.get()))
+                .save(pWriter, EllieCraft.MOD_ID + ":stone_hoe_part_crude");
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.STONE_SHOVEL_PART.get(), 1)
+                .pattern("W")
+                .pattern("P")
+                .define('W', Tags.Items.COBBLESTONE)
+                .define('P', ModItems.CRUDE_PATTERN.get())
+                .unlockedBy(getHasName(ModItems.BLANK_PATTERN.get()), has(ModItems.BLANK_PATTERN.get()))
+                .save(pWriter, EllieCraft.MOD_ID + ":stone_shovel_part_crude");
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.STONE_BINDING_PART.get(), 1)
+                .pattern("P")
+                .pattern("W")
+                .define('W', Tags.Items.COBBLESTONE)
+                .define('P', ModItems.CRUDE_PATTERN.get())
+                .unlockedBy(getHasName(ModItems.BLANK_PATTERN.get()), has(ModItems.BLANK_PATTERN.get()))
+                .save(pWriter, EllieCraft.MOD_ID + ":stone_binding_part_crude");
+
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.WOODEN_SWORD_PART.get(), 1)
+                .pattern("W")
+                .pattern("W")
+                .pattern("P")
+                .define('W', ItemTags.PLANKS)
+                .define('P', ModItems.CRUDE_PATTERN.get())
+                .unlockedBy(getHasName(ModItems.BLANK_PATTERN.get()), has(ModItems.BLANK_PATTERN.get()))
+                .save(pWriter, EllieCraft.MOD_ID + ":wooden_sword_part_crude");
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.WOODEN_AXE_PART.get(), 1)
+                .pattern("WW")
+                .pattern("WP")
+                .define('W', ItemTags.PLANKS)
+                .define('P', ModItems.CRUDE_PATTERN.get())
+                .unlockedBy(getHasName(ModItems.BLANK_PATTERN.get()), has(ModItems.BLANK_PATTERN.get()))
+                .save(pWriter, EllieCraft.MOD_ID + ":wooden_axe_part_crude");
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.WOODEN_PICKAXE_PART.get(), 1)
+                .pattern("WWW")
+                .pattern(" P ")
+                .define('W', ItemTags.PLANKS)
+                .define('P', ModItems.CRUDE_PATTERN.get())
+                .unlockedBy(getHasName(ModItems.BLANK_PATTERN.get()), has(ModItems.BLANK_PATTERN.get()))
+                .save(pWriter, EllieCraft.MOD_ID + ":wooden_pickaxe_part_crude");
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.WOODEN_HOE_PART.get(), 1)
+                .pattern("WW")
+                .pattern(" P")
+                .define('W', ItemTags.PLANKS)
+                .define('P', ModItems.CRUDE_PATTERN.get())
+                .unlockedBy(getHasName(ModItems.BLANK_PATTERN.get()), has(ModItems.BLANK_PATTERN.get()))
+                .save(pWriter, EllieCraft.MOD_ID + ":wooden_hoe_part_crude");
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.WOODEN_SHOVEL_PART.get(), 1)
+                .pattern("W")
+                .pattern("P")
+                .define('W', ItemTags.PLANKS)
+                .define('P', ModItems.CRUDE_PATTERN.get())
+                .unlockedBy(getHasName(ModItems.BLANK_PATTERN.get()), has(ModItems.BLANK_PATTERN.get()))
+                .save(pWriter, EllieCraft.MOD_ID + ":wooden_shovel_part_crude");
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.WOODEN_BINDING_PART.get(), 1)
+                .pattern("P")
+                .pattern("W")
+                .define('W', ItemTags.PLANKS)
+                .define('P', ModItems.CRUDE_PATTERN.get())
+                .unlockedBy(getHasName(ModItems.BLANK_PATTERN.get()), has(ModItems.BLANK_PATTERN.get()))
+                .save(pWriter, EllieCraft.MOD_ID + ":wooden_binding_part_crude");
+    }
+
+    private void createPatternRecipes(Consumer<FinishedRecipe> pWriter) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.BLANK_PATTERN.get(), 2)
+                .pattern("PIP")
+                .pattern("ICI")
+                .pattern("PIP")
+                .define('P', ItemTags.PLANKS)
+                .define('I', ModItems.CRUDE_PATTERN.get())
+                .define('C', Tags.Items.COBBLESTONE)
+                .unlockedBy("has_cobblestone", has(Tags.Items.COBBLESTONE))
+                .save(pWriter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.CRUDE_PATTERN.get(), 2)
+                .pattern("IP")
+                .pattern("PI")
+                .define('I', Items.STICK)
+                .define('P', ItemTags.PLANKS)
+                .unlockedBy("has_planks", has(ItemTags.PLANKS))
+                .save(pWriter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SWORD_PATTERN.get(), 1)
+                .pattern("W")
+                .pattern("W")
+                .pattern("P")
+                .define('W', Tags.Items.DYES)
+                .define('P', ModItems.BLANK_PATTERN.get())
+                .unlockedBy(getHasName(ModItems.BLANK_PATTERN.get()), has(ModItems.BLANK_PATTERN.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.AXE_PATTERN.get(), 1)
+                .pattern("WW")
+                .pattern("WP")
+                .define('W', Tags.Items.DYES)
+                .define('P', ModItems.BLANK_PATTERN.get())
+                .unlockedBy(getHasName(ModItems.BLANK_PATTERN.get()), has(ModItems.BLANK_PATTERN.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.PICKAXE_PATTERN.get(), 1)
+                .pattern("WWW")
+                .pattern(" P ")
+                .define('W', Tags.Items.DYES)
+                .define('P', ModItems.BLANK_PATTERN.get())
+                .unlockedBy(getHasName(ModItems.BLANK_PATTERN.get()), has(ModItems.BLANK_PATTERN.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.HOE_PATTERN.get(), 1)
+                .pattern("WW")
+                .pattern(" P")
+                .define('W', Tags.Items.DYES)
+                .define('P', ModItems.BLANK_PATTERN.get())
+                .unlockedBy(getHasName(ModItems.BLANK_PATTERN.get()), has(ModItems.BLANK_PATTERN.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SHOVEL_PATTERN.get(), 1)
+                .pattern("W")
+                .pattern("P")
+                .define('W', Tags.Items.DYES)
+                .define('P', ModItems.BLANK_PATTERN.get())
+                .unlockedBy(getHasName(ModItems.BLANK_PATTERN.get()), has(ModItems.BLANK_PATTERN.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.BINDING_PATTERN.get(), 1)
+                .pattern("P")
+                .pattern("W")
+                .define('W', Tags.Items.DYES)
+                .define('P', ModItems.BLANK_PATTERN.get())
+                .unlockedBy(getHasName(ModItems.BLANK_PATTERN.get()), has(ModItems.BLANK_PATTERN.get()))
+                .save(pWriter);
+    }
+
+    private void createSignRecipes(Consumer<FinishedRecipe> pWriter) {
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.SPEED_LIMIT_SIGN_30.get(), 1)
                 .pattern("YRB")
                 .pattern("   ")
@@ -314,295 +621,5 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('S', ModBlocks.RED_METAL_SHEET_BLOCK.get())
                 .unlockedBy(getHasName(ModBlocks.RED_METAL_SHEET_BLOCK.get()), has(ModBlocks.RED_METAL_SHEET_BLOCK.get()))
                 .save(pWriter);
-
-        createCompressedRecipe(Blocks.COBBLESTONE, ModBlocks.COMPRESSED_COBBLESTONE_1X.get(), pWriter);
-        createCompressedRecipe(ModBlocks.COMPRESSED_COBBLESTONE_1X.get(), ModBlocks.COMPRESSED_COBBLESTONE_2X.get(), pWriter);
-        createCompressedRecipe(ModBlocks.COMPRESSED_COBBLESTONE_2X.get(), ModBlocks.COMPRESSED_COBBLESTONE_3X.get(), pWriter);
-        createCompressedRecipe(ModBlocks.COMPRESSED_COBBLESTONE_3X.get(), ModBlocks.COMPRESSED_COBBLESTONE_4X.get(), pWriter);
-        createCompressedRecipe(ModBlocks.COMPRESSED_COBBLESTONE_4X.get(), ModBlocks.COMPRESSED_COBBLESTONE_5X.get(), pWriter);
-        createCompressedRecipe(ModBlocks.COMPRESSED_COBBLESTONE_5X.get(), ModBlocks.COMPRESSED_COBBLESTONE_6X.get(), pWriter);
-
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.COUNTERFEIT_DIAMOND.get(), 1)
-                .requires(Items.LIGHT_BLUE_DYE, 1)
-                .requires(Items.COAL, 1)
-                .unlockedBy(getHasName(Items.COAL), has(Items.COAL))
-                .save(pWriter, EllieCraft.MOD_ID + ":color_coal_into_counterfeit_diamond");
-
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.COAL, 1)
-                .requires(ModItems.COUNTERFEIT_DIAMOND.get(), 1)
-                .requires(ModItems.PAINT_SPONGE.get(), 1)
-                .unlockedBy(getHasName(Items.COAL), has(Items.COAL))
-                .save(pWriter, EllieCraft.MOD_ID + ":wash_counterfeit_diamond_into_coal");
-
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.RED_DYE, 1)
-                .requires(Items.SWEET_BERRIES, 1)
-                .unlockedBy(getHasName(Items.SWEET_BERRIES), has(Items.SWEET_BERRIES))
-                .save(pWriter, EllieCraft.MOD_ID + ":red_dye_from_berries");
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.BLANK_PATTERN.get(), 2)
-                .pattern("PIP")
-                .pattern("ICI")
-                .pattern("PIP")
-                .define('P', ItemTags.PLANKS)
-                .define('I', ModItems.CRUDE_PATTERN.get())
-                .define('C', Tags.Items.COBBLESTONE)
-                .unlockedBy("has_cobblestone", has(Tags.Items.COBBLESTONE))
-                .save(pWriter);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.CRUDE_PATTERN.get(), 2)
-                .pattern("IP")
-                .pattern("PI")
-                .define('I', Items.STICK)
-                .define('P', ItemTags.PLANKS)
-                .unlockedBy("has_planks", has(ItemTags.PLANKS))
-                .save(pWriter);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SWORD_PATTERN.get(), 1)
-                .pattern("W")
-                .pattern("W")
-                .pattern("P")
-                .define('W', Tags.Items.DYES)
-                .define('P', ModItems.BLANK_PATTERN.get())
-                .unlockedBy(getHasName(ModItems.BLANK_PATTERN.get()), has(ModItems.BLANK_PATTERN.get()))
-                .save(pWriter);
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.AXE_PATTERN.get(), 1)
-                .pattern("WW")
-                .pattern("WP")
-                .define('W', Tags.Items.DYES)
-                .define('P', ModItems.BLANK_PATTERN.get())
-                .unlockedBy(getHasName(ModItems.BLANK_PATTERN.get()), has(ModItems.BLANK_PATTERN.get()))
-                .save(pWriter);
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.PICKAXE_PATTERN.get(), 1)
-                .pattern("WWW")
-                .pattern(" P ")
-                .define('W', Tags.Items.DYES)
-                .define('P', ModItems.BLANK_PATTERN.get())
-                .unlockedBy(getHasName(ModItems.BLANK_PATTERN.get()), has(ModItems.BLANK_PATTERN.get()))
-                .save(pWriter);
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.HOE_PATTERN.get(), 1)
-                .pattern("WW")
-                .pattern(" P")
-                .define('W', Tags.Items.DYES)
-                .define('P', ModItems.BLANK_PATTERN.get())
-                .unlockedBy(getHasName(ModItems.BLANK_PATTERN.get()), has(ModItems.BLANK_PATTERN.get()))
-                .save(pWriter);
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SHOVEL_PATTERN.get(), 1)
-                .pattern("W")
-                .pattern("P")
-                .define('W', Tags.Items.DYES)
-                .define('P', ModItems.BLANK_PATTERN.get())
-                .unlockedBy(getHasName(ModItems.BLANK_PATTERN.get()), has(ModItems.BLANK_PATTERN.get()))
-                .save(pWriter);
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.BINDING_PATTERN.get(), 1)
-                .pattern("P")
-                .pattern("W")
-                .define('W', Tags.Items.DYES)
-                .define('P', ModItems.BLANK_PATTERN.get())
-                .unlockedBy(getHasName(ModItems.BLANK_PATTERN.get()), has(ModItems.BLANK_PATTERN.get()))
-                .save(pWriter);
-
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.STONE_SWORD_PART.get(), 1)
-                .pattern("W")
-                .pattern("W")
-                .pattern("P")
-                .define('W', Tags.Items.COBBLESTONE)
-                .define('P', ModItems.CRUDE_PATTERN.get())
-                .unlockedBy(getHasName(ModItems.BLANK_PATTERN.get()), has(ModItems.BLANK_PATTERN.get()))
-                .save(pWriter, EllieCraft.MOD_ID + ":stone_sword_part_crude");
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.STONE_AXE_PART.get(), 1)
-                .pattern("WW")
-                .pattern("WP")
-                .define('W', Tags.Items.COBBLESTONE)
-                .define('P', ModItems.CRUDE_PATTERN.get())
-                .unlockedBy(getHasName(ModItems.BLANK_PATTERN.get()), has(ModItems.BLANK_PATTERN.get()))
-                .save(pWriter, EllieCraft.MOD_ID + ":stone_axe_part_crude");
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.STONE_PICKAXE_PART.get(), 1)
-                .pattern("WWW")
-                .pattern(" P ")
-                .define('W', Tags.Items.COBBLESTONE)
-                .define('P', ModItems.CRUDE_PATTERN.get())
-                .unlockedBy(getHasName(ModItems.BLANK_PATTERN.get()), has(ModItems.BLANK_PATTERN.get()))
-                .save(pWriter, EllieCraft.MOD_ID + ":stone_pickaxe_part_crude");
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.STONE_HOE_PART.get(), 1)
-                .pattern("WW")
-                .pattern(" P")
-                .define('W', Tags.Items.COBBLESTONE)
-                .define('P', ModItems.CRUDE_PATTERN.get())
-                .unlockedBy(getHasName(ModItems.BLANK_PATTERN.get()), has(ModItems.BLANK_PATTERN.get()))
-                .save(pWriter, EllieCraft.MOD_ID + ":stone_hoe_part_crude");
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.STONE_SHOVEL_PART.get(), 1)
-                .pattern("W")
-                .pattern("P")
-                .define('W', Tags.Items.COBBLESTONE)
-                .define('P', ModItems.CRUDE_PATTERN.get())
-                .unlockedBy(getHasName(ModItems.BLANK_PATTERN.get()), has(ModItems.BLANK_PATTERN.get()))
-                .save(pWriter, EllieCraft.MOD_ID + ":stone_shovel_part_crude");
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.STONE_BINDING_PART.get(), 1)
-                .pattern("P")
-                .pattern("W")
-                .define('W', Tags.Items.COBBLESTONE)
-                .define('P', ModItems.CRUDE_PATTERN.get())
-                .unlockedBy(getHasName(ModItems.BLANK_PATTERN.get()), has(ModItems.BLANK_PATTERN.get()))
-                .save(pWriter, EllieCraft.MOD_ID + ":stone_binding_part_crude");
-
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.WOODEN_SWORD_PART.get(), 1)
-                .pattern("W")
-                .pattern("W")
-                .pattern("P")
-                .define('W', ItemTags.PLANKS)
-                .define('P', ModItems.CRUDE_PATTERN.get())
-                .unlockedBy(getHasName(ModItems.BLANK_PATTERN.get()), has(ModItems.BLANK_PATTERN.get()))
-                .save(pWriter, EllieCraft.MOD_ID + ":wooden_sword_part_crude");
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.WOODEN_AXE_PART.get(), 1)
-                .pattern("WW")
-                .pattern("WP")
-                .define('W', ItemTags.PLANKS)
-                .define('P', ModItems.CRUDE_PATTERN.get())
-                .unlockedBy(getHasName(ModItems.BLANK_PATTERN.get()), has(ModItems.BLANK_PATTERN.get()))
-                .save(pWriter, EllieCraft.MOD_ID + ":wooden_axe_part_crude");
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.WOODEN_PICKAXE_PART.get(), 1)
-                .pattern("WWW")
-                .pattern(" P ")
-                .define('W', ItemTags.PLANKS)
-                .define('P', ModItems.CRUDE_PATTERN.get())
-                .unlockedBy(getHasName(ModItems.BLANK_PATTERN.get()), has(ModItems.BLANK_PATTERN.get()))
-                .save(pWriter, EllieCraft.MOD_ID + ":wooden_pickaxe_part_crude");
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.WOODEN_HOE_PART.get(), 1)
-                .pattern("WW")
-                .pattern(" P")
-                .define('W', ItemTags.PLANKS)
-                .define('P', ModItems.CRUDE_PATTERN.get())
-                .unlockedBy(getHasName(ModItems.BLANK_PATTERN.get()), has(ModItems.BLANK_PATTERN.get()))
-                .save(pWriter, EllieCraft.MOD_ID + ":wooden_hoe_part_crude");
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.WOODEN_SHOVEL_PART.get(), 1)
-                .pattern("W")
-                .pattern("P")
-                .define('W', ItemTags.PLANKS)
-                .define('P', ModItems.CRUDE_PATTERN.get())
-                .unlockedBy(getHasName(ModItems.BLANK_PATTERN.get()), has(ModItems.BLANK_PATTERN.get()))
-                .save(pWriter, EllieCraft.MOD_ID + ":wooden_shovel_part_crude");
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.WOODEN_BINDING_PART.get(), 1)
-                .pattern("P")
-                .pattern("W")
-                .define('W', ItemTags.PLANKS)
-                .define('P', ModItems.CRUDE_PATTERN.get())
-                .unlockedBy(getHasName(ModItems.BLANK_PATTERN.get()), has(ModItems.BLANK_PATTERN.get()))
-                .save(pWriter, EllieCraft.MOD_ID + ":wooden_binding_part_crude");
-
-
-        createToolPartRecipe(ModItems.WOODEN_BINDING_PART.get(), ModItems.BINDING_PATTERN.get(), ItemTags.PLANKS, 1, pWriter);
-
-        createToolPartRecipe(ModItems.WOODEN_SWORD_PART.get(),      ModItems.SWORD_PATTERN.get(),   ItemTags.PLANKS, 2, pWriter);
-        createToolPartRecipe(ModItems.WOODEN_PICKAXE_PART.get(),    ModItems.PICKAXE_PATTERN.get(), ItemTags.PLANKS, 3, pWriter);
-        createToolPartRecipe(ModItems.WOODEN_AXE_PART.get(),        ModItems.AXE_PATTERN.get(),     ItemTags.PLANKS, 3, pWriter);
-        createToolPartRecipe(ModItems.WOODEN_SHOVEL_PART.get(),     ModItems.SHOVEL_PATTERN.get(),  ItemTags.PLANKS, 1, pWriter);
-        createToolPartRecipe(ModItems.WOODEN_HOE_PART.get(),        ModItems.HOE_PATTERN.get(),     ItemTags.PLANKS, 2, pWriter);
-        createToolRecipe(Items.WOODEN_SWORD, ModItems.WOODEN_SWORD_PART.get(), ModItems.WOODEN_BINDING_PART.get(), pWriter);
-        createToolRecipe(Items.WOODEN_PICKAXE, ModItems.WOODEN_PICKAXE_PART.get(), ModItems.WOODEN_BINDING_PART.get(), pWriter);
-        createToolRecipe(Items.WOODEN_AXE, ModItems.WOODEN_AXE_PART.get(), ModItems.WOODEN_BINDING_PART.get(), pWriter);
-        createToolRecipe(Items.WOODEN_SHOVEL, ModItems.WOODEN_SHOVEL_PART.get(), ModItems.WOODEN_BINDING_PART.get(), pWriter);
-        createToolRecipe(Items.WOODEN_HOE, ModItems.WOODEN_HOE_PART.get(), ModItems.WOODEN_BINDING_PART.get(), pWriter);
-
-        createToolPartRecipe(ModItems.STONE_BINDING_PART.get(), ModItems.BINDING_PATTERN.get(), Tags.Items.COBBLESTONE, 1, pWriter);
-
-        createToolPartRecipe(ModItems.STONE_SWORD_PART.get(),      ModItems.SWORD_PATTERN.get(),   Tags.Items.COBBLESTONE, 2, pWriter);
-        createToolPartRecipe(ModItems.STONE_PICKAXE_PART.get(),    ModItems.PICKAXE_PATTERN.get(), Tags.Items.COBBLESTONE, 3, pWriter);
-        createToolPartRecipe(ModItems.STONE_AXE_PART.get(),        ModItems.AXE_PATTERN.get(),     Tags.Items.COBBLESTONE, 3, pWriter);
-        createToolPartRecipe(ModItems.STONE_SHOVEL_PART.get(),     ModItems.SHOVEL_PATTERN.get(),  Tags.Items.COBBLESTONE, 1, pWriter);
-        createToolPartRecipe(ModItems.STONE_HOE_PART.get(),        ModItems.HOE_PATTERN.get(),     Tags.Items.COBBLESTONE, 2, pWriter);
-        createToolRecipe(Items.STONE_SWORD, ModItems.STONE_SWORD_PART.get(), ModItems.STONE_BINDING_PART.get(), pWriter);
-        createToolRecipe(Items.STONE_PICKAXE, ModItems.STONE_PICKAXE_PART.get(), ModItems.STONE_BINDING_PART.get(), pWriter);
-        createToolRecipe(Items.STONE_AXE, ModItems.STONE_AXE_PART.get(), ModItems.STONE_BINDING_PART.get(), pWriter);
-        createToolRecipe(Items.STONE_SHOVEL, ModItems.STONE_SHOVEL_PART.get(), ModItems.STONE_BINDING_PART.get(), pWriter);
-        createToolRecipe(Items.STONE_HOE, ModItems.STONE_HOE_PART.get(), ModItems.STONE_BINDING_PART.get(), pWriter);
-    }
-
-    static void createToolPartRecipe(Item toolPart, Item pattern, Item material, int amount, Consumer<FinishedRecipe> pWriter) {
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, toolPart, 1)
-                .requires(pattern, 1)
-                .requires(material, amount)
-                .unlockedBy(getHasName(pattern), has(pattern))
-                .save(pWriter, EllieCraft.MOD_ID + ":" +
-                        BuiltInRegistries.ITEM.getKey(toolPart).getPath() + "_from_"+
-                        BuiltInRegistries.ITEM.getKey(pattern).getPath());
-    }
-    static void createToolPartRecipe(Item toolPart, Item pattern, TagKey<Item> material, int amount, Consumer<FinishedRecipe> pWriter) {
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, toolPart, 1)
-                .requires(pattern, 1)
-                .requires(Ingredient.of(material), amount)
-                .unlockedBy(getHasName(pattern), has(pattern))
-                .save(pWriter, EllieCraft.MOD_ID + ":" +
-                        BuiltInRegistries.ITEM.getKey(toolPart).getPath() + "_from_"+
-                        BuiltInRegistries.ITEM.getKey(pattern).getPath());
-    }
-
-    static void createBrickRecipe(Block block, String blockName, Item dye, Consumer<FinishedRecipe> pWriter) {
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, block, 1)
-                .requires(dye, 1)
-                .requires(Blocks.BRICKS, 1)
-                .unlockedBy(getHasName(Blocks.BRICKS), has(Blocks.BRICKS))
-                .save(pWriter, EllieCraft.MOD_ID + ":" + blockName + "_single");
-
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, block, 8)
-                .requires(dye, 1)
-                .requires(Blocks.BRICKS, 8)
-                .unlockedBy(getHasName(Blocks.BRICKS), has(Blocks.BRICKS))
-                .save(pWriter, EllieCraft.MOD_ID + ":" + blockName + "_bulk");
-
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Blocks.BRICKS, 1)
-                .requires(Items.WATER_BUCKET, 1)
-                .requires(block, 1)
-                .unlockedBy(getHasName(Blocks.BRICKS), has(Blocks.BRICKS))
-                .save(pWriter, EllieCraft.MOD_ID + ":" + blockName + "_single_uncolor");
-
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Blocks.BRICKS, 8)
-                .requires(Items.WATER_BUCKET, 1)
-                .requires(block, 8)
-                .unlockedBy(getHasName(Blocks.BRICKS), has(Blocks.BRICKS))
-                .save(pWriter, EllieCraft.MOD_ID + ":" + blockName + "_bulk_uncolor");
-    }
-
-    static void createCompressedRecipe(Block tiny, Block big, Consumer<FinishedRecipe> pWriter) {
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, big, 1)
-                .requires(tiny, 9)
-                .unlockedBy(getHasName(tiny), has(tiny))
-                .save(pWriter, EllieCraft.MOD_ID + ":" +
-                        BuiltInRegistries.BLOCK.getKey(tiny).getPath() + "_to_" +
-                        BuiltInRegistries.BLOCK.getKey(big).getPath());
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, tiny, 9)
-                .requires(big, 1)
-                .unlockedBy(getHasName(big), has(big))
-                .save(pWriter, EllieCraft.MOD_ID + ":" +
-                        BuiltInRegistries.BLOCK.getKey(big).getPath() + "_to_" +
-                        BuiltInRegistries.BLOCK.getKey(tiny).getPath());
-    }
-
-
-    static void createToolRecipe(Item tool, Item mainPart, Item binding, Consumer<FinishedRecipe> pWriter) {
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, tool, 1)
-                .requires(Items.STICK, 1)
-                .requires(binding, 1)
-                .requires(mainPart, 1)
-                .unlockedBy(getHasName(mainPart), has(mainPart))
-                .save(pWriter, EllieCraft.MOD_ID + ":" + BuiltInRegistries.ITEM.getKey(tool).getPath());
-    }
-
-    protected static void oreSmelting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult, float pExperience, int pCookingTime, String pGroup) {
-        oreCooking(pFinishedRecipeConsumer, RecipeSerializer.SMELTING_RECIPE, pIngredients, pCategory, pResult, pExperience, pCookingTime, pGroup, "_from_smelting");
-    }
-
-    protected static void oreBlasting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult, float pExperience, int pCookingTime, String pGroup) {
-        oreCooking(pFinishedRecipeConsumer, RecipeSerializer.BLASTING_RECIPE, pIngredients, pCategory, pResult, pExperience, pCookingTime, pGroup, "_from_blasting");
-    }
-
-    protected static void oreCooking(Consumer<FinishedRecipe> pFinishedRecipeConsumer, RecipeSerializer<? extends AbstractCookingRecipe> pCookingSerializer, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult, float pExperience, int pCookingTime, String pGroup, String pRecipeName) {
-        for(ItemLike itemlike : pIngredients) {
-            SimpleCookingRecipeBuilder.generic(Ingredient.of(itemlike), pCategory, pResult,
-                            pExperience, pCookingTime, pCookingSerializer)
-                    .group(pGroup).unlockedBy(getHasName(itemlike), has(itemlike))
-                    .save(pFinishedRecipeConsumer,  EllieCraft.MOD_ID + ":" + getItemName(pResult) + pRecipeName + "_" + getItemName(itemlike));
-        }
     }
 }
