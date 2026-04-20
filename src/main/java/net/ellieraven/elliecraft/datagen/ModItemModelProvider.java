@@ -62,6 +62,14 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItemInFolder(ModItems.STONE_SHOVEL_PART, "tool_parts/stone");
         simpleItemInFolder(ModItems.STONE_HOE_PART, "tool_parts/stone");
 
+        simpleItemInFolder(ModItems.IRON_BINDING_PART, "tool_parts/iron");
+
+        simpleItemInFolder(ModItems.IRON_SWORD_PART, "tool_parts/iron");
+        simpleItemInFolder(ModItems.IRON_PICKAXE_PART, "tool_parts/iron");
+        simpleItemInFolder(ModItems.IRON_AXE_PART, "tool_parts/iron");
+        simpleItemInFolder(ModItems.IRON_SHOVEL_PART, "tool_parts/iron");
+        simpleItemInFolder(ModItems.IRON_HOE_PART, "tool_parts/iron");
+
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {

@@ -343,6 +343,12 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         createToolRecipe(Items.STONE_AXE, ModItems.STONE_AXE_PART.get(), ModItems.STONE_BINDING_PART.get(), pWriter);
         createToolRecipe(Items.STONE_SHOVEL, ModItems.STONE_SHOVEL_PART.get(), ModItems.STONE_BINDING_PART.get(), pWriter);
         createToolRecipe(Items.STONE_HOE, ModItems.STONE_HOE_PART.get(), ModItems.STONE_BINDING_PART.get(), pWriter);
+
+        createToolRecipe(Items.IRON_SWORD, ModItems.IRON_SWORD_PART.get(), ModItems.IRON_BINDING_PART.get(), pWriter);
+        createToolRecipe(Items.IRON_PICKAXE, ModItems.IRON_PICKAXE_PART.get(), ModItems.IRON_BINDING_PART.get(), pWriter);
+        createToolRecipe(Items.IRON_AXE, ModItems.IRON_AXE_PART.get(), ModItems.IRON_BINDING_PART.get(), pWriter);
+        createToolRecipe(Items.IRON_SHOVEL, ModItems.IRON_SHOVEL_PART.get(), ModItems.IRON_BINDING_PART.get(), pWriter);
+        createToolRecipe(Items.IRON_HOE, ModItems.IRON_HOE_PART.get(), ModItems.IRON_BINDING_PART.get(), pWriter);
     }
 
     private void createToolPartRecipes(Consumer<FinishedRecipe> pWriter) {

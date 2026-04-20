@@ -96,6 +96,12 @@ public class ModCreativeModeTabs {
             pOutput.accept(ModItems.STONE_AXE_PART.get());
             pOutput.accept(ModItems.STONE_SHOVEL_PART.get());
             pOutput.accept(ModItems.STONE_HOE_PART.get());
+            pOutput.accept(ModItems.IRON_BINDING_PART.get());
+            pOutput.accept(ModItems.IRON_SWORD_PART.get());
+            pOutput.accept(ModItems.IRON_PICKAXE_PART.get());
+            pOutput.accept(ModItems.IRON_AXE_PART.get());
+            pOutput.accept(ModItems.IRON_SHOVEL_PART.get());
+            pOutput.accept(ModItems.IRON_HOE_PART.get());
         })
         .build()
     );

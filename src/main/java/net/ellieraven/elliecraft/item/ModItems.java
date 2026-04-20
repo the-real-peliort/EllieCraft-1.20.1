@@ -147,6 +147,26 @@ public class ModItems {
             () -> new Item(new Item.Properties())
     );
 
+    public static final RegistryObject<Item> IRON_BINDING_PART = ITEMS.register("iron_binding_part",
+            () -> new Item(new Item.Properties())
+    );
+
+    public static final RegistryObject<Item> IRON_SWORD_PART = ITEMS.register("iron_sword_part",
+            () -> new Item(new Item.Properties())
+    );
+    public static final RegistryObject<Item> IRON_PICKAXE_PART = ITEMS.register("iron_pickaxe_part",
+            () -> new Item(new Item.Properties())
+    );
+    public static final RegistryObject<Item> IRON_AXE_PART = ITEMS.register("iron_axe_part",
+            () -> new Item(new Item.Properties())
+    );
+    public static final RegistryObject<Item> IRON_SHOVEL_PART = ITEMS.register("iron_shovel_part",
+            () -> new Item(new Item.Properties())
+    );
+    public static final RegistryObject<Item> IRON_HOE_PART = ITEMS.register("iron_hoe_part",
+            () -> new Item(new Item.Properties())
+    );
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

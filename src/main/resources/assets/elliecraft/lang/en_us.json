@@ -96,5 +96,13 @@
     "item.elliecraft.stone_pickaxe_part": "Stone Pickaxe Head Part",
     "item.elliecraft.stone_axe_part": "Stone Axe Head Part",
     "item.elliecraft.stone_shovel_part": "Stone Shovel Head Part",
-    "item.elliecraft.stone_hoe_part": "Stone Hoe Head Part"
+    "item.elliecraft.stone_hoe_part": "Stone Hoe Head Part",
+
+    "item.elliecraft.iron_binding_part": "Iron Binding Part",
+
+    "item.elliecraft.iron_sword_part": "Iron Sword Blade Part",
+    "item.elliecraft.iron_pickaxe_part": "Iron Pickaxe Head Part",
+    "item.elliecraft.iron_axe_part": "Iron Axe Head Part",
+    "item.elliecraft.iron_shovel_part": "Iron Shovel Head Part",
+    "item.elliecraft.iron_hoe_part": "Iron Hoe Head Part"
 }
