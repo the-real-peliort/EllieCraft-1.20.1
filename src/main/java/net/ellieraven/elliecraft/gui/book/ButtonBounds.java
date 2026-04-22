@@ -1,4 +1,4 @@
-package net.ellieraven.elliecraft.gui;
+package net.ellieraven.elliecraft.gui.book;
 
 public class ButtonBounds {
     public int X;

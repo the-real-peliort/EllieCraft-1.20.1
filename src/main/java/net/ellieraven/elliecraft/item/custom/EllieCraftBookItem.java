@@ -1,6 +1,6 @@
 package net.ellieraven.elliecraft.item.custom;
 
-import net.ellieraven.elliecraft.gui.EllieCraftBookScreen;
+import net.ellieraven.elliecraft.gui.book.EllieCraftBookScreen;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;

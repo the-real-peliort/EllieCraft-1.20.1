@@ -1,6 +1,5 @@
-package net.ellieraven.elliecraft.gui;
+package net.ellieraven.elliecraft.gui.book;
 
-import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.screens.Screen;

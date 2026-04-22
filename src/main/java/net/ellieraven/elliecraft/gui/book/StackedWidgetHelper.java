@@ -1,4 +1,4 @@
-package net.ellieraven.elliecraft.gui;
+package net.ellieraven.elliecraft.gui.book;
 
 
 import java.util.*;
