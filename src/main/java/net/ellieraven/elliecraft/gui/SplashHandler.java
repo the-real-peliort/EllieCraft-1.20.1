@@ -20,23 +20,47 @@ public class SplashHandler {
 
     private static int index = 0;
 
-    private static final String[] LOOP = {
-            "-",
-            "/",
-            "|",
-            "\\",
-    };
-
     List<BiConsumer<TitleScreen, Integer>> SPLASHES = List.of(
             (title, ticks) ->  {
-                setSplash(title, LOOP[(int)Math.floor((double)ticks/10) % LOOP.length]);
+                String[] loop = {
+                        "-",
+                        "/",
+                        "|",
+                        "\\",
+                };
+
+                setSplash(title, loop[(int)Math.floor((double)ticks/10) % loop.length]);
             },
             (title, ticks) ->  {
-                setSplash(title, "EllieCraft :3");
+                setSplash(title, "EllieCraft!");
             },
             (title, ticks) ->  {
                 setSplash(title, ":3");
+            },
+            (title, ticks) ->  {
+                String[] loop = {
+                        "#----",
+                        "-#---",
+                        "--#--",
+                        "---#-",
+                        "----#"
+                };
+                setSplash(title, loop[(int)Math.floor((double)ticks/10) % loop.length]);
+            },
+            (title, ticks) ->  {
+                String[] loop = {
+                        "#----",
+                        "-#---",
+                        "--#--",
+                        "---#-",
+                        "----#",
+                        "---#-",
+                        "--#--",
+                        "-#---"
+                };
+                setSplash(title, loop[(int)Math.floor((double)ticks/10) % loop.length]);
             }
+
     );
 
     @SubscribeEvent
