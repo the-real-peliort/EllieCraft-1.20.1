@@ -62,44 +62,40 @@ public class ModCreativeModeTabs {
 
             pOutput.accept(ModBlocks.FATE_CUBE.get());
             pOutput.accept(ModItems.FATE_DELAYING_WAND.get());
-            pOutput.accept(ModItems.GIRL_THIGH_HIGHS.get());
-            pOutput.accept(ModItems.GIRL_HOODIE.get());
-            pOutput.accept(ModItems.GIRL_HOODIE_HOOD.get());
             pOutput.accept(ModBlocks.BUSH.get());
             pOutput.accept(ModBlocks.COMPRESSED_COBBLESTONE_1X.get());
             pOutput.accept(ModBlocks.COMPRESSED_COBBLESTONE_2X.get());
             pOutput.accept(ModBlocks.COMPRESSED_COBBLESTONE_3X.get());
-
             pOutput.accept(ModBlocks.COMPRESSED_COBBLESTONE_4X.get());
             pOutput.accept(ModBlocks.COMPRESSED_COBBLESTONE_5X.get());
             pOutput.accept(ModBlocks.COMPRESSED_COBBLESTONE_6X.get());
+
             pOutput.accept(ModItems.COUNTERFEIT_DIAMOND.get());
             pOutput.accept(ModItems.SWORD_PATTERN.get());
             pOutput.accept(ModItems.PICKAXE_PATTERN.get());
             pOutput.accept(ModItems.AXE_PATTERN.get());
             pOutput.accept(ModItems.SHOVEL_PATTERN.get());
             pOutput.accept(ModItems.HOE_PATTERN.get());
-
             pOutput.accept(ModItems.BINDING_PATTERN.get());
             pOutput.accept(ModItems.BLANK_PATTERN.get());
             pOutput.accept(ModItems.CRUDE_PATTERN.get());
+
             pOutput.accept(ModItems.WOODEN_BINDING_PART.get());
             pOutput.accept(ModItems.WOODEN_SWORD_PART.get());
             pOutput.accept(ModItems.WOODEN_PICKAXE_PART.get());
             pOutput.accept(ModItems.WOODEN_AXE_PART.get());
             pOutput.accept(ModItems.WOODEN_SHOVEL_PART.get());
             pOutput.accept(ModItems.WOODEN_HOE_PART.get());
-
             pOutput.accept(ModItems.STONE_BINDING_PART.get());
             pOutput.accept(ModItems.STONE_SWORD_PART.get());
             pOutput.accept(ModItems.STONE_PICKAXE_PART.get());
+
             pOutput.accept(ModItems.STONE_AXE_PART.get());
             pOutput.accept(ModItems.STONE_SHOVEL_PART.get());
             pOutput.accept(ModItems.STONE_HOE_PART.get());
             pOutput.accept(ModItems.IRON_BINDING_PART.get());
             pOutput.accept(ModItems.IRON_SWORD_PART.get());
             pOutput.accept(ModItems.IRON_PICKAXE_PART.get());
-            
             pOutput.accept(ModItems.IRON_AXE_PART.get());
             pOutput.accept(ModItems.IRON_SHOVEL_PART.get());
             pOutput.accept(ModItems.IRON_HOE_PART.get());
