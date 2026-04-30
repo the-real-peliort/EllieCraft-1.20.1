@@ -104,5 +104,7 @@
     "item.elliecraft.iron_pickaxe_part": "Iron Pickaxe Head Part",
     "item.elliecraft.iron_axe_part": "Iron Axe Head Part",
     "item.elliecraft.iron_shovel_part": "Iron Shovel Head Part",
-    "item.elliecraft.iron_hoe_part": "Iron Hoe Head Part"
+    "item.elliecraft.iron_hoe_part": "Iron Hoe Head Part",
+
+    "block.elliecraft.vertical_brick_slab": "Vertical Brick Slab"
 }

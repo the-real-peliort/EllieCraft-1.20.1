@@ -154,6 +154,10 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE).destroyTime(5f))
     );
 
+    public static final RegistryObject<Block> VERTICAL_BRICK_SLAB = registerBlock("vertical_brick_slab",
+            () -> new VerticalSlabBlock(BlockBehaviour.Properties.copy(Blocks.BRICK_SLAB).noOcclusion())
+    );
+
     public static void register(IEventBus eventBus) {
         BLOCKS.register(eventBus);
     }

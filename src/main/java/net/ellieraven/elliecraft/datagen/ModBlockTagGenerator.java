@@ -57,6 +57,7 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 .add(ModBlocks.COMPRESSED_COBBLESTONE_4X.get())
                 .add(ModBlocks.COMPRESSED_COBBLESTONE_5X.get())
                 .add(ModBlocks.COMPRESSED_COBBLESTONE_6X.get())
+                .add(ModBlocks.VERTICAL_BRICK_SLAB.get())
         ;
 
         this.tag(BlockTags.MINEABLE_WITH_AXE)

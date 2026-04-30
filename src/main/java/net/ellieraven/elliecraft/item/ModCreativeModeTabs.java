@@ -99,6 +99,8 @@ public class ModCreativeModeTabs {
             pOutput.accept(ModItems.IRON_AXE_PART.get());
             pOutput.accept(ModItems.IRON_SHOVEL_PART.get());
             pOutput.accept(ModItems.IRON_HOE_PART.get());
+
+            pOutput.accept(ModBlocks.VERTICAL_BRICK_SLAB.get());
         })
         .build()
     );
