@@ -2,7 +2,8 @@
 	"format_version": "1.9.0",
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "block/0"
+		"0": "missingno",
+		"particle": "#0"
 	},
 	"elements": [
 		{
