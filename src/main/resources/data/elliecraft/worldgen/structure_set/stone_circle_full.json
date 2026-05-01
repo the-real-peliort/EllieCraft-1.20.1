@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "elliecraft:stone_circle_full",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 16,
+    "separation": 8,
+    "salt": 123456789
+  }
+}

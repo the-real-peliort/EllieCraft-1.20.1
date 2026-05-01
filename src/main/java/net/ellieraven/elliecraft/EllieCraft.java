@@ -6,6 +6,7 @@ import net.ellieraven.elliecraft.block.ModBlocks;
 import net.ellieraven.elliecraft.gui.SplashHandler;
 import net.ellieraven.elliecraft.item.ModCreativeModeTabs;
 import net.ellieraven.elliecraft.item.ModItems;
+import net.ellieraven.elliecraft.worldgen.structure.ModStructures;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -37,6 +38,10 @@ public class EllieCraft
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+
+        ModStructures.STRUCTURE_TYPES.register(modEventBus);
+        ModStructures.STRUCTURE_PIECES.register(modEventBus);
+
         MinecraftForge.EVENT_BUS.register(new SplashHandler());
 
         modEventBus.addListener(this::commonSetup);
