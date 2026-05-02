@@ -101,6 +101,7 @@ public class ModCreativeModeTabs {
             pOutput.accept(ModItems.IRON_HOE_PART.get());
 
             pOutput.accept(ModBlocks.VERTICAL_BRICK_SLAB.get());
+            pOutput.accept(ModBlocks.VERTICAL_STONE_BRICK_SLAB.get());
         })
         .build()
     );

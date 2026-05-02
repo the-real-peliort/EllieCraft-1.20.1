@@ -1,6 +1,6 @@
 {
   "parent": "elliecraft:block/vertical_slab",
   "textures": {
-    "0": "minecraft:block/bricks"
+    "0": "minecraft:block/stone_bricks"
   }
 }

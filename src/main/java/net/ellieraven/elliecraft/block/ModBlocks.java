@@ -157,6 +157,9 @@ public class ModBlocks {
     public static final RegistryObject<Block> VERTICAL_BRICK_SLAB = registerBlock("vertical_brick_slab",
             () -> new VerticalSlabBlock(BlockBehaviour.Properties.copy(Blocks.BRICK_SLAB).noOcclusion())
     );
+    public static final RegistryObject<Block> VERTICAL_STONE_BRICK_SLAB = registerBlock("vertical_stone_brick_slab",
+            () -> new VerticalSlabBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_SLAB).noOcclusion())
+    );
 
     public static void register(IEventBus eventBus) {
         BLOCKS.register(eventBus);

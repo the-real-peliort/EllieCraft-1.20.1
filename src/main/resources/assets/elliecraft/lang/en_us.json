@@ -106,5 +106,6 @@
     "item.elliecraft.iron_shovel_part": "Iron Shovel Head Part",
     "item.elliecraft.iron_hoe_part": "Iron Hoe Head Part",
 
-    "block.elliecraft.vertical_brick_slab": "Vertical Brick Slab"
+    "block.elliecraft.vertical_brick_slab": "Vertical Brick Slab",
+    "block.elliecraft.vertical_stone_brick_slab": "Vertical Stone Brick Slab"
 }
