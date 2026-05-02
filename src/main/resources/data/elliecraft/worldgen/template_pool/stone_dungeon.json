@@ -12,7 +12,7 @@
       }
     },
     {
-      "weight": 0,
+      "weight": 1,
       "element": {
         "location": "elliecraft:dungeon/stone/stair_straight",
         "processors": "minecraft:empty",

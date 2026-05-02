@@ -1,5 +1,7 @@
 package net.ellieraven.elliecraft.worldgen.structure;
 
+import net.ellieraven.elliecraft.worldgen.structure.dungeon_house.DungeonHouseStructure;
+import net.ellieraven.elliecraft.worldgen.structure.dungeon_house.DungeonHouseStructurePiece;
 import net.ellieraven.elliecraft.worldgen.structure.stone_circle.broken_1.StoneCircleBroken1Structure;
 import net.ellieraven.elliecraft.worldgen.structure.stone_circle.broken_1.StoneCircleBroken1StructurePiece;
 import net.ellieraven.elliecraft.worldgen.structure.stone_circle.full.StoneCircleFullStructure;
@@ -37,6 +39,16 @@ public class ModStructures{
     public static final RegistryObject<StructurePieceType> STONE_CIRCLE_BROKEN_1_PIECE =
             STRUCTURE_PIECES.register("stone_circle_broken_1_piece",
                     () -> StoneCircleBroken1StructurePiece::new
+            );
+
+    public static final RegistryObject<StructureType<DungeonHouseStructure>> DUNGEON_HOUSE =
+            STRUCTURE_TYPES.register("dungeon_house",
+                    () -> () -> DungeonHouseStructure.CODEC
+            );
+
+    public static final RegistryObject<StructurePieceType> DUNGEON_HOUSE_PIECE =
+            STRUCTURE_PIECES.register("dungeon_house_piece",
+                    () -> DungeonHouseStructurePiece::new
             );
 
 }

@@ -1,0 +1,6 @@
+{
+  "type": "elliecraft:dungeon_house",
+  "biomes": "#minecraft:is_overworld",
+  "step": "surface_structures",
+  "spawn_overrides": {}
+}
