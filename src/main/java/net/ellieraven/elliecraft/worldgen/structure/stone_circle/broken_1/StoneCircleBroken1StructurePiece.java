@@ -1,4 +1,4 @@
-package net.ellieraven.elliecraft.worldgen.structure.stone_circle.full;
+package net.ellieraven.elliecraft.worldgen.structure.stone_circle.broken_1;
 
 import net.ellieraven.elliecraft.worldgen.structure.ModStructures;
 import net.minecraft.core.BlockPos;
@@ -15,23 +15,23 @@ import net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlac
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplateManager;
 
 
-public class StoneCircleFullStructurePiece extends TemplateStructurePiece {
+public class StoneCircleBroken1StructurePiece extends TemplateStructurePiece {
 
-    public StoneCircleFullStructurePiece(StructureTemplateManager manager, BlockPos pos) {
+    public StoneCircleBroken1StructurePiece(StructureTemplateManager manager, BlockPos pos) {
         super(
-                ModStructures.STONE_CIRCLE_FULL_PIECE.get(),
+                ModStructures.STONE_CIRCLE_BROKEN_1_PIECE.get(),
                 0,
                 manager,
-                new ResourceLocation("elliecraft", "stone_circle/stone_circle_full"),
-                "stone_circle_full",
+                new ResourceLocation("elliecraft", "stone_circle/stone_circle_broken_1"),
+                "stone_circle_broken_1",
                 makeSettings(),
                 pos
         );
     }
 
-    public StoneCircleFullStructurePiece(StructurePieceSerializationContext context, CompoundTag tag) {
+    public StoneCircleBroken1StructurePiece(StructurePieceSerializationContext context, CompoundTag tag) {
         super(
-                ModStructures.STONE_CIRCLE_FULL_PIECE.get(),
+                ModStructures.STONE_CIRCLE_BROKEN_1_PIECE.get(),
                 tag,
                 context.structureTemplateManager(),
                 (resourceLocation) -> makeSettings()

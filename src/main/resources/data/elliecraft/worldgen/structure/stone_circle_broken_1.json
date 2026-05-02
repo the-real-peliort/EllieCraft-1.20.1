@@ -1,0 +1,6 @@
+{
+  "type": "elliecraft:stone_circle_broken_1",
+  "biomes": "#minecraft:is_overworld",
+  "step": "surface_structures",
+  "spawn_overrides": {}
+}
