@@ -50,7 +50,7 @@ public class DungeonHouseStructure extends Structure {
         );
 
         if (y < 63) {
-            LOGGER.warn("Dungeon House circle skipped at {} {}", x, z);
+            LOGGER.warn("Dungeon House skipped at {} {}", x, z);
             return Optional.empty();
         }
 
