@@ -39,7 +39,7 @@
       }
     },
     {
-      "weight": 75,
+      "weight": 25,
       "element": {
         "location": "elliecraft:dungeon/stone/end",
         "processors": "minecraft:empty",
@@ -51,6 +51,24 @@
       "weight": 5,
       "element": {
          "location": "elliecraft:dungeon/stone/room_1",
+        "processors": "minecraft:empty",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 5,
+      "element": {
+        "location": "elliecraft:dungeon/stone/secret_fate_cube",
+        "processors": "minecraft:empty",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 5,
+      "element": {
+        "location": "elliecraft:dungeon/stone/secret_chest_trap",
         "processors": "minecraft:empty",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"

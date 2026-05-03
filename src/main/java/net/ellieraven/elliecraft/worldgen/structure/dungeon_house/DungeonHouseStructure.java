@@ -4,11 +4,23 @@ import com.mojang.serialization.Codec;
 import net.ellieraven.elliecraft.worldgen.structure.ModStructures;
 import net.ellieraven.elliecraft.worldgen.structure.stone_circle.broken_1.StoneCircleBroken1Structure;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Holder;
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.ChunkPos;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.Mirror;
+import net.minecraft.world.level.block.Rotation;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.levelgen.structure.Structure;
 import net.minecraft.world.level.levelgen.structure.StructureType;
+import net.minecraft.world.level.levelgen.structure.pools.JigsawPlacement;
+import net.minecraft.world.level.levelgen.structure.pools.StructureTemplatePool;
+import net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings;
+import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -43,13 +55,50 @@ public class DungeonHouseStructure extends Structure {
         }
 
         return Optional.of(new GenerationStub(
-                new BlockPos(x, y, z),
-                builder -> builder.addPiece(
-                        new DungeonHouseStructurePiece(
-                                pContext.structureTemplateManager(),
-                                new BlockPos(x, y-3, z)
-                        )
-                )
+                new BlockPos(x, y - 3, z),
+                builder -> {
+                    // Add the house piece
+                    BlockPos housePos = new BlockPos(x, y - 3, z);
+                    builder.addPiece(new DungeonHouseStructurePiece(
+                            pContext.structureTemplateManager(), housePos
+                    ));
+
+                    // Get the jigsaw block position from the template
+                    StructureTemplate template = pContext.structureTemplateManager()
+                            .getOrCreate(new ResourceLocation("elliecraft", "dungeon/dungeon_house"));
+
+                    StructurePlaceSettings settings = new StructurePlaceSettings()
+                            .setMirror(Mirror.NONE)
+                            .setRotation(Rotation.NONE);
+
+                    for (StructureTemplate.StructureBlockInfo blockInfo : template.filterBlocks(
+                            housePos, settings, Blocks.JIGSAW)) {
+
+                        LOGGER.info("Jigsaw blockstate: {}", blockInfo.state());
+
+                        LOGGER.info("Found jigsaw in template at {}", blockInfo.pos());
+
+                        Registry<StructureTemplatePool> pools = pContext.registryAccess()
+                                .registryOrThrow(Registries.TEMPLATE_POOL);
+                        Holder<StructureTemplatePool> poolHolder = pools.getHolderOrThrow(
+                                ResourceKey.create(Registries.TEMPLATE_POOL,
+                                        new ResourceLocation("elliecraft", "dungeon_center_staircase_start"))
+                        );
+
+
+                        JigsawPlacement.addPieces(
+                                pContext,
+                                poolHolder,
+                                Optional.of(new ResourceLocation("elliecraft", "house_entry")),
+                                35,
+                                blockInfo.pos(),
+                                false,
+                                Optional.empty(),
+                                128
+                        ).ifPresent(stub -> stub.generator().ifLeft(consumer -> consumer.accept(builder)));
+                        break;
+                    }
+                }
         ));
     }
 

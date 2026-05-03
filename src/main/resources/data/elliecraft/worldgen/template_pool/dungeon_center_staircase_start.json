@@ -1,0 +1,15 @@
+{
+  "name": "elliecraft:dungeon_center_staircase_start",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "location": "elliecraft:dungeon/stone/center/start/start_center_staircase",
+        "processors": "minecraft:empty",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ]
+}
