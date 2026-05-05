@@ -17,6 +17,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
     @Override
     protected void generate() {
         this.dropSelf(ModBlocks.SAPPHIRE_BLOCK.get());
+        this.dropSelf(ModBlocks.CONNECTING_OAK_LOG_PILLAR.get());
         this.dropSelf(ModBlocks.OAK_LOG_PILLAR.get());
         this.dropSelf(ModBlocks.STONE_PILLAR.get());
         this.dropSelf(ModBlocks.CONNECTING_STONE_PILLAR.get());

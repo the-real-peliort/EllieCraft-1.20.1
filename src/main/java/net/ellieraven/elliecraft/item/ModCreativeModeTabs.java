@@ -29,8 +29,8 @@ public class ModCreativeModeTabs {
             pOutput.accept(ModItems.HAMBURGER.get());
             pOutput.accept(ModBlocks.STONE_PILLAR.get());
             pOutput.accept(ModBlocks.CONNECTING_STONE_PILLAR.get());
-
             pOutput.accept(ModBlocks.OAK_LOG_PILLAR.get());
+            pOutput.accept(ModBlocks.CONNECTING_OAK_LOG_PILLAR.get());
             pOutput.accept(ModItems.OBSIDIAN_ROD.get());
             pOutput.accept(ModItems.REINFORCED_STICK.get());
             pOutput.accept(ModItems.LAG_STICK.get());
@@ -39,7 +39,6 @@ public class ModCreativeModeTabs {
             pOutput.accept(ModBlocks.TUNNEL.get());
             pOutput.accept(ModItems.ELLIECRAFT_BOOK.get());
             pOutput.accept(ModBlocks.ALGAE_STONE.get());
-
             pOutput.accept(ModBlocks.PASSTHROUGH_BLOCK.get());
             pOutput.accept(ModBlocks.BLACK_BRICKS.get());
             pOutput.accept(ModBlocks.BLUE_BRICKS.get());
@@ -49,7 +48,6 @@ public class ModCreativeModeTabs {
             pOutput.accept(ModBlocks.ROUNDABOUT_SIGN.get());
             pOutput.accept(ModBlocks.RED_METAL_SHEET_BLOCK.get());
             pOutput.accept(ModBlocks.STOP_SIGN.get());
-
             pOutput.accept(ModBlocks.YELLOW_METAL_SHEET_BLOCK.get());
             pOutput.accept(ModBlocks.SPEED_LIMIT_SIGN_30.get());
             pOutput.accept(ModBlocks.SPEED_LIMIT_SIGN_40.get());
@@ -59,7 +57,6 @@ public class ModCreativeModeTabs {
             pOutput.accept(ModBlocks.SPEED_LIMIT_SIGN_80.get());
             pOutput.accept(ModItems.PAINT_SPONGE.get());
             pOutput.accept(ModItems.SOAP_BAR.get());
-
             pOutput.accept(ModBlocks.FATE_CUBE.get());
             pOutput.accept(ModItems.FATE_DELAYING_WAND.get());
             pOutput.accept(ModBlocks.BUSH.get());
@@ -69,7 +66,6 @@ public class ModCreativeModeTabs {
             pOutput.accept(ModBlocks.COMPRESSED_COBBLESTONE_4X.get());
             pOutput.accept(ModBlocks.COMPRESSED_COBBLESTONE_5X.get());
             pOutput.accept(ModBlocks.COMPRESSED_COBBLESTONE_6X.get());
-
             pOutput.accept(ModItems.COUNTERFEIT_DIAMOND.get());
             pOutput.accept(ModItems.SWORD_PATTERN.get());
             pOutput.accept(ModItems.PICKAXE_PATTERN.get());
@@ -79,7 +75,6 @@ public class ModCreativeModeTabs {
             pOutput.accept(ModItems.BINDING_PATTERN.get());
             pOutput.accept(ModItems.BLANK_PATTERN.get());
             pOutput.accept(ModItems.CRUDE_PATTERN.get());
-
             pOutput.accept(ModItems.WOODEN_BINDING_PART.get());
             pOutput.accept(ModItems.WOODEN_SWORD_PART.get());
             pOutput.accept(ModItems.WOODEN_PICKAXE_PART.get());
@@ -89,7 +84,6 @@ public class ModCreativeModeTabs {
             pOutput.accept(ModItems.STONE_BINDING_PART.get());
             pOutput.accept(ModItems.STONE_SWORD_PART.get());
             pOutput.accept(ModItems.STONE_PICKAXE_PART.get());
-
             pOutput.accept(ModItems.STONE_AXE_PART.get());
             pOutput.accept(ModItems.STONE_SHOVEL_PART.get());
             pOutput.accept(ModItems.STONE_HOE_PART.get());
@@ -99,7 +93,6 @@ public class ModCreativeModeTabs {
             pOutput.accept(ModItems.IRON_AXE_PART.get());
             pOutput.accept(ModItems.IRON_SHOVEL_PART.get());
             pOutput.accept(ModItems.IRON_HOE_PART.get());
-
             pOutput.accept(ModBlocks.VERTICAL_BRICK_SLAB.get());
             pOutput.accept(ModBlocks.VERTICAL_STONE_BRICK_SLAB.get());
             pOutput.accept(ModBlocks.KITCHEN_TILES.get());
