@@ -7,8 +7,8 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
-public class StonePillarBlock extends Block {
-    public StonePillarBlock(Properties pProperties) {
+public class PillarBlock extends Block {
+    public PillarBlock(Properties pProperties) {
         super(pProperties);
     }
 

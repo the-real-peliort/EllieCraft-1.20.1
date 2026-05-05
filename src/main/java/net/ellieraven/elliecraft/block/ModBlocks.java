@@ -33,15 +33,15 @@ public class ModBlocks {
     );
 
     public static final RegistryObject<Block> STONE_PILLAR = registerBlock("stone_pillar",
-            () -> new StonePillarBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICKS).noOcclusion())
+            () -> new PillarBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICKS).noOcclusion())
     );
 
     public static final RegistryObject<Block> CONNECTING_STONE_PILLAR = registerBlock("connecting_stone_pillar",
-            () -> new ConnectingStonePillarBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICKS).noOcclusion())
+            () -> new ConnectingPillarBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICKS).noOcclusion())
     );
 
     public static final RegistryObject<Block> OAK_LOG_PILLAR = registerBlock("oak_log_pillar",
-            () -> new OakLogPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).noOcclusion())
+            () -> new PillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).noOcclusion())
     );
 
 

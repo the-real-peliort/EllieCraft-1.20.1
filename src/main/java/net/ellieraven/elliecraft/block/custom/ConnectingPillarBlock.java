@@ -7,7 +7,6 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
@@ -16,8 +15,8 @@ import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
 
-public class ConnectingStonePillarBlock extends Block {
-    public ConnectingStonePillarBlock(Properties props) {
+public class ConnectingPillarBlock extends Block {
+    public ConnectingPillarBlock(Properties props) {
         super(props);
         this.registerDefaultState(this.stateDefinition.any()
                 .setValue(NORTH, false)
@@ -70,7 +69,7 @@ public class ConnectingStonePillarBlock extends Block {
     }
 
     private Boolean connectsTo(BlockState blockState, Direction direction, Level level, BlockPos pos) {
-        return blockState.isFaceSturdy(level, pos, direction) || blockState.getBlock() instanceof ConnectingStonePillarBlock;
+        return blockState.isFaceSturdy(level, pos, direction) || blockState.getBlock() instanceof ConnectingPillarBlock;
     }
 
     @Override
