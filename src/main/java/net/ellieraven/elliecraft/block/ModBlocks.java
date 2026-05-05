@@ -161,6 +161,10 @@ public class ModBlocks {
             () -> new VerticalSlabBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_SLAB).noOcclusion())
     );
 
+    public static final RegistryObject<Block> KITCHEN_TILES = registerBlock("kitchen_tiles",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK))
+    );
+
     public static void register(IEventBus eventBus) {
         BLOCKS.register(eventBus);
     }

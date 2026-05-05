@@ -34,6 +34,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItemInFolder(ModBlocks.SPEED_LIMIT_SIGN_70, "traffic_signs/speed");
         blockWithItemInFolder(ModBlocks.SPEED_LIMIT_SIGN_80, "traffic_signs/speed");
         blockWithItem(ModBlocks.FATE_CUBE);
+        blockWithItem(ModBlocks.KITCHEN_TILES);
         blockWithItemInFolder(ModBlocks.COMPRESSED_COBBLESTONE_1X, "compressed/cobblestone");
         blockWithItemInFolder(ModBlocks.COMPRESSED_COBBLESTONE_2X, "compressed/cobblestone");
         blockWithItemInFolder(ModBlocks.COMPRESSED_COBBLESTONE_3X, "compressed/cobblestone");

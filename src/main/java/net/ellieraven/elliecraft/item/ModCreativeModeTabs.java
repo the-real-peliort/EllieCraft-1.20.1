@@ -102,6 +102,7 @@ public class ModCreativeModeTabs {
 
             pOutput.accept(ModBlocks.VERTICAL_BRICK_SLAB.get());
             pOutput.accept(ModBlocks.VERTICAL_STONE_BRICK_SLAB.get());
+            pOutput.accept(ModBlocks.KITCHEN_TILES.get());
         })
         .build()
     );
