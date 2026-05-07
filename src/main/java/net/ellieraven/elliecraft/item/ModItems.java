@@ -167,7 +167,7 @@ public class ModItems {
             () -> new Item(new Item.Properties())
     );
     public static final RegistryObject<Item> ELLIECRAFT_STAR = ITEMS.register("elliecraft_star",
-            () -> new Item(new Item.Properties())
+            () -> new FoilItem(new Item.Properties())
     );
 
     public static void register(IEventBus eventBus) {
