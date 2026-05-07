@@ -5,7 +5,16 @@
     {
       "weight": 50,
       "element": {
-        "location": "elliecraft:dungeon/pedestals/spawner",
+        "location": "elliecraft:dungeon/pedestals/spawner_z",
+        "processors": "minecraft:empty",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 50,
+      "element": {
+        "location": "elliecraft:dungeon/pedestals/spawner_s",
         "processors": "minecraft:empty",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
