@@ -166,6 +166,9 @@ public class ModItems {
     public static final RegistryObject<Item> IRON_HOE_PART = ITEMS.register("iron_hoe_part",
             () -> new Item(new Item.Properties())
     );
+    public static final RegistryObject<Item> ELLIECRAFT_STAR = ITEMS.register("elliecraft_star",
+            () -> new Item(new Item.Properties())
+    );
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

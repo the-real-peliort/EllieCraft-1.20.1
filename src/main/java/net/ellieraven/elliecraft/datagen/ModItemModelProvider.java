@@ -32,6 +32,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.GIRL_HOODIE_HOOD);
         simpleItem(ModItems.GIRL_HOODIE);
         simpleItem(ModItems.GIRL_THIGH_HIGHS);
+        simpleItem(ModItems.ELLIECRAFT_STAR);
 
         simpleVanillaTextureItem(ModItems.LAG_STICK, "stick");
         simpleVanillaTextureItem(ModItems.COUNTERFEIT_DIAMOND, "diamond");

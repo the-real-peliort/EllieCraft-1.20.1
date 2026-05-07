@@ -111,5 +111,6 @@
     "block.elliecraft.vertical_brick_slab": "Vertical Brick Slab",
     "block.elliecraft.vertical_stone_brick_slab": "Vertical Stone Brick Slab",
 
-    "block.elliecraft.kitchen_tiles": "Kitchen Tiles"
+    "block.elliecraft.kitchen_tiles": "Kitchen Tiles",
+    "item.elliecraft.elliecraft_star": "EllieCraft Star"
 }
