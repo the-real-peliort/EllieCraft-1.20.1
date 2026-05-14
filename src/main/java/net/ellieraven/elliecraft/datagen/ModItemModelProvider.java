@@ -32,7 +32,6 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.GIRL_HOODIE_HOOD);
         simpleItem(ModItems.GIRL_HOODIE);
         simpleItem(ModItems.GIRL_THIGH_HIGHS);
-        simpleItem(ModItems.ELLIECRAFT_STAR);
 
         simpleVanillaTextureItem(ModItems.LAG_STICK, "stick");
         simpleVanillaTextureItem(ModItems.COUNTERFEIT_DIAMOND, "diamond");
@@ -71,12 +70,22 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItemInFolder(ModItems.IRON_SHOVEL_PART, "tool_parts/iron");
         simpleItemInFolder(ModItems.IRON_HOE_PART, "tool_parts/iron");
 
+        simpleItem(ModItems.ELLIECRAFT_STAR);
+        simpleItemWithSpecificTexture(ModItems.ELLIECRAFT_STAR, "elliecraft_star");
+
+
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {
         return withExistingParent(item.getId().getPath(),
                 new ResourceLocation("item/generated")).texture("layer0",
                 new ResourceLocation(EllieCraft.MOD_ID,"item/" + item.getId().getPath()));
+    }
+
+    private ItemModelBuilder simpleItemWithSpecificTexture(RegistryObject<Item> item, String path) {
+        return withExistingParent(item.getId().getPath(),
+                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation(EllieCraft.MOD_ID,"item/" + path));
     }
 
     private ItemModelBuilder simpleVanillaTextureItem(RegistryObject<Item> item, String textureName) {
