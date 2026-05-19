@@ -162,7 +162,7 @@ public class ModBlocks {
     );
 
     public static final RegistryObject<Block> KITCHEN_TILES = registerBlock("kitchen_tiles",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK))
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.BONE_BLOCK).destroyTime(1.5f))
     );
 
     public static void register(IEventBus eventBus) {
