@@ -71,7 +71,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItemInFolder(ModItems.IRON_HOE_PART, "tool_parts/iron");
 
         simpleItem(ModItems.ELLIECRAFT_STAR);
-        simpleItemWithSpecificTexture(ModItems.ELLIECRAFT_STAR, "elliecraft_star");
+        simpleItemWithSpecificTexture(ModItems.CHARGED_ELLIECRAFT_STAR, "elliecraft_star");
 
 
     }

@@ -31,8 +31,10 @@ public class EllieCraft
     // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
 
-    public EllieCraft(FMLJavaModLoadingContext context)
+    public EllieCraft()
     {
+        FMLJavaModLoadingContext context = FMLJavaModLoadingContext.get();
+
         IEventBus modEventBus = context.getModEventBus();
         ModCreativeModeTabs.register(modEventBus);
 
