@@ -474,8 +474,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.CRUDE_PATTERN.get(), 2)
                 .pattern("IP")
                 .pattern("PI")
-                .define('I', Items.STICK)
-                .define('P', ItemTags.PLANKS)
+                .define('I', ItemTags.PLANKS)
+                .define('P', ItemTags.LOGS)
                 .unlockedBy("has_planks", has(ItemTags.PLANKS))
                 .save(pWriter);
 
