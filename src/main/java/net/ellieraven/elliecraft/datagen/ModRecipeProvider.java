@@ -101,8 +101,18 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModBlocks.STONE_PILLAR.get())
                 .requires(ModBlocks.CONNECTING_STONE_PILLAR.get(), 1)
-                .unlockedBy(getHasName(ModBlocks.STONE_PILLAR.get()), has(ModBlocks.STONE_PILLAR.get()))
+                .unlockedBy(getHasName(ModBlocks.CONNECTING_STONE_PILLAR.get()), has(ModBlocks.CONNECTING_STONE_PILLAR.get()))
                 .save(pWriter, EllieCraft.MOD_ID + ":stone_pillar_from_connecting_stone_pillar");
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModBlocks.CONNECTING_OAK_LOG_PILLAR.get(), 1)
+                .requires(ModBlocks.OAK_LOG_PILLAR.get(), 1)
+                .unlockedBy(getHasName(ModBlocks.OAK_LOG_PILLAR.get()), has(ModBlocks.OAK_LOG_PILLAR.get()))
+                .save(pWriter, EllieCraft.MOD_ID + ":connecting_oak_log_pillar_from_oak_log_pillar");
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModBlocks.OAK_LOG_PILLAR.get())
+                .requires(ModBlocks.CONNECTING_OAK_LOG_PILLAR.get(), 1)
+                .unlockedBy(getHasName(ModBlocks.CONNECTING_OAK_LOG_PILLAR.get()), has(ModBlocks.CONNECTING_OAK_LOG_PILLAR.get()))
+                .save(pWriter, EllieCraft.MOD_ID + ":oak_log_pillar_from_connecting_oak_log_pillar");
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.HAMBURGER.get())
                 .pattern("B")
