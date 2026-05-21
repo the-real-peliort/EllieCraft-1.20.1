@@ -87,7 +87,7 @@ public class EndBladeItem extends SwordItem {
         if (!level.isClientSide()) {
 
             fireRay(level, player.getEyePosition(), player.getLookAngle(), player);
-            player.getCooldowns().addCooldown(stack.getItem(), 20);
+            player.getCooldowns().addCooldown(stack.getItem(), 15);
         }
 
         return InteractionResultHolder.sidedSuccess(stack, level.isClientSide());
