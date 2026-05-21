@@ -41,6 +41,19 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItemInFolder(ModBlocks.COMPRESSED_COBBLESTONE_4X, "compressed/cobblestone");
         blockWithItemInFolder(ModBlocks.COMPRESSED_COBBLESTONE_5X, "compressed/cobblestone");
         blockWithItemInFolder(ModBlocks.COMPRESSED_COBBLESTONE_6X, "compressed/cobblestone");
+
+        simpleBlockWithItem(
+                ModBlocks.PASSTHROUGH_BLOCK_GRASS.get(),
+                models().withExistingParent("passthrough_block_grass", mcLoc("block/grass_block"))
+        );
+        simpleBlockWithItem(
+                ModBlocks.PASSTHROUGH_BLOCK_STONE.get(),
+                models().withExistingParent("passthrough_block_stone", mcLoc("block/stone"))
+        );
+        simpleBlockWithItem(
+                ModBlocks.PASSTHROUGH_BLOCK_DIRT.get(),
+                models().withExistingParent("passthrough_block_dirt", mcLoc("block/dirt"))
+        );
     }
 
     private void blockWithItem(RegistryObject<Block> blockRegistryObject) {

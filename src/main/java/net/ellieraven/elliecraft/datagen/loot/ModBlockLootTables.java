@@ -25,6 +25,9 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.OAK_LOG_SAPPHIRE_GENERATOR.get());
         this.dropSelf(ModBlocks.ALGAE_STONE.get());
         this.dropSelf(ModBlocks.PASSTHROUGH_BLOCK.get());
+        this.dropSelf(ModBlocks.PASSTHROUGH_BLOCK_GRASS.get());
+        this.dropSelf(ModBlocks.PASSTHROUGH_BLOCK_STONE.get());
+        this.dropSelf(ModBlocks.PASSTHROUGH_BLOCK_DIRT.get());
         this.dropSelf(ModBlocks.BLACK_BRICKS.get());
         this.dropSelf(ModBlocks.BLUE_BRICKS.get());
         this.dropSelf(ModBlocks.YELLOW_BRICKS.get());

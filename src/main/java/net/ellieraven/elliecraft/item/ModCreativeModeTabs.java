@@ -39,6 +39,9 @@ public class ModCreativeModeTabs {
             pOutput.accept(ModItems.ELLIECRAFT_BOOK.get());
             pOutput.accept(ModBlocks.ALGAE_STONE.get());
             pOutput.accept(ModBlocks.PASSTHROUGH_BLOCK.get());
+            pOutput.accept(ModBlocks.PASSTHROUGH_BLOCK_GRASS.get());
+            pOutput.accept(ModBlocks.PASSTHROUGH_BLOCK_STONE.get());
+            pOutput.accept(ModBlocks.PASSTHROUGH_BLOCK_DIRT.get());
             pOutput.accept(ModBlocks.BLACK_BRICKS.get());
             pOutput.accept(ModBlocks.BLUE_BRICKS.get());
             pOutput.accept(ModBlocks.YELLOW_BRICKS.get());

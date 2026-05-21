@@ -10,9 +10,11 @@ import net.ellieraven.elliecraft.item.ModItems;
 import net.ellieraven.elliecraft.client.ModKeybinds;
 import net.ellieraven.elliecraft.network.PacketHandler;
 import net.ellieraven.elliecraft.worldgen.structure.ModStructures;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.level.GrassColor;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.RegisterKeyMappingsEvent;
 import net.minecraftforge.common.MinecraftForge;
@@ -90,6 +92,16 @@ public class EllieCraft
                         RenderType.cutout()
                 );
             });
+
+            Minecraft.getInstance().getBlockColors().register(
+                    (state, level, pos, tintIndex) -> {
+                        return level != null && pos != null
+                                ? Minecraft.getInstance().level.getBiome(pos)
+                                .value().getGrassColor(pos.getX(), pos.getZ())
+                                : GrassColor.get(0.5D, 1.0D);
+                    },
+                    ModBlocks.PASSTHROUGH_BLOCK_GRASS.get()
+            );
 
         }
 

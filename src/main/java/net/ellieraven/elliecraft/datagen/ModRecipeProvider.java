@@ -252,6 +252,23 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .requires(Items.SWEET_BERRIES, 1)
                 .unlockedBy(getHasName(Items.SWEET_BERRIES), has(Items.SWEET_BERRIES))
                 .save(pWriter, EllieCraft.MOD_ID + ":red_dye_from_berries");
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModBlocks.PASSTHROUGH_BLOCK_GRASS.get(), 1)
+                .requires(ModBlocks.PASSTHROUGH_BLOCK.get(), 1)
+                .requires(Blocks.GRASS_BLOCK, 1)
+                .unlockedBy(getHasName(ModBlocks.PASSTHROUGH_BLOCK.get()), has(ModBlocks.PASSTHROUGH_BLOCK.get()))
+                .save(pWriter);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModBlocks.PASSTHROUGH_BLOCK_STONE.get(), 1)
+                .requires(ModBlocks.PASSTHROUGH_BLOCK.get(), 1)
+                .requires(Blocks.STONE, 1)
+                .unlockedBy(getHasName(ModBlocks.PASSTHROUGH_BLOCK.get()), has(ModBlocks.PASSTHROUGH_BLOCK.get()))
+                .save(pWriter);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModBlocks.PASSTHROUGH_BLOCK_DIRT.get(), 1)
+                .requires(ModBlocks.PASSTHROUGH_BLOCK.get(), 1)
+                .requires(Blocks.DIRT, 1)
+                .unlockedBy(getHasName(ModBlocks.PASSTHROUGH_BLOCK.get()), has(ModBlocks.PASSTHROUGH_BLOCK.get()))
+                .save(pWriter);
     }
 
     static void createToolPartRecipe(Item toolPart, Item pattern, Item material, int amount, Consumer<FinishedRecipe> pWriter) {
