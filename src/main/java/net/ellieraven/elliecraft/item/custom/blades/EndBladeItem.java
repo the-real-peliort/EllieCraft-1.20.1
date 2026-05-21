@@ -42,10 +42,12 @@ public class EndBladeItem extends SwordItem {
             );
         }
 
+        float blinkDistance = 5;
+
         player.teleportTo(
-                player.getX() + player.getLookAngle().x * 5,
+                player.getX() + player.getLookAngle().x * blinkDistance,
                 player.getY(),
-                player.getZ() + player.getLookAngle().z * 5
+                player.getZ() + player.getLookAngle().z * blinkDistance
         );
 
         if (player.level() instanceof ServerLevel level){
