@@ -177,7 +177,7 @@ public class ModItems {
     );
 
     public static final RegistryObject<Item> END_BLADE = ITEMS.register("end_blade",
-            () -> new EndBladeItem(Tiers.NETHERITE, 2, -1f, new Item.Properties())
+            () -> new EndBladeItem(Tiers.NETHERITE, 10, -1f, new Item.Properties())
     );
 
     public static void register(IEventBus eventBus) {
