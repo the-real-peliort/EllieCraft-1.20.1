@@ -32,8 +32,7 @@ public class EndBladeRayPacket {
                     level,
                     player.getEyePosition(1.0F),
                     player.getLookAngle(),
-                    player,
-                    stack
+                    player
             );
         });
 

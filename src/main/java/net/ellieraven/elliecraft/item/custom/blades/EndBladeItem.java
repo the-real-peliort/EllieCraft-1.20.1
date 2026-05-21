@@ -86,14 +86,14 @@ public class EndBladeItem extends SwordItem {
 
         if (!level.isClientSide()) {
 
-            fireRay(level, player.getEyePosition(), player.getLookAngle(), player, stack);
+            fireRay(level, player.getEyePosition(), player.getLookAngle(), player);
             player.getCooldowns().addCooldown(stack.getItem(), 20);
         }
 
         return InteractionResultHolder.sidedSuccess(stack, level.isClientSide());
     }
 
-    public static void fireRay(Level level, Vec3 start, Vec3 direction, Player player, ItemStack stack) {
+    public static void fireRay(Level level, Vec3 start, Vec3 direction, Player player) {
         final double range = 75.0;
 
 
@@ -113,9 +113,8 @@ public class EndBladeItem extends SwordItem {
                 : range;
 
         // --- ENTITY HIT ---
-        AABB box = player.getBoundingBox()
-                .expandTowards(direction.scale(range))
-                .inflate(2.5);
+        AABB box = new AABB(start, end).inflate(1.0);
+
 
         EntityHitResult entityHit = ProjectileUtil.getEntityHitResult(
                 level,
@@ -145,9 +144,9 @@ public class EndBladeItem extends SwordItem {
         // --- SOUND (HERE IS THE CORRECT PLACE) ---
         level.playSound(
                 null,
-                player.getX(),
-                player.getY(),
-                player.getZ(),
+                start.x,
+                start.y,
+                start.z,
                 SoundEvents.ENDERMAN_HURT,
                 SoundSource.PLAYERS,
                 1.0f,

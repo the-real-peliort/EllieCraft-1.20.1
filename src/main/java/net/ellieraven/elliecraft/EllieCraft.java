@@ -3,6 +3,7 @@ package net.ellieraven.elliecraft;
 import com.mojang.logging.LogUtils;
 
 import net.ellieraven.elliecraft.block.ModBlocks;
+import net.ellieraven.elliecraft.dispenser.ModDispenserBehaviours;
 import net.ellieraven.elliecraft.gui.SplashHandler;
 import net.ellieraven.elliecraft.item.ModCreativeModeTabs;
 import net.ellieraven.elliecraft.item.ModItems;
@@ -60,7 +61,7 @@ public class EllieCraft
 
     private void commonSetup(final FMLCommonSetupEvent event)
     {
-
+        event.enqueueWork(ModDispenserBehaviours::register);
     }
 
     private void addCreative(BuildCreativeModeTabContentsEvent event)
