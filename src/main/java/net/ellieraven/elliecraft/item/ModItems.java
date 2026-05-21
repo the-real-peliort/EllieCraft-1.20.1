@@ -3,8 +3,10 @@ package net.ellieraven.elliecraft.item;
 import net.ellieraven.elliecraft.EllieCraft;
 import net.ellieraven.elliecraft.armor.ModArmorMaterials;
 import net.ellieraven.elliecraft.item.custom.*;
+import net.ellieraven.elliecraft.item.custom.blades.EndBladeItem;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Tiers;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -173,6 +175,11 @@ public class ModItems {
     public static final RegistryObject<Item> CHARGED_ELLIECRAFT_STAR = ITEMS.register("charged_elliecraft_star",
             () -> new ChargedEllieCraftStarItem(new Item.Properties())
     );
+
+    public static final RegistryObject<Item> END_BLADE = ITEMS.register("end_blade",
+            () -> new EndBladeItem(Tiers.NETHERITE, 2, -1f, new Item.Properties())
+    );
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

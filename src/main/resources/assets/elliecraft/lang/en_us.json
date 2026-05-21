@@ -114,5 +114,9 @@
     "block.elliecraft.kitchen_tiles": "Kitchen Tiles",
 
     "item.elliecraft.elliecraft_star": "EllieCraft Star",
-    "item.elliecraft.charged_elliecraft_star": "Charged EllieCraft Star"
+    "item.elliecraft.charged_elliecraft_star": "Charged EllieCraft Star",
+
+    "item.elliecraft.end_blade": "End Blade",
+    "key.elliecraft.end_blade_ability": "End Blade Ability",
+    "key.elliecraft.end_blade_blink_ability": "End Blade Blink Ability"
 }

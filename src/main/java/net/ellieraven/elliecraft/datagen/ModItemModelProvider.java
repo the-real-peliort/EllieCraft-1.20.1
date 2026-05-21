@@ -73,7 +73,20 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.ELLIECRAFT_STAR);
         simpleItemWithSpecificTexture(ModItems.CHARGED_ELLIECRAFT_STAR, "elliecraft_star");
 
+        advancedItemInFolder(ModItems.END_BLADE, "blades");
+    }
 
+    private ItemModelBuilder advancedItemInFolder(RegistryObject<Item> item, String path) {
+        String name = item.getId().getPath();
+
+        ResourceLocation modelLocation =
+                new ResourceLocation(EllieCraft.MOD_ID, "item/" + path + "/" + name);
+
+        ResourceLocation textureLocation =
+                new ResourceLocation(EllieCraft.MOD_ID, "item/" + path + "/" + name);
+
+        return withExistingParent(name, modelLocation)
+                .texture("layer0", textureLocation);
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {

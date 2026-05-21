@@ -6,11 +6,14 @@ import net.ellieraven.elliecraft.block.ModBlocks;
 import net.ellieraven.elliecraft.gui.SplashHandler;
 import net.ellieraven.elliecraft.item.ModCreativeModeTabs;
 import net.ellieraven.elliecraft.item.ModItems;
+import net.ellieraven.elliecraft.client.ModKeybinds;
+import net.ellieraven.elliecraft.network.PacketHandler;
 import net.ellieraven.elliecraft.worldgen.structure.ModStructures;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.RegisterKeyMappingsEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
@@ -51,6 +54,8 @@ public class EllieCraft
         MinecraftForge.EVENT_BUS.register(this);
 
         modEventBus.addListener(this::addCreative);
+
+        PacketHandler.register();
     }
 
     private void commonSetup(final FMLCommonSetupEvent event)
@@ -84,6 +89,12 @@ public class EllieCraft
                         RenderType.cutout()
                 );
             });
+
+        }
+
+        @SubscribeEvent
+        public static void registerKeys(RegisterKeyMappingsEvent event) {
+            event.register(ModKeybinds.END_BLADE_KEY);
         }
     }
 }

@@ -97,6 +97,7 @@ public class ModCreativeModeTabs {
             pOutput.accept(ModBlocks.KITCHEN_TILES.get());
             pOutput.accept(ModItems.ELLIECRAFT_STAR.get());
             pOutput.accept(ModItems.CHARGED_ELLIECRAFT_STAR.get());
+            pOutput.accept(ModItems.END_BLADE.get());
         })
         .build()
     );
