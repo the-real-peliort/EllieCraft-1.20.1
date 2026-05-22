@@ -1,6 +1,7 @@
 package net.ellieraven.elliecraft.item.custom.blades;
 
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
@@ -17,10 +18,31 @@ import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.*;
 
+import java.util.List;
+import java.util.Optional;
+
 import static net.minecraft.commands.arguments.coordinates.Vec3Argument.vec3;
 
 public class EndBladeItem extends SwordItem {
     public static void blinkAbility(Player player) {
+        if (getCooldown(player.getMainHandItem(), "blink_cd") > 0) { //still on cooldown
+            player.level().playSound(
+                    null,
+                    player.getX(),
+                    player.getY(),
+                    player.getZ(),
+                    SoundEvents.ENDER_DRAGON_HURT,
+                    SoundSource.PLAYERS,
+                    0.8f,
+                    1.0f
+            );
+            return;
+        }
+
+        //cooldown finished
+
+        setCooldown(player.getMainHandItem(), "blink_cd", 15); //reset cooldown
+
         player.level().playSound(
                 null,
                 player.getX(),
@@ -83,11 +105,26 @@ public class EndBladeItem extends SwordItem {
 
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
         ItemStack stack = player.getItemInHand(hand);
-
+        if (hand != InteractionHand.MAIN_HAND) return InteractionResultHolder.fail(stack);;
         if (!level.isClientSide()) {
 
+            if (getCooldown(player.getMainHandItem(), "ray_cd") > 0) { //still on cooldown
+                player.level().playSound(
+                        null,
+                        player.getX(),
+                        player.getY(),
+                        player.getZ(),
+                        SoundEvents.ENDER_DRAGON_HURT,
+                        SoundSource.PLAYERS,
+                        0.8f,
+                        1.0f
+                );
+                return InteractionResultHolder.sidedSuccess(stack, level.isClientSide());
+            }
+            //cooldown finished
+            setCooldown(player.getMainHandItem(), "ray_cd", 15); //reset cooldown
+
             fireRay(level, player.getEyePosition(), player.getLookAngle(), player);
-            player.getCooldowns().addCooldown(stack.getItem(), 15);
         }
 
         return InteractionResultHolder.sidedSuccess(stack, level.isClientSide());
@@ -95,7 +132,6 @@ public class EndBladeItem extends SwordItem {
 
     public static void fireRay(Level level, Vec3 start, Vec3 direction, Player player) {
         final double range = 75.0;
-
 
         Vec3 end = start.add(direction.scale(range));
 
@@ -113,32 +149,31 @@ public class EndBladeItem extends SwordItem {
                 : range;
 
         // --- ENTITY HIT ---
-        AABB box = new AABB(start, end).inflate(1.0);
+        AABB searchBox = new AABB(start, end).inflate(1.0);
 
-
-        EntityHitResult entityHit = ProjectileUtil.getEntityHitResult(
-                level,
-                player,
-                start,
-                end,
-                box,
+        List<Entity> entities = level.getEntities(
+                (Entity) null,
+                searchBox,
                 e -> !e.isSpectator() && e.isPickable()
         );
 
-        double entityDist = Double.MAX_VALUE;
-        Entity target = null;
+        Vec3 dir = direction.normalize();
 
-        if (entityHit != null) {
-            entityDist = entityHit.getLocation().distanceTo(start);
+        for (Entity e : entities) {
 
-            if (entityDist < blockDist) {
-                target = entityHit.getEntity();
+            AABB box = e.getBoundingBox().inflate(0.1);
+
+            Optional<Vec3> hit = box.clip(start, end);
+
+            if (hit.isPresent()) {
+
+                Vec3 hitPos = hit.get();
+                double dist = start.distanceTo(hitPos);
+
+                if (dist <= blockDist) {
+                    e.hurt(level.damageSources().playerAttack(player), 15.0f);
+                }
             }
-        }
-
-        // --- DAMAGE ---
-        if (target != null) {
-            target.hurt(level.damageSources().playerAttack(player), 15.0f);
         }
 
         // --- SOUND (HERE IS THE CORRECT PLACE) ---
@@ -154,7 +189,7 @@ public class EndBladeItem extends SwordItem {
         );
 
         // --- PARTICLES ---
-        double stopDistance = Math.min(blockDist, entityDist);
+        double stopDistance = blockDist;
         Vec3 rayDir = direction.normalize();
         double step = 0.25;
 
@@ -195,10 +230,15 @@ public class EndBladeItem extends SwordItem {
     @Override
     public void inventoryTick(ItemStack stack, Level level, Entity entity, int slot, boolean selected) {
         if (!(entity instanceof Player)) return;
+        Player player = (Player) entity;
 
-        if (!level.isClientSide) {
+        if (!level.isClientSide) { //server stuff:
+            decrementCooldown(stack, "ray_cd");
             decrementCooldown(stack, "blink_cd");
+            return;
         }
+
+        //client stuff:
     }
 
     private void decrementCooldown(ItemStack stack, String key) {

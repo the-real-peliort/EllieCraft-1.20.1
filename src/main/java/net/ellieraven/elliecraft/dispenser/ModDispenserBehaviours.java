@@ -21,9 +21,9 @@ public class ModDispenserBehaviours {
                 Vec3 dirVec = new Vec3(direction.getStepX(), direction.getStepY(), direction.getStepZ());
                 BlockPos frontPos = pSource.getPos().relative(direction);
                 Vec3 frontVec = Vec3.atCenterOf(pSource.getPos())
-                        .add(direction.getStepX() * 1.0,
-                                direction.getStepY() * 1.0,
-                                direction.getStepZ() * 1.0);
+                        .add(direction.getStepX() * 0.51,
+                                direction.getStepY() * 0.51,
+                                direction.getStepZ() * 0.51);
 
                 if (!level.isClientSide) {
                     EndBladeItem.fireRay(level, frontVec, dirVec, null);
