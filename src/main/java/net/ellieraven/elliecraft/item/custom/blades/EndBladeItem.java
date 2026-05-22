@@ -1,5 +1,6 @@
 package net.ellieraven.elliecraft.item.custom.blades;
 
+import net.ellieraven.elliecraft.gui.death.DamageSources;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
@@ -171,7 +172,7 @@ public class EndBladeItem extends SwordItem {
                 double dist = start.distanceTo(hitPos);
 
                 if (dist <= blockDist) {
-                    e.hurt(level.damageSources().playerAttack(player), 15.0f);
+                    e.hurt(DamageSources.endRay(level, player), 15.0f);
                 }
             }
         }
