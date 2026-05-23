@@ -146,9 +146,9 @@ public class EndBladeItem extends SwordItem {
         serverLevel.sendParticles( //purple
                 ParticleTypes.DRAGON_BREATH,
                 pos.x, pos.y+1, pos.z,
-                50,
+                250,
                 .1, .1, .1,
-                2.5
+                1
         );
     }
 
