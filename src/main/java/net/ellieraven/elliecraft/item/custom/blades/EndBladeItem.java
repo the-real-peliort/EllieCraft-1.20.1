@@ -10,6 +10,7 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.ProjectileUtil;
 import net.minecraft.world.item.ItemStack;
@@ -25,6 +26,16 @@ import java.util.Optional;
 import static net.minecraft.commands.arguments.coordinates.Vec3Argument.vec3;
 
 public class EndBladeItem extends SwordItem {
+    @Override
+    public boolean hurtEnemy(ItemStack pStack, LivingEntity pTarget, LivingEntity pAttacker) {
+        if (pTarget.level().isClientSide) return super.hurtEnemy(pStack, pTarget, pAttacker);
+
+        if (pTarget.level() instanceof ServerLevel serverLevel) {
+            hitEffect(serverLevel, pTarget.position());
+        }
+        return super.hurtEnemy(pStack, pTarget, pAttacker);
+    }
+
     public static void blinkAbility(Player player) {
         if (getCooldown(player.getMainHandItem(), "blink_cd") > 0) { //still on cooldown
             player.level().playSound(
@@ -131,6 +142,16 @@ public class EndBladeItem extends SwordItem {
         return InteractionResultHolder.sidedSuccess(stack, level.isClientSide());
     }
 
+    public static void hitEffect(ServerLevel serverLevel, Vec3 pos) {
+        serverLevel.sendParticles( //purple
+                ParticleTypes.DRAGON_BREATH,
+                pos.x, pos.y+1, pos.z,
+                50,
+                .1, .1, .1,
+                2.5
+        );
+    }
+
     public static void fireRay(Level level, Vec3 start, Vec3 direction, Player player) {
         final double range = 75.0;
 
@@ -171,8 +192,11 @@ public class EndBladeItem extends SwordItem {
                 Vec3 hitPos = hit.get();
                 double dist = start.distanceTo(hitPos);
 
-                if (dist <= blockDist) {
+                if (dist <= blockDist) { //on each hit
                     e.hurt(DamageSources.endRay(level, player), 15.0f);
+                    if (level instanceof ServerLevel serverLevel) {
+                        hitEffect(serverLevel, e.position());
+                    }
                 }
             }
         }
