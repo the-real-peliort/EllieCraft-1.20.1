@@ -54,6 +54,10 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 ModBlocks.PASSTHROUGH_BLOCK_DIRT.get(),
                 models().withExistingParent("passthrough_block_dirt", mcLoc("block/dirt"))
         );
+        simpleBlockWithItem(
+                ModBlocks.PASSTHROUGH_BLOCK_COBBLESTONE.get(),
+                models().withExistingParent("passthrough_block_cobblestone", mcLoc("block/cobblestone"))
+        );
     }
 
     private void blockWithItem(RegistryObject<Block> blockRegistryObject) {

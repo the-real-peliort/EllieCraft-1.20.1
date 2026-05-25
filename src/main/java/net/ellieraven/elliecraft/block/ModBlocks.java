@@ -70,6 +70,9 @@ public class ModBlocks {
     public static final RegistryObject<Block> PASSTHROUGH_BLOCK_DIRT = registerBlock("passthrough_block_dirt",
             () -> new PassthroughBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noCollission())
     );
+    public static final RegistryObject<Block> PASSTHROUGH_BLOCK_COBBLESTONE = registerBlock("passthrough_block_cobblestone",
+            () -> new PassthroughBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noCollission())
+    );
 
     public static final RegistryObject<Block> BLACK_BRICKS = registerBlock("black_bricks",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.BRICKS))

@@ -258,7 +258,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .requires(Blocks.GRASS_BLOCK, 1)
                 .unlockedBy(getHasName(ModBlocks.PASSTHROUGH_BLOCK.get()), has(ModBlocks.PASSTHROUGH_BLOCK.get()))
                 .save(pWriter);
-
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModBlocks.PASSTHROUGH_BLOCK_STONE.get(), 1)
                 .requires(ModBlocks.PASSTHROUGH_BLOCK.get(), 1)
                 .requires(Blocks.STONE, 1)
@@ -267,6 +266,11 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModBlocks.PASSTHROUGH_BLOCK_DIRT.get(), 1)
                 .requires(ModBlocks.PASSTHROUGH_BLOCK.get(), 1)
                 .requires(Blocks.DIRT, 1)
+                .unlockedBy(getHasName(ModBlocks.PASSTHROUGH_BLOCK.get()), has(ModBlocks.PASSTHROUGH_BLOCK.get()))
+                .save(pWriter);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModBlocks.PASSTHROUGH_BLOCK_COBBLESTONE.get(), 1)
+                .requires(ModBlocks.PASSTHROUGH_BLOCK.get(), 1)
+                .requires(Blocks.COBBLESTONE, 1)
                 .unlockedBy(getHasName(ModBlocks.PASSTHROUGH_BLOCK.get()), has(ModBlocks.PASSTHROUGH_BLOCK.get()))
                 .save(pWriter);
     }

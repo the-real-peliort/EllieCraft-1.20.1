@@ -57,7 +57,7 @@ public class ModItems {
     );
 
     public static final RegistryObject<Item> PAINT_SPONGE = ITEMS.register("paint_sponge",
-            () -> new PaintSpongeItem(new Item.Properties())
+            () -> new PaintSpongeItem(new Item.Properties().stacksTo(1))
     );
 
     public static final RegistryObject<Item> SOAP_BAR = ITEMS.register("soap_bar",
