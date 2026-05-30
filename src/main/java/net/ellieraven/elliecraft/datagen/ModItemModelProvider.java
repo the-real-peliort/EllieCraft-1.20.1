@@ -74,6 +74,10 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItemWithSpecificTexture(ModItems.CHARGED_ELLIECRAFT_STAR, "elliecraft_star");
 
         advancedItemInFolder(ModItems.END_BLADE, "blades");
+
+        simpleItemInFolder(ModItems.PESTLE, "pestle_and_mortar");
+        simpleItemInFolder(ModItems.MORTAR, "pestle_and_mortar");
+        simpleItemInFolder(ModItems.PESTLE_AND_MORTAR, "pestle_and_mortar");
     }
 
     private ItemModelBuilder advancedItemInFolder(RegistryObject<Item> item, String path) {

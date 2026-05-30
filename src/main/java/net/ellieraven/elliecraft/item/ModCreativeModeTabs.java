@@ -102,6 +102,9 @@ public class ModCreativeModeTabs {
             pOutput.accept(ModItems.ELLIECRAFT_STAR.get());
             pOutput.accept(ModItems.CHARGED_ELLIECRAFT_STAR.get());
             pOutput.accept(ModItems.END_BLADE.get());
+            pOutput.accept(ModItems.PESTLE.get());
+            pOutput.accept(ModItems.MORTAR.get());
+            pOutput.accept(ModItems.PESTLE_AND_MORTAR.get());
         })
         .build()
     );

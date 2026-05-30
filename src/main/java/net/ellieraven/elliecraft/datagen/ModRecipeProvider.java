@@ -273,6 +273,27 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .requires(Blocks.COBBLESTONE, 1)
                 .unlockedBy(getHasName(ModBlocks.PASSTHROUGH_BLOCK.get()), has(ModBlocks.PASSTHROUGH_BLOCK.get()))
                 .save(pWriter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.PESTLE.get(), 1)
+                .pattern("S")
+                .pattern("S")
+                .define('S', Blocks.STONE)
+                .unlockedBy(getHasName(Blocks.STONE), has(Blocks.STONE))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.MORTAR.get(), 1)
+                .pattern("S S")
+                .pattern("SSS")
+                .define('S', Blocks.STONE)
+                .unlockedBy(getHasName(Blocks.STONE), has(Blocks.STONE))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.PESTLE_AND_MORTAR.get(), 1)
+                .pattern("P")
+                .pattern("M")
+                .define('P', ModItems.PESTLE.get())
+                .define('M', ModItems.MORTAR.get())
+                .unlockedBy(getHasName(Blocks.STONE), has(Blocks.STONE))
+                .save(pWriter);
+
     }
 
     static void createToolPartRecipe(Item toolPart, Item pattern, Item material, int amount, Consumer<FinishedRecipe> pWriter) {

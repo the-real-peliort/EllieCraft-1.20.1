@@ -127,5 +127,9 @@
     "key.elliecraft.end_blade_blink_ability": "End Blade Blink Ability",
 
     "death.attack.end_ray_plr": "%1$s got obliterated by %2$s with an end ray",
-    "death.attack.end_ray": "%1$s got obliterated by an end ray"
+    "death.attack.end_ray": "%1$s got obliterated by an end ray",
+
+    "item.elliecraft.pestle": "Pestle",
+    "item.elliecraft.mortar": "Mortar",
+    "item.elliecraft.pestle_and_mortar": "Pestle And Mortar"
 }

@@ -180,6 +180,16 @@ public class ModItems {
             () -> new EndBladeItem(Tiers.NETHERITE, 10, -1.5f, new Item.Properties())
     );
 
+    public static final RegistryObject<Item> PESTLE = ITEMS.register("pestle",
+            () -> new Item(new Item.Properties().stacksTo(1))
+    );
+    public static final RegistryObject<Item> MORTAR = ITEMS.register("mortar",
+            () -> new Item(new Item.Properties().stacksTo(1))
+    );
+    public static final RegistryObject<Item> PESTLE_AND_MORTAR = ITEMS.register("pestle_and_mortar",
+            () -> new Item(new Item.Properties().stacksTo(1).durability(128))
+    );
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }
