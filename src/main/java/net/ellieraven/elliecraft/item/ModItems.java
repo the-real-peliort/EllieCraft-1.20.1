@@ -187,7 +187,14 @@ public class ModItems {
             () -> new Item(new Item.Properties().stacksTo(1))
     );
     public static final RegistryObject<Item> PESTLE_AND_MORTAR = ITEMS.register("pestle_and_mortar",
-            () -> new Item(new Item.Properties().stacksTo(1).durability(128))
+            () -> new PestleAndMortarItem(new Item.Properties().stacksTo(1).durability(128))
+    );
+
+    public static final RegistryObject<Item> HERBS = ITEMS.register("herbs",
+            () -> new Item(new Item.Properties())
+    );
+    public static final RegistryObject<Item> CRUSHED_HERBS = ITEMS.register("crushed_herbs",
+            () -> new Item(new Item.Properties())
     );
 
     public static void register(IEventBus eventBus) {

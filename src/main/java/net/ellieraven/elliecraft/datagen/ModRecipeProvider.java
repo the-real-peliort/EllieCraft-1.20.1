@@ -44,6 +44,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         createToolPartRecipesCrude(pWriter);
         createToolPartRecipes(pWriter);
         createToolRecipes(pWriter);
+        createDyeRecipes(pWriter);
 
         oreSmelting(pWriter, SAPPHIRE_SMELTABLES, RecipeCategory.MISC, ModItems.SAPPHIRE.get(), 0.25f, 200, "sapphire");
         oreBlasting(pWriter, SAPPHIRE_SMELTABLES, RecipeCategory.MISC, ModItems.SAPPHIRE.get(), 0.25f, 100, "sapphire");
@@ -248,11 +249,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(Items.COAL), has(Items.COAL))
                 .save(pWriter, EllieCraft.MOD_ID + ":wash_counterfeit_diamond_into_coal");
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.RED_DYE, 1)
-                .requires(Items.SWEET_BERRIES, 1)
-                .unlockedBy(getHasName(Items.SWEET_BERRIES), has(Items.SWEET_BERRIES))
-                .save(pWriter, EllieCraft.MOD_ID + ":red_dye_from_berries");
-
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModBlocks.PASSTHROUGH_BLOCK_GRASS.get(), 1)
                 .requires(ModBlocks.PASSTHROUGH_BLOCK.get(), 1)
                 .requires(Blocks.GRASS_BLOCK, 1)
@@ -293,7 +289,21 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('M', ModItems.MORTAR.get())
                 .unlockedBy(getHasName(Blocks.STONE), has(Blocks.STONE))
                 .save(pWriter);
+    }
 
+    static void createDyeRecipes(Consumer<FinishedRecipe> pWriter) {
+        createDyeRecipe(pWriter, "red", Items.SWEET_BERRIES, Items.RED_DYE);
+        createDyeRecipe(pWriter, "red", Items.RED_MUSHROOM, Items.RED_DYE);
+        createDyeRecipe(pWriter, "brown", Items.BROWN_MUSHROOM, Items.BROWN_DYE);
+    }
+
+    static void createDyeRecipe(Consumer<FinishedRecipe> pWriter, String color, Item ingredient, Item dye) {
+        String ingredientName = BuiltInRegistries.ITEM.getKey(ingredient).getPath();
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, dye, 1)
+                .requires(ingredient, 1)
+                .unlockedBy(getHasName(ingredient), has(ingredient))
+                .save(pWriter, EllieCraft.MOD_ID + ":"+color+"_dye_from_"+ingredientName);
     }
 
     static void createToolPartRecipe(Item toolPart, Item pattern, Item material, int amount, Consumer<FinishedRecipe> pWriter) {

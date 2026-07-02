@@ -8,6 +8,7 @@ import net.ellieraven.elliecraft.gui.SplashHandler;
 import net.ellieraven.elliecraft.item.ModCreativeModeTabs;
 import net.ellieraven.elliecraft.item.ModItems;
 import net.ellieraven.elliecraft.client.ModKeybinds;
+import net.ellieraven.elliecraft.item.custom.PestleAndMortarItem;
 import net.ellieraven.elliecraft.network.PacketHandler;
 import net.ellieraven.elliecraft.worldgen.structure.ModStructures;
 import net.minecraft.client.Minecraft;
@@ -64,6 +65,7 @@ public class EllieCraft
     private void commonSetup(final FMLCommonSetupEvent event)
     {
         event.enqueueWork(ModDispenserBehaviours::register);
+        event.enqueueWork(PestleAndMortarItem::initRecipes);
     }
 
     private void addCreative(BuildCreativeModeTabContentsEvent event)

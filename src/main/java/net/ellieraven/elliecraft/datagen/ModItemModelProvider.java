@@ -78,6 +78,10 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItemInFolder(ModItems.PESTLE, "pestle_and_mortar");
         simpleItemInFolder(ModItems.MORTAR, "pestle_and_mortar");
         simpleItemInFolder(ModItems.PESTLE_AND_MORTAR, "pestle_and_mortar");
+
+        simpleItemInFolder(ModItems.HERBS, "herbs");
+        simpleItemInFolder(ModItems.CRUSHED_HERBS, "herbs");
+
     }
 
     private ItemModelBuilder advancedItemInFolder(RegistryObject<Item> item, String path) {

@@ -105,6 +105,8 @@ public class ModCreativeModeTabs {
             pOutput.accept(ModItems.PESTLE.get());
             pOutput.accept(ModItems.MORTAR.get());
             pOutput.accept(ModItems.PESTLE_AND_MORTAR.get());
+            pOutput.accept(ModItems.HERBS.get());
+            pOutput.accept(ModItems.CRUSHED_HERBS.get());
         })
         .build()
     );

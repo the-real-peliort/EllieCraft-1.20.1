@@ -131,5 +131,8 @@
 
     "item.elliecraft.pestle": "Pestle",
     "item.elliecraft.mortar": "Mortar",
-    "item.elliecraft.pestle_and_mortar": "Pestle And Mortar"
+    "item.elliecraft.pestle_and_mortar": "Pestle And Mortar",
+
+    "item.elliecraft.herbs": "Herbs",
+    "item.elliecraft.crushed_herbs": "Crushed Herbs"
 }
