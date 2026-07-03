@@ -98,6 +98,8 @@ public class ModCreativeModeTabs {
             pOutput.accept(ModItems.IRON_HOE_PART.get());
             pOutput.accept(ModBlocks.VERTICAL_BRICK_SLAB.get());
             pOutput.accept(ModBlocks.VERTICAL_STONE_BRICK_SLAB.get());
+            pOutput.accept(ModBlocks.VERTICAL_STONE_SLAB.get());
+            pOutput.accept(ModBlocks.VERTICAL_DIRT_SLAB.get());
             pOutput.accept(ModBlocks.KITCHEN_TILES.get());
             pOutput.accept(ModItems.ELLIECRAFT_STAR.get());
             pOutput.accept(ModItems.CHARGED_ELLIECRAFT_STAR.get());

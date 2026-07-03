@@ -173,6 +173,13 @@ public class ModBlocks {
             () -> new VerticalSlabBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_SLAB).noOcclusion())
     );
 
+    public static final RegistryObject<Block> VERTICAL_STONE_SLAB = registerBlock("vertical_stone_slab",
+            () -> new VerticalSlabBlock(BlockBehaviour.Properties.copy(Blocks.STONE_SLAB).noOcclusion())
+    );
+    public static final RegistryObject<Block> VERTICAL_DIRT_SLAB = registerBlock("vertical_dirt_slab",
+            () -> new VerticalSlabBlock(BlockBehaviour.Properties.copy(Blocks.DIRT).noOcclusion())
+    );
+
     public static final RegistryObject<Block> KITCHEN_TILES = registerBlock("kitchen_tiles",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.BONE_BLOCK).destroyTime(1.5f))
     );
