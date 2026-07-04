@@ -96,7 +96,11 @@ public class EndBladeItem extends SwordItem {
 
         ServerPlayer serverPlayer = (ServerPlayer) player;
 
-        float newYaw = serverPlayer.getYRot() + 180.0F;
+        float newYaw = serverPlayer.getYRot();
+
+        if (player.isCrouching()) {
+            newYaw = serverPlayer.getYRot() + 180.0F;
+        }
 
         serverPlayer.setYRot(newYaw);
         serverPlayer.setYHeadRot(newYaw);
